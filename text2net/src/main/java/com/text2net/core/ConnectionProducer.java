@@ -23,7 +23,7 @@ public class ConnectionProducer {
 		List<Connection> result = new ArrayList<Connection>();
 		
 		
-		// Listas de anotações detectadas pelo gate já na ordem em que aparecem no documento
+		// Listas de anotações detectadas pelo gate ja na ordem em que aparecem no documento
 		AnnotationSet todasAnnots = annotatedText.getDoc().getAnnotations();
 		List<gate.Annotation> inicioList = gate.Utils.inDocumentOrder(todasAnnots.get("Inicio"));
 		List<gate.Annotation> entidadeList = gate.Utils.inDocumentOrder(todasAnnots.get("EntidadeIdentificada"));
@@ -36,7 +36,7 @@ public class ConnectionProducer {
 			SimpleFeatureMap fMap = annIni.getFeatures();
 
 			long fimPortaria;
-			if (i == inicioList.size() - 1) { // se estivermos no ultimo inicio, o fim é o fim e nao a proximo inicio
+			if (i == inicioList.size() - 1) { // se estivermos no ultimo inicio, o fim eh o fim e nao a proximo inicio
 				fimPortaria = annotatedText.getDoc().getContent().size().longValue();
 			} else	{
 				fimPortaria = inicioList.get(i + 1).getStartNode().getOffset();
@@ -67,7 +67,7 @@ public class ConnectionProducer {
 
 				if (inicioEntidade >= inicioPortaria)
 				{
-					if (inicioEntidade < fimPortaria) // Se esta entre o inicio e o final, pertence à portaria
+					if (inicioEntidade < fimPortaria) // Se esta entre o inicio e o final, pertence a portaria
 					{
 						long fimEntidade = annEnt.getEndNode().getOffset();
 
