@@ -1,9 +1,17 @@
 package com.text2net;
 
+import java.io.File;
+import java.util.List;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import com.text2net.core.ConnectionProducer;
+import com.text2net.core.TextAnnotator;
+import com.text2net.core.api.AnnotatedText;
+import com.text2net.core.api.Connection;
 
 /**
  * Root resource (exposed at "myresource" path)
@@ -20,6 +28,42 @@ public class MyResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "Hello, teste!";
+       
+    	String gappFilePath = "C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\gate\\InicioInicio_v5.xapp";
+		String docFilePath = "C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\douSample\\Dou-02012013-1.txt";
+		
+		//String gappFilePath = this.getClass().getClassLoader().getResource("com\\text2net\\gate\\InicioInicio_v5.xapp");
+		String r = "Result: ";
+		
+		File gappFile =  new File(gappFilePath);
+		File docFile =  new File(docFilePath);
+		try {
+		AnnotatedText annotatedText;
+		
+			annotatedText = new TextAnnotator().processFile(gappFile, docFile);
+		
+		
+		System.out.println("Finished Annotation. Starting connection detection");
+		
+		List<Connection> connections = new ConnectionProducer().process(annotatedText);
+		
+		for (int i = 0; i < 100; i++) {
+			Connection connection = connections.get(i);
+			
+			r += "Conncetion: [" + connection.getElementA() + "][" + connection.getElementB() + "](" + connection.getDistance() + ")";
+		}
+		
+		/*
+		for (Connection connection : connections) {
+			System.out.println("Conncetion: [" + connection.getElementA() + "][" + connection.getElementB() + "](" + connection.getDistance() + ")");
+		}
+		
+		System.out.println("Finished Connection");
+		*/
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return r;
     }
 }
