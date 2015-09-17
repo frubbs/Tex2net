@@ -23,7 +23,7 @@ public class ConnectionProducer {
 		List<Connection> result = new ArrayList<Connection>();
 		
 		
-		// Listas de anotações detectadas pelo gate ja na ordem em que aparecem no documento
+		// Listas de anotacoes detectadas pelo gate ja na ordem em que aparecem no documento
 		AnnotationSet todasAnnots = annotatedText.getDoc().getAnnotations();
 		List<gate.Annotation> inicioList = gate.Utils.inDocumentOrder(todasAnnots.get("Inicio"));
 		List<gate.Annotation> entidadeList = gate.Utils.inDocumentOrder(todasAnnots.get("EntidadeIdentificada"));
