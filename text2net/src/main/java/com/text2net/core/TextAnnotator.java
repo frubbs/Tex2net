@@ -92,8 +92,17 @@ public class TextAnnotator {
 		/*props.setProperty("gate.home",
 				"C:\\Users\\rafa\\Documents\\GitHub\\analisador-dou\\AnalisadorDou\\lib\\GateAPI\\gate-7.1-build4485-ALL");
 	*/
-		props.setProperty("gate.home",".\\gate");
+		
+		
+//essa eh a boa:
+		//props.setProperty("gate.home",".\\gate");
 
+		String home = this.getClass().getClassLoader().getResource("com/text2net/gate/gatehome").getPath();
+		 
+		props.setProperty("gate.home",home);
+		
+		
+		
 		// props.setProperty("gate.site.config", ".\\gate.xml");
 
 		/*

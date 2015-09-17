@@ -29,10 +29,23 @@ public class MyResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
        
-    	String gappFilePath = "C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\gate\\InicioInicio_v5.xapp";
-		String docFilePath = "C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\douSample\\Dou-02012013-1.txt";
+    	String gappFilePath = "nao";//"C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\gate\\InicioInicio_v5.xapp";
+		String docFilePath = "nop";//"C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\douSample\\Dou-02012013-1.txt";
 		
-		//String gappFilePath = this.getClass().getClassLoader().getResource("com\\text2net\\gate\\InicioInicio_v5.xapp");
+		try{
+		 gappFilePath = this.getClass().getClassLoader().getResource("com/text2net/gate/InicioInicio_v5.xapp").getPath();
+		 docFilePath = this.getClass().getClassLoader().getResource("com/text2net/douSample/Dou-02012013-1.txt").getPath();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
+		String r = runGate(gappFilePath, docFilePath);
+    	return r;
+    }
+
+	private String runGate(String gappFilePath, String docFilePath) {
 		String r = "Result: ";
 		
 		File gappFile =  new File(gappFilePath);
@@ -58,12 +71,13 @@ public class MyResource {
 			System.out.println("Conncetion: [" + connection.getElementA() + "][" + connection.getElementB() + "](" + connection.getDistance() + ")");
 		}
 		
-		System.out.println("Finished Connection");
+		
 		*/
+		System.out.println("Finished Connection");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	return r;
-    }
+		return r;
+	}
 }

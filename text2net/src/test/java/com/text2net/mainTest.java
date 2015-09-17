@@ -21,10 +21,13 @@ public class mainTest {
 		String docFilePath = "C:\\Users\\rafa\\workspace\\Text2NetCore\\src\\main\\resources\\TempDir2013\\Dou-02012013-1.txt";
 		*/
 		
-		String gappFilePath = "C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\gate\\InicioInicio_v5.xapp";
+		//String gappFilePath = "C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\gate\\InicioInicio_v5.xapp";
 		String docFilePath = "C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\douSample\\Dou-02012013-1.txt";
 		
-		//String gappFilePath = this.getClass().getClassLoader().getResource("com\\text2net\\gate\\InicioInicio_v5.xapp");
+		String gappFilePath = this.getClass().getClassLoader().getResource("com\\text2net\\gate\\InicioInicio_v5.xapp").getPath();
+		
+		System.out.println("gappFilePath: " + gappFilePath);
+		/*
 		
 		File gappFile =  new File(gappFilePath);
 		File docFile =  new File(docFilePath);
@@ -38,6 +41,7 @@ public class mainTest {
 		for (Connection connection : connections) {
 			System.out.println("Conncetion: [" + connection.getElementA() + "][" + connection.getElementB() + "](" + connection.getDistance() + ")");
 		}
+		*/
 		
 		System.out.println("Finished Connection");
 		

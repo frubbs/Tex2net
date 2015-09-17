@@ -24,6 +24,8 @@ public class MyResourceTest extends JerseyTest {
     public void testGetIt() {
         final String responseMsg = target().path("myresource").request().get(String.class);
 
+        System.out.println("responseMsg: " + responseMsg);
+        
         assertEquals("Hello, Heroku!", responseMsg);
     }
 }
