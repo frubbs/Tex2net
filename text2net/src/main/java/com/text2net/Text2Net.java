@@ -21,7 +21,7 @@ public class Text2Net {
        
 		try{
 			File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate/InicioInicio_v5.xapp").getPath());
-			File docFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/douSample/Dou-02012013-1.txt").getPath());
+			File docFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/douSample/Dou-02012013-1.min.txt").getPath());
 
 			AnnotatedText annotatedText = new TextAnnotator().processFile(gappFile, docFile);
 			
