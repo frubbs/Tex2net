@@ -19,17 +19,17 @@ public class TextAnnotatorTest {
 	public void testAnotaEGeraConexao() {
 		try{
 			String gappFilePath = this.getClass().getClassLoader().getResource("com/text2net/gate/InicioInicio_v5.xapp").getPath();
-			String docFilePath = this.getClass().getClassLoader().getResource("com/text2net/douSample/Dou-02012013-1.txt").getPath();
+			String docFilePath = this.getClass().getClassLoader().getResource("com/text2net/douSample/Dou-02012013-1.min.txt").getPath();
 			File gappFile =  new File(gappFilePath);
 			File docFile =  new File(docFilePath);
 			AnnotatedText annotatedText = new TextAnnotator().processFile(gappFile, docFile);
 			
-			assertEquals(annotatedText.getDoc().getAnnotations().size(), 187749);
+			assertEquals(annotatedText.getDoc().getAnnotations().size(), 56120);
 			
 			
 			List<Connection> connections = new ConnectionProducer().process(annotatedText);
 			
-			assertEquals(connections.size(), 512306);
+			assertEquals(connections.size(), 8846);
 			
 		}
 		catch(Exception e){
