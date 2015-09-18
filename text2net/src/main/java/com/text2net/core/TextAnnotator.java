@@ -12,6 +12,7 @@ import gate.CorpusController;
 import gate.Document;
 import gate.Factory;
 import gate.Gate;
+import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
 
 public class TextAnnotator {
@@ -19,16 +20,13 @@ public class TextAnnotator {
 	private String encoding = "UTF-8";
 	protected final Logger log = Logger.getLogger(TextAnnotator.class);
 	
-	public AnnotatedText processFile(File gappFile, File docFile) throws Exception
+	
+	
+	public AnnotatedText processDoc(File gappFile, Document doc) throws Exception 
 	{
-
 		long startTime = System.currentTimeMillis();
 
-		// Configura variaveis de ambiente para o GATE
-		configureGateProps();
 
-		// initialise GATE - this must be done before calling any GATE APIs
-		Gate.init();
 
 		// load the saved application
 		CorpusController application = (CorpusController) PersistenceManager.loadObjectFromFile(gappFile);
@@ -42,12 +40,7 @@ public class TextAnnotator {
 
 		long arquivoStart = System.currentTimeMillis();
 
-		// load the document (using the specified encoding if one was given)
-		System.out.print("Processing document " + docFile + "...");
-
-		@SuppressWarnings("deprecation")
-		Document doc = Factory.newDocument(docFile.toURL(), encoding);
-
+		
 		// put the document in the corpus
 		corpus.add(doc);
 
@@ -83,6 +76,35 @@ public class TextAnnotator {
 		// Release the document, as it is no longer needed
 		//Factory.deleteResource(doc);
 
+	}
+
+	private void initGate() throws GateException {
+		// Configura variaveis de ambiente para o GATE
+		configureGateProps();
+
+		// initialise GATE - this must be done before calling any GATE APIs
+		Gate.init();
+	}
+	
+	public AnnotatedText processString(File gappFile, String docString) throws Exception 
+	{
+		// load the document (using the specified encoding if one was given)
+		System.out.print("Processing docString ");
+		initGate();
+		Document doc = Factory.newDocument(docString);
+		return processDoc(gappFile, doc);
+	}
+	
+	
+	
+	public AnnotatedText processFile(File gappFile, File docFile) throws Exception
+	{
+		// load the document (using the specified encoding if one was given)
+		System.out.print("Processing document " + docFile + "...");
+		initGate();
+		@SuppressWarnings("deprecation")
+		Document doc = Factory.newDocument(docFile.toURL(), encoding);
+		return processDoc(gappFile, doc);
 	}
 
 	private void configureGateProps()
