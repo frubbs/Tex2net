@@ -4,7 +4,9 @@ angular.module('Text2net',['ngResource'])
 	 $scope.teste = 'opaqqq'; 
 	
 	 $scope.id = 4;
-	 var Connection = $resource('http://localhost:8081/text2net/text2net/:id');	
+	// var Connection = $resource('http://localhost:8081/text2net/text2net/:id');	
+	 var Connection = $resource('https://aqueous-springs-2352.herokuapp.com/text2net/:id');	
+	
 	
   var entry = Connection.get({ id: $scope.id }, function() {
     console.log(entry);
