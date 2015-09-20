@@ -17,6 +17,13 @@ import com.text2net.core.api.Connection;
 @Path("text2net")
 public class Text2Net {
 	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Connection getConnection(int id) {
+		return new Connection("Elemento teste A", "Elemento tsst b", 256L, 2L);
+	}
+	
+	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Connection> getConnections(String text) {
