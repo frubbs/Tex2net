@@ -1,6 +1,11 @@
 package com.text2net;
 
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -25,8 +30,33 @@ public class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
+	
+	@GET
+    @Produces(MediaType.TEXT_HTML)
+	public String getForm() {
+		try {
+			File f = new File("C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\html\\TesteRestAngular\\index.html");
+		List<String> lines = Files.readAllLines(Paths.get(f.toURI()));
+		
+		StringBuilder sb = new StringBuilder(); 
+		for (String line : lines) {
+            sb.append(line);
+        }
+		
+		return sb.toString();
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return e.getMessage();
+		}
+		
+		
+	}
+	
+	
+    //@GET
+    //@Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
        
     	String gappFilePath = "nao";//"C:\\Users\\rafa\\workspace\\Text2Net\\text2net\\src\\main\\resources\\com\\text2net\\gate\\InicioInicio_v5.xapp";

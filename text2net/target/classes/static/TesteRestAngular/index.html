@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://code.angularjs.org/1.4.6/angular.js"></script>
+		<script src="https://code.angularjs.org/1.4.6/angular-resource.js"></script>
+		<script> 
+angular.module('Text2net',['ngResource'])
+.controller('ConnectionCtrl',function($scope,$resource) {
+	
+	 $scope.teste = 'opa'; 
+	/*	
+	var Connection = $resource('http://localhost:8080/text2net/text2net/:id');	
+	
+  var entry = Connection.get({ id: $scope.id }, function() {
+    console.log(entry);
+  }); // get() returns a single entry
+
+  var entries = Connection.query(function() {
+    console.log(entries);
+  }); //query() returns all the entries
+
+  $scope.entry = entry; //You can instantiate resource class
+	*/
+	
+}); </script>
+		
+	</head>
+
+	<body>
+		
+		<div id="sidebar" ng-app="Text2net">
+			<div ng-controller='ConnectionCtrl'>
+			{{teste}}
+				
+
+	</body>
+</html>

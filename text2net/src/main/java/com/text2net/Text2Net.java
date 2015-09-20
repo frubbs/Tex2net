@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -19,8 +20,9 @@ public class Text2Net {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Connection getConnection(int id) {
-		return new Connection("Elemento teste A", "Elemento tsst b", 256L, 2L);
+	@Path("{id}")
+	public Connection getConnection(@PathParam("id") int id) {
+		return new Connection("Elemento teste A", "Elemento tsst b", 256L, id);
 	}
 	
 	
@@ -46,7 +48,7 @@ public class Text2Net {
 		return null;
 	}
 	    
-	
+	/*
 	@GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Connection> getIt() {
@@ -69,5 +71,6 @@ public class Text2Net {
 		
     	return null;
     }
+    */
 
 }
