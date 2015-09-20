@@ -13,7 +13,24 @@
 		<div id="sidebar" ng-app="Text2net">
 			<div ng-controller='ConnectionCtrl'>
 			{{teste}}
-				
+			
+			<li ng-repeat="connection in connections">
+				<span>{{connection.elementA}} - {{connection.elementB}}</span>
+			</li>
+			</div>
+			
+			<form ng-submit="submitConnections()">
+				<input type="text" value="Give a name to this network " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Give a name to this network';}">
+				<textarea onfocus="if(this.value == 'Text *') this.value='';" onblur="if(this.value == '') this.value='Text *;">Text *</textarea>
+				<span class="submit-btn"><input type="submit" value="Send"></span>
+				<span class="submit-btn"><input type="submit" value="Clear Networks"></span>
+			</form>
+			
+		</div>
+
+		
+
+		
 
 	</body>
 </html>
