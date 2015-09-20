@@ -15,6 +15,7 @@ import com.text2net.core.TextAnnotator;
 import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionElement;
+import com.text2net.core.api.ConnectionQueryResult;
 
 @Path("text2net")
 public class Text2Net {
@@ -34,7 +35,7 @@ public class Text2Net {
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{id}")
-	public List<Connection> getConnections(@PathParam("id") int id, String text) {
+	public ConnectionQueryResult getConnections(@PathParam("id") int id, String text) {
 		
 		try {
 			File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate/InicioInicio_v5.xapp").getPath());
@@ -45,7 +46,7 @@ public class Text2Net {
 			
 			List<Connection> connections = new ConnectionProducer().process(annotatedText);
 			
-			return connections;
+			return new ConnectionQueryResult(connections, text);
 		}
 		catch(Exception e){
 			e.printStackTrace();
