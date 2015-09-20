@@ -63,7 +63,7 @@
 </filter-mapping>
 	<filter-mapping>
 	  <filter-name>CORS</filter-name>
-	  <servlet-name>JAXServlet</servlet-name>
+	  <servlet-name>Jersey Web Application</servlet-name>
 	</filter-mapping>
     
     
