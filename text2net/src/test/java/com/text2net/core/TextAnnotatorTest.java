@@ -67,4 +67,36 @@ public class TextAnnotatorTest {
 		}
 	}
 
+	
+	@Test
+	public void testAnotaEGeraConexaoStringEAnotaTexto() {
+		try{
+			String gappFilePath = this.getClass().getClassLoader().getResource("com/text2net/gate/InicioInicio_v5.xapp").getPath();
+
+			//The path \C:\Sample\sample.txt must not have a leading \. It should be just C:\Sample\sample.txt http://stackoverflow.com/questions/9834776/java-nio-file-path-issue
+			String docFilePath = this.getClass().getClassLoader().getResource("com/text2net/douSample/Dou-02012013-1.min.txt").getPath().substring(1);
+			
+			byte[] encoded = Files.readAllBytes(Paths.get(docFilePath));
+			
+			File gappFile =  new File(gappFilePath);
+			AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, new String(encoded,"UTF-8"));
+			
+			assertEquals(annotatedText.getDoc().getAnnotations().size(), 56120);
+			
+			
+			List<Connection> connections = new ConnectionProducer().process(annotatedText);
+			
+			
+			String txtMarkedUp = annotatedText.getDoc().getContent().toString();
+			
+			
+			assertEquals(connections.size(), 8846);
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+	
 }

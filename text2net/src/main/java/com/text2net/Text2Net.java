@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.text2net.core.ConnectionProducer;
 import com.text2net.core.TextAnnotator;
+import com.text2net.core.TextMarkerUp;
 import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionElement;

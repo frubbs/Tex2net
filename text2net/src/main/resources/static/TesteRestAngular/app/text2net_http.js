@@ -19,7 +19,7 @@ angular.module('Text2net',['ngResource'])
   
   $http.post('https://aqueous-springs-2352.herokuapp.com/text2net/1', processText).
         success(function(data) {
-            $scope.connections = data;
+           $scope.connections = data.connections;
 				console.log(data);
     });
 	
@@ -28,10 +28,9 @@ angular.module('Text2net',['ngResource'])
 		console.log('noi');
 		$http.post('https://aqueous-springs-2352.herokuapp.com/text2net/1', $scope.connectionQuery).
 			success(function(data) {
-				$scope.connections = data;
+				$scope.connections = data.connections;
+				$scope.markedUpText = data.markedUpText;
 				console.log(data);
-				
-				
 		});
 		
 	};

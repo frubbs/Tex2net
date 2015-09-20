@@ -18,7 +18,7 @@
 					<span>{{connection.elementA.name}} - {{connection.elementB.name}}</span>
 					<span>{{connection.elementA.initialOffset}} - {{connection.elementB.initialOffset}}</span>
 				</li>
-				
+				{{markedUpText}}
 				
 				<form ng-submit="submitConnections()">
 					<input  ng-model="connectionQuery.name" type="text" value="Give a name to this network " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Give a name to this network';}">
