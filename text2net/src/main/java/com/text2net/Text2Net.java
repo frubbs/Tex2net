@@ -14,6 +14,7 @@ import com.text2net.core.ConnectionProducer;
 import com.text2net.core.TextAnnotator;
 import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
+import com.text2net.core.api.ConnectionElement;
 
 @Path("text2net")
 public class Text2Net {
@@ -22,7 +23,11 @@ public class Text2Net {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{id}")
 	public Connection getConnection(@PathParam("id") int id) {
-		return new Connection("Elemento teste A", "Elemento tsst b", 256L, id);
+		ConnectionElement elementA = new ConnectionElement("Elemneto testea", 554, 564);
+		ConnectionElement elementB = new ConnectionElement("Elemneto testeb", 554, 564);
+		
+		
+		return new Connection(elementA, elementB, 256L, id);
 	}
 	
 	

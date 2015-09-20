@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 
 import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
+import com.text2net.core.api.ConnectionElement;
 import com.text2net.core.api.Entidade;
 
 import gate.AnnotationSet;
@@ -125,7 +126,10 @@ public class ConnectionProducer {
 					Entidade entidadeA = entidadesEncontradas[k];
 					Entidade entidadeB = entidadesEncontradas[l];
 
-					result.add(new Connection(entidadeA.entidade, entidadeB.entidade, entidadeA.inicioEntidade - entidadeB.inicioEntidade, inicioPortaria));
+					ConnectionElement elementA = new ConnectionElement(entidadeA.entidade, entidadeA.inicioEntidade, entidadeA.fimEntidade);
+					ConnectionElement elementB = new ConnectionElement(entidadeB.entidade, entidadeB.inicioEntidade, entidadeB.fimEntidade);
+					
+					result.add(new Connection(elementA, elementB, entidadeA.inicioEntidade - entidadeB.inicioEntidade, inicioPortaria));
 					
 					
 					if ((result.size() % 100) == 0)
