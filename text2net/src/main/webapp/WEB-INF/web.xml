@@ -61,6 +61,10 @@
 	<filter-name>CORS</filter-name>
  	<url-pattern>/text2net</url-pattern>
 </filter-mapping>
+	<filter-mapping>
+	  <filter-name>CORS</filter-name>
+	  <servlet-name>JAXServlet</servlet-name>
+	</filter-mapping>
     
     
 </web-app>
