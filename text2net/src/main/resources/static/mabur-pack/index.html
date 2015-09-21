@@ -233,11 +233,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</form>
 							</div>
 							<div class="col-md-4 contact-right">
+								<div ng-show="loading"> <h1><i class="fa fa-cog fa-spin"></i></h1></div>
 								<div ng-bind-html="selectedQueryResult.markedUpText"></div>
+								
 							</div>
 							<div class="col-md-3 contact-right" ng-show="queryResults.length > 0">
-								<h3><font color="red"><i class="fa fa-bug"> </i> </font> Your generated Pajek Network (merge)</h3></span>
+								<h3><font color="red"><i class="fa fa-bug"> </i> </font> Your generated Pajek Network (merge {{queryResults.length}} networks)</h3></span>
 								<div ng-bind-html="pajekNetwork"></div>
+								
 							</div>
 							<div class="clearfix"> </div>
 						</div>

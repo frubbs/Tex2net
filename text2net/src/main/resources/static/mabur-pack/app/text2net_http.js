@@ -26,7 +26,8 @@ angular.module('Text2net', ["ngSanitize"])
 	
 	$scope.submitConnections = function() {
 		console.log('noi');
-		$http.post(targetURL, $scope.connectionQuery).
+		$scope.loading = true; //loading
+		$http.post(targetURL, $scope.connectionQuery.text).
 			success(function(data) {
 				//$scope.connections = data.connections;
 				//$scope.markedUpText = data.markedUpText;
@@ -35,6 +36,8 @@ angular.module('Text2net', ["ngSanitize"])
 				console.log(data);
 				$scope.selectedQueryResult = data;
 				$scope.pajekNetwork = mergeToPajek($scope.queryResults);
+				$scope.loading = false; //loading
+		
 		});
 		
 	};
