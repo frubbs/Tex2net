@@ -1,6 +1,9 @@
 angular.module('Text2net',['ngResource'])
 .controller('ConnectionCtrl',function($scope,$http) {
 		
+		
+		
+		
 //	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
 	var targetURL = 'http://localhost:8081/text2net/text2net/1';
 	 
@@ -38,5 +41,52 @@ angular.module('Text2net',['ngResource'])
 		
 	};
 	
+  /*
+	$scope.generatePajek = function(connectionList) {
+		var elements = ['Dummy, cause pajek is 1 based'];
+		
+		//List network elements
+		connectionList.forEach(function(entry) {
+			elements.push(entry.elementA.name);
+			elements.push(entry.elementB.name);
+		});
+		
+		//generate unique list for pajek ids
+		var uniqueElements = uniq(elements);
+		
+		//generate vertices list
+		var vertices = [];
+		uniqueElements.forEach(function(entry, i) {
+			var verticesLine = i + ' "' + entry + '"';
+			vertices.push(verticesLine);
+		});
+		
+		//generate edges list
+		var edges = [];
+		connectionList.forEach(function(entry) {
+			var edgeLine = uniqueElements.indexOf(entry.elementA.name) + ' ' + uniqueElements.indexOf(entry.elementB.name) + ' ' + entry.distance;
+			edges.push(edgeLine);
+		});
+		
+		
+		vertices.shift(); //remove dummy
+		
+		var header = '*Vertices ' + vertices.length; //-1 dummy
+		
+		var edgesHeader = '*Edges';
+		
+		return header + '\n' + vertices.join('\n') + '\n' + edgesHeader + '\n' + edges.join('\n');
+		
+		
+	}
+	*/
+	
+	function uniq(a) {
+		var seen = {};
+		return a.filter(function(item) {
+			return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+		});
+	};
+  
   
 });

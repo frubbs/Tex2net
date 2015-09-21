@@ -9,6 +9,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 <title>Text2net - co-word analisys tool and Social network analisys tool.</title>
 <link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+
+<script src="https://code.angularjs.org/1.4.6/angular.js"></script>
+<script src="app/text2net_http.js"></script>
+
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="web/js/jquery.min.js"></script>
 <!---- start-smoth-scrolling---->
@@ -22,6 +28,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				});
 			});
 		</script>
+		
+<style>
+.selectedQueryResult{
+	font-weight: bold;
+}
+</style>		
+		
+		
 <!---- start-smoth-scrolling---->
 <!-- Custom Theme files -->
 <link href="web/css/theme-style.css" rel='stylesheet' type='text/css' />
@@ -184,26 +198,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!---- //End-work---->
 
 			<!----start-contact---->
-				<div id="contact" class="contact"> 
-						<div class="contact-grids">
+				<div id="contact" class="contact" ng-app="Text2net"> 
+						<div class="contact-grids" ng-controller='ConnectionCtrl'>
+							<li ng-repeat="connection in queryResults[0].connections">
+								<span>{{connection.elementA.name}} - {{connection.elementB.name}}</span>
+								<span>{{connection.elementA.initialOffset}} - {{connection.elementB.initialOffset}}</span>
+							</li>
+							{{teste}}
+							{{processText.text}}
+							{{generatePajek(queryResults[0].connections)}}
 							<div class="col-md-6 contact-left">
 								<h3><span> </span> Plain text 2 Net (Beta)</h3>
 								<p>Next network will be merged to:</p>
+								<table class="table table-tripped">
+									<tr ng-class="{selectedQueryResult: (selectedQueryResult.name == queryResult.name)}" ng-repeat="queryResult in queryResults">
+										<td><input type="radio" ng-model="$parent.selectedQueryResult" ng-value="queryResult" name="QueryResultGroup"/></td>
+										<td><p><i class="fa fa- fa-connectdevelop"></p></td>
+										<td ng-click="showQueryResult(queryResult)">{{queryResult.name}}</td>
+										<td>{{queryResult.connections.length}}</td>
+										<!-- <td>{{queryResult.selected}}</td> -->
+									</tr>
+								</table>
+								sq:{{selectedQueryResult.name}}
 								<p><i class="fa fa- fa-connectdevelop"> </i> Sample1</p>
 								<p><i class="fa fa- fa-connectdevelop"> </i> Second article</p>
-								<form>
-									<input type="text" value="Give a name to this network " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Give a name to this network';}">
-									<textarea onfocus="if(this.value == 'Text *') this.value='';" onblur="if(this.value == '') this.value='Text *;">Text *</textarea>
-									<!--
-									<p class="conditions"> <label><span>*</span>scelerisque sit amet felis sit nunc.</label></p>
-									-->
+									<input class="form-control" ng-model="connectionQuery.name" type="text" value="Give a name to the network" >
+									<textarea class="form-control" ng-model="connectionQuery.text"></textarea>
+									 
+									<!--TODO passar conectionsQuery como parametro-->
+									<button class="btn btn-primary btn-block" ng-click="submitConnections()" ng-disabled="!connectionQuery.name || !connectionQuery.text">Process text</button>
+									<button class="btn btn-danger btn-block" ng-click="disposeConnection(selectedQueryResult)">Dispose selected network</button>
 									
-									<span class="submit-btn"><input type="submit" value="Send"></span>
-									<span class="submit-btn"><input type="submit" value="Clear Networks"></span>
 								</form>
 							</div>
 							<div class="col-md-6 contact-right">
-								<span class="pin-map"> </span>
+								<span> sq:{{selectedQueryResult.name}}</span>
+								<span> sq:{{selectedQueryResult.markedUpText}}</span>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
