@@ -71,7 +71,7 @@ public class TextUpMarker {
 		
 		
 		// TODO Auto-generated method stub
-		return doc.toString();
+		return doc.getContent().toString();
 	}
 }
 
