@@ -1,4 +1,4 @@
-angular.module('Text2net',[])
+angular.module('Text2net', ["ngSanitize"])
 .controller('ConnectionCtrl',function($scope,$http) {
 		
 		
@@ -33,12 +33,25 @@ angular.module('Text2net',[])
 				data.name = $scope.connectionQuery.name; //isso eh mau
 				$scope.queryResults.push(data)
 				console.log(data);
+				$scope.selectedQueryResult = data;
+				$scope.pajekNetwork = mergeToPajek($scope.queryResults);
 		});
 		
 	};
 	
   
-	$scope.generatePajek = function(connectionList) {
+       var mergeToPajek = function(queryResults) {
+		var connectionList = [];
+		
+		queryResults.forEach(function(entry) {
+			connectionList = connectionList.concat(entry.connections);
+		});
+		
+		return generatePajek(connectionList);
+		}
+  
+  
+	    var generatePajek = function(connectionList) {
 		var elements = ['Dummy, cause pajek is 1 based'];
 		
 		//List network elements
@@ -71,10 +84,14 @@ angular.module('Text2net',[])
 		
 		var edgesHeader = '*Edges';
 		
-		return header + '\n' + vertices.join('\n') + '\n' + edgesHeader + '\n' + edges.join('\n');
+		//return header + '\n' + vertices.join('\n') + '\n' + edgesHeader + '\n' + edges.join('\n');
+		return header + '<br/>' + vertices.join('<br/>') + '<br/>' + edgesHeader + '<br/>' + edges.join('<br/>');
 		
 		
 	}
+	
+	
+	
 	
 	function uniq(a) {
 		var seen = {};
@@ -89,6 +106,7 @@ angular.module('Text2net',[])
 			$scope.queryResults.splice(i, 1);
 		}
 		$scope.selectedQueryResult = $scope.queryResults[0];
+		$scope.pajekNetwork = mergeToPajek($scope.queryResults);
 		
 	}
   
@@ -97,7 +115,7 @@ angular.module('Text2net',[])
 		queryResult.clicked = true;
 	}
   
-  
+ // $scope.content = $scope.selectedQueryResult.markedUpText;
   
   
 });
