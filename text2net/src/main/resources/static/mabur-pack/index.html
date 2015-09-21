@@ -209,13 +209,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div id="contact" class="contact" ng-app="Text2net"> 
 						<div class="contact-grids" ng-controller='ConnectionCtrl'>
 							<div class="col-md-4 contact-left">
-								<h3><i class="fa fa-pencil-square-o"> </i>
-									<i class="fa fa-arrow-right "> </i> 
-									<i class="fa fa-connectdevelop"></i> 
-								</h3>
 								<h3>
 									<span> </span> 
-									Plain text 2 Net (Beta)
+									Plain text 2 Net <i class="fa fa-pencil-square-o"> </i>	<i class="fa fa-arrow-right "> </i> <i class="fa fa-connectdevelop"></i>
 								</h3>
 								<div ng-show="queryResults.length > 0">Your generated networks:</div>
 								<table class="table table-tripped">
@@ -240,7 +236,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div ng-bind-html="selectedQueryResult.markedUpText"></div>
 							</div>
 							<div class="col-md-3 contact-right" ng-show="queryResults.length > 0">
-								<p><i class="fa fa-bug"> </i> Your generated Pajek Network (merge)</p>
+								<h3><font color="red"><i class="fa fa-bug"> </i> </font> Your generated Pajek Network (merge)</h3></span>
 								<div ng-bind-html="pajekNetwork"></div>
 							</div>
 							<div class="clearfix"> </div>
