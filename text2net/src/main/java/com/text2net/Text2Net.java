@@ -39,7 +39,7 @@ public class Text2Net {
 	public ConnectionQueryResult getConnections(@PathParam("id") int id, String text) {
 		
 		try {
-			File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate/InicioInicio_v5.xapp").getPath());
+			File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate/Nomes_Trecho.xapp").getPath());
 			
 			AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, text);
 			

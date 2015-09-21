@@ -26,12 +26,12 @@ public class TextAnnotatorTest {
 			File docFile =  new File(docFilePath);
 			AnnotatedText annotatedText = new TextAnnotator().processFile(gappFile, docFile);
 			
-			assertEquals(annotatedText.getDoc().getAnnotations().size(), 56120);
+			assertEquals(annotatedText.getDoc().getAnnotations().size(), 56064);
 			
 			
 			List<Connection> connections = new ConnectionProducer().process(annotatedText);
 			
-			assertEquals(connections.size(), 8846);
+			assertEquals(connections.size(), 3735);
 			
 		}
 		catch(Exception e){
@@ -53,12 +53,12 @@ public class TextAnnotatorTest {
 			File gappFile =  new File(gappFilePath);
 			AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, new String(encoded,"UTF-8"));
 			
-			assertEquals(annotatedText.getDoc().getAnnotations().size(), 56120);
+			assertEquals(annotatedText.getDoc().getAnnotations().size(), 56064);
 			
 			
 			List<Connection> connections = new ConnectionProducer().process(annotatedText);
 			
-			assertEquals(connections.size(), 8846);
+			assertEquals(connections.size(), 3735);
 			
 		}
 		catch(Exception e){
@@ -81,7 +81,7 @@ public class TextAnnotatorTest {
 			File gappFile =  new File(gappFilePath);
 			AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, new String(encoded,"UTF-8"));
 			
-			assertEquals(annotatedText.getDoc().getAnnotations().size(), 678);
+			assertEquals(annotatedText.getDoc().getAnnotations().size(), 4600);
 			
 			
 			List<Connection> connections = new ConnectionProducer().process(annotatedText);
@@ -89,7 +89,7 @@ public class TextAnnotatorTest {
 			
 			String markedUpText = new TextUpMarker().markUp(annotatedText, connections);
 			
-			assertEquals(connections.size(), 8846);
+			assertEquals(connections.size(), 80);
 			
 		}
 		catch(Exception e){
@@ -97,5 +97,36 @@ public class TextAnnotatorTest {
 			fail(e.getMessage());
 		}
 	}
+
 	
+	@Test
+	public void testAnotaEGeraConexaoStringEAnotaTexto_NomesTrecho_xapp() {
+		try{
+			String gappFilePath = this.getClass().getClassLoader().getResource("com/text2net/gate/Nomes_Trecho.xapp").getPath();
+
+			//The path \C:\Sample\sample.txt must not have a leading \. It should be just C:\Sample\sample.txt http://stackoverflow.com/questions/9834776/java-nio-file-path-issue
+			String docFilePath = this.getClass().getClassLoader().getResource("com/text2net/douSample/Dou-teste.txt").getPath().substring(1);
+			
+			byte[] encoded = Files.readAllBytes(Paths.get(docFilePath));
+			
+			File gappFile =  new File(gappFilePath);
+			AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, new String(encoded,"UTF-8"));
+			
+			assertEquals(annotatedText.getDoc().getAnnotations().size(), 4589);
+			
+			
+			List<Connection> connections = new ConnectionProducer().process(annotatedText);
+			
+			
+			String markedUpText = new TextUpMarker().markUp(annotatedText, connections);
+			
+			assertEquals(connections.size(), 80);
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+	}
+
 }

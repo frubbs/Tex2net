@@ -37,7 +37,7 @@ MACRO: CompletoInicial
     (
 		({Token.orth == "upperInitial"} | {Lookup.majorType == "Conector"} )
 		({SpaceToken})[0,3]
-	)[1,4]
+	)[0,4]
 )
 
 MACRO: NOMECOMPLETO

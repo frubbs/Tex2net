@@ -12,6 +12,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 <script src="https://code.angularjs.org/1.4.6/angular.js"></script>
+<script src="http://code.angularjs.org/1.4.6/angular-sanitize.js"></script>
+
+
 <script src="app/text2net_http.js"></script>
 
 
@@ -32,6 +35,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <style>
 .selectedQueryResult{
 	font-weight: bold;
+}
+
+.element{
+	font-weight: bold;
+	background-color: yellow;
 }
 </style>		
 		
@@ -95,7 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</nav>
 				<div class="clearfix"> </div>
 				<div class="slide-text text-center">
-					<h1>Co-Word and SNA analisys</h1>
+					<h1>SNA and Co-Word analysis </h1>
 					<span>Just a few clicks away.</span>
 					<a class="slide-btn" href="#">Learn More</a>
 				</div>
@@ -200,28 +208,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!----start-contact---->
 				<div id="contact" class="contact" ng-app="Text2net"> 
 						<div class="contact-grids" ng-controller='ConnectionCtrl'>
-							<li ng-repeat="connection in queryResults[0].connections">
-								<span>{{connection.elementA.name}} - {{connection.elementB.name}}</span>
-								<span>{{connection.elementA.initialOffset}} - {{connection.elementB.initialOffset}}</span>
-							</li>
-							{{teste}}
-							{{processText.text}}
-							{{generatePajek(queryResults[0].connections)}}
-							<div class="col-md-6 contact-left">
-								<h3><span> </span> Plain text 2 Net (Beta)</h3>
-								<p>Next network will be merged to:</p>
+							<div class="col-md-4 contact-left">
+								<h3>
+									<span> </span> 
+									Plain text 2 Net <i class="fa fa-pencil-square-o"> </i>	<i class="fa fa-arrow-right "> </i> <i class="fa fa-connectdevelop"></i>
+								</h3>
+								<div ng-show="queryResults.length > 0">Your generated networks:</div>
 								<table class="table table-tripped">
 									<tr ng-class="{selectedQueryResult: (selectedQueryResult.name == queryResult.name)}" ng-repeat="queryResult in queryResults">
 										<td><input type="radio" ng-model="$parent.selectedQueryResult" ng-value="queryResult" name="QueryResultGroup"/></td>
-										<td><p><i class="fa fa- fa-connectdevelop"></p></td>
-										<td ng-click="showQueryResult(queryResult)">{{queryResult.name}}</td>
-										<td>{{queryResult.connections.length}}</td>
+										<td ng-click="showQueryResult(queryResult)"><p><i class="fa fa- fa-connectdevelop">{{queryResult.name}} <small>({{queryResult.connections.length}} connections)</small></p></td>
 										<!-- <td>{{queryResult.selected}}</td> -->
 									</tr>
 								</table>
-								sq:{{selectedQueryResult.name}}
-								<p><i class="fa fa- fa-connectdevelop"> </i> Sample1</p>
-								<p><i class="fa fa- fa-connectdevelop"> </i> Second article</p>
+
+									<p>Insert text data:</p>
 									<input class="form-control" ng-model="connectionQuery.name" type="text" value="Give a name to the network" >
 									<textarea class="form-control" ng-model="connectionQuery.text"></textarea>
 									 
@@ -231,9 +232,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									
 								</form>
 							</div>
-							<div class="col-md-6 contact-right">
-								<span> sq:{{selectedQueryResult.name}}</span>
-								<span> sq:{{selectedQueryResult.markedUpText}}</span>
+							<div class="col-md-4 contact-right">
+								<div ng-bind-html="selectedQueryResult.markedUpText"></div>
+							</div>
+							<div class="col-md-3 contact-right" ng-show="queryResults.length > 0">
+								<h3><font color="red"><i class="fa fa-bug"> </i> </font> Your generated Pajek Network (merge)</h3></span>
+								<div ng-bind-html="pajekNetwork"></div>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
