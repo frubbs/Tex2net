@@ -18,7 +18,7 @@ import org.junit.Assert;
 public class ConfigurationSetup {
 	
 	private String randomGaneratedName;
-	private String root = "temp\\";
+	private String root = "temp/";
 	
 	
 	protected ConfigurationSetup(String name) {
@@ -37,7 +37,7 @@ public class ConfigurationSetup {
 		copyResourcesToTemp(lineBreak);
 		//changeXappTempGazeterReference(xappFile);
 		
-		return new File(randomGaneratedName + "\\" + xappFile);
+		return new File(randomGaneratedName + "/" + xappFile);
 	}
 	
 	
