@@ -9,6 +9,9 @@ public class Connection {
 	
 	long textChunkID; //reference to a chunk where the connection was found
 
+	public Connection() {
+		
+	}
 	
 	public Connection(ConnectionElement elementA, ConnectionElement elementB, long distance, long textChunkID) {
 		super();

@@ -5,6 +5,10 @@ public class ConnectionElement {
 	long initialOffset; //Position in the document
 	long finalOffset; //Position in the document
 	
+	public ConnectionElement() {
+		
+	}
+	
 	public ConnectionElement(String name, long initialOffset, long finalOffset) {
 		super();
 		this.name = name;

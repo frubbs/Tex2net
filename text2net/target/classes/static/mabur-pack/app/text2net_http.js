@@ -26,7 +26,11 @@ angular.module('Text2net', ["ngSanitize"])
 	
 	$scope.submitConnections = function() {
 		console.log('noi');
-		$http.post(targetURL, $scope.connectionQuery).
+		$scope.loading = true; //loading
+		
+		var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
+		
+		$http.post(targetURL, submitText).
 			success(function(data) {
 				//$scope.connections = data.connections;
 				//$scope.markedUpText = data.markedUpText;
@@ -35,6 +39,8 @@ angular.module('Text2net', ["ngSanitize"])
 				console.log(data);
 				$scope.selectedQueryResult = data;
 				$scope.pajekNetwork = mergeToPajek($scope.queryResults);
+				$scope.loading = false; //loading
+		
 		});
 		
 	};

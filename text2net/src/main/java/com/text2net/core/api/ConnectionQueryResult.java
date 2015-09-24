@@ -2,10 +2,18 @@ package com.text2net.core.api;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class ConnectionQueryResult {
 	private List<Connection> connections;
 	
 	private String markedUpText;
+	
+	public ConnectionQueryResult() {
+		
+	}
+	
 	
 		public ConnectionQueryResult(List<Connection> connections, String markedUpText) {
 		super();

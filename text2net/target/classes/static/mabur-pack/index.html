@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 
-<script src="https://code.angularjs.org/1.4.6/angular.js"></script>
+<script src="http://code.angularjs.org/1.4.6/angular.js"></script>
 <script src="http://code.angularjs.org/1.4.6/angular-sanitize.js"></script>
 
 
@@ -86,15 +86,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="container">
 				<!---- start-logo---->
 				<div class="logo">
-					<a href="index.html"><img src="web/images/logo.png" title="Mabur" /><i class="fa fa-connectdevelop"> </i></a>
+					<h1>
+					<a href="index.html"><!--<img src="web/images/logo.png" title="Mabur" />--><b>TEXT<font color="red">2</font>NET</b><i class="fa fa-connectdevelop"> </i></a>
+					</h1>
 				</div>
 				<!---- //End-logo---->
 				<!----start-top-nav---->
 				 <nav class="top-nav">
 					<ul class="top-nav">
 						<li class="active"><a href="#home" class="scroll">Home</a></li>
-						<li class="page-scroll"><a href="#fea" class="scroll">Features</a></li>
-						<li class="page-scroll"><a href="#port" class="scroll">Portfolio</a></li>
+						<li class="page-scroll"><a href="#fea" class="scroll">Tools</a></li>
+						<li class="page-scroll"><a href="#work" class="scroll">Step-by-Step</a></li>
 						<li class="page-scroll"><a href="#blog" class="scroll">Blog</a></li>
 						<li class="page-scroll"><a href="#test" class="scroll">Testimonials</a></li>
 						<li class="contatct-active" class="page-scroll"><a href="#contact" class="scroll">Contact</a></li>
@@ -233,11 +235,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</form>
 							</div>
 							<div class="col-md-4 contact-right">
+								<div ng-show="loading"> <h1><i class="fa fa-cog fa-spin"></i></h1></div>
 								<div ng-bind-html="selectedQueryResult.markedUpText"></div>
+								
 							</div>
 							<div class="col-md-3 contact-right" ng-show="queryResults.length > 0">
-								<h3><font color="red"><i class="fa fa-bug"> </i> </font> Your generated Pajek Network (merge)</h3></span>
+								<h3><font color="red"><i class="fa fa-bug"> </i> </font> Your generated Pajek Network (merge {{queryResults.length}} networks)</h3></span>
 								<div ng-bind-html="pajekNetwork"></div>
+								
 							</div>
 							<div class="clearfix"> </div>
 						</div>

@@ -10,12 +10,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.text2net.core.ConfigurationSetup;
 import com.text2net.core.ConnectionProducer;
 import com.text2net.core.TextAnnotator;
 import com.text2net.core.TextUpMarker;
 import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionElement;
+import com.text2net.core.api.ConnectionQuery;
 import com.text2net.core.api.ConnectionQueryResult;
 
 @Path("text2net")
@@ -31,32 +33,58 @@ public class Text2Net {
 		
 		return new Connection(elementA, elementB, 256L, id);
 	}
-	
+	/*
 	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{id}")
 	public ConnectionQueryResult getConnections(@PathParam("id") int id, String text) {
-		
+		ConnectionQueryResult result = null;
+		System.out.println("getCopnnections............");
 		try {
 			File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate/Nomes_Trecho.xapp").getPath());
 			
-			AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, text);
-			
-			System.out.println("Finished Annotation. Starting connection detection");
-			
-			List<Connection> connections = new ConnectionProducer().process(annotatedText);
-			
-			
-			String markedUpText = new TextUpMarker().markUp(annotatedText, connections);
-			
-			return new ConnectionQueryResult(connections, markedUpText);
+			result = processRequest(text, gappFile);
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 		
-		return null;
+		return result;
+	}*/
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{id}")
+	public ConnectionQueryResult getConnectionsLineBreak(@PathParam("id") int id, ConnectionQuery connectionQuery) {
+		ConnectionQueryResult result = null;
+		try {
+			File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate/Nomes_Trecho.xapp").getPath());
+			File gappFileConfigured = new ConfigurationSetup().configure(connectionQuery.getLineBreak(), gappFile.getName());
+			result = processRequest(connectionQuery.getText(), gappFileConfigured);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	
+
+	private ConnectionQueryResult processRequest(String text, File gappFile) throws Exception {
+		ConnectionQueryResult result;
+		AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, text);
+		
+		System.out.println("Finished Annotation. Starting connection detection");
+		
+		List<Connection> connections = new ConnectionProducer().process(annotatedText);
+		
+		
+		String markedUpText = new TextUpMarker().markUp(annotatedText, connections);
+		
+		result = new ConnectionQueryResult(connections, markedUpText);
+		return result;
 	}
 	    
 	/*

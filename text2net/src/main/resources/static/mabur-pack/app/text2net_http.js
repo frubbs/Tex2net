@@ -27,7 +27,10 @@ angular.module('Text2net', ["ngSanitize"])
 	$scope.submitConnections = function() {
 		console.log('noi');
 		$scope.loading = true; //loading
-		$http.post(targetURL, $scope.connectionQuery.text).
+		
+		var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
+		
+		$http.post(targetURL, submitText).
 			success(function(data) {
 				//$scope.connections = data.connections;
 				//$scope.markedUpText = data.markedUpText;
