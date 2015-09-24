@@ -41,7 +41,7 @@ public class ConfigurationSetupTest {
 		
 		String[] resourceNames = cs.getResourceNames();
 		
-		cs.copyResourcesToTemp();
+		cs.copyResourcesToTemp("@@DOUBLE_NW@@");
 
 		for (String resourceName : resourceNames) {
 			//File resource = new File(this.getClass().getClassLoader().getResource(resourceName).getPath());
@@ -73,7 +73,7 @@ public class ConfigurationSetupTest {
 		
 		String lineBreak = "TESTE2";
 
-		cs.updateLineBreak(lineBreak);
+		cs.updateLineBreak(lineBreak, new File(cs.getRandomGaneratedName() + "\\Gazeter\\quebra.lst"));
 		
 
 		byte[] lstArray = Files.readAllBytes(Paths.get(cs.getRandomGaneratedName() + "\\Gazeter\\quebra.lst"));

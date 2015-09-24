@@ -34,9 +34,9 @@ public class ConfigurationSetup {
 	
 	public File configure(String lineBreak, String xappFile) throws IOException {
 		createDir();
-		copyResourcesToTemp();
+		copyResourcesToTemp(lineBreak);
 		//changeXappTempGazeterReference(xappFile);
-		updateLineBreak(lineBreak);
+		
 		return new File(randomGaneratedName + "\\" + xappFile);
 	}
 	
@@ -81,12 +81,12 @@ public class ConfigurationSetup {
 		return resourceNames;
 	}
 
-	protected void updateLineBreak(String lineBreak) throws IOException {
+	protected void updateLineBreak(String lineBreak, File lineBreakFile) throws IOException {
 		System.out.println("########### updateLineBreak INI ##############");
-		System.out.println("randomGaneratedName: " + randomGaneratedName + "/Gazeter/quebra.lst");
+		System.out.println("lineBreakFile.getAbsolutePath(): " + lineBreakFile.getAbsolutePath());
 		System.out.println("lineBreak: " + lineBreak);
 		try {
-		Files.write(Paths.get(randomGaneratedName + "/Gazeter/quebra.lst"), lineBreak.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
+		Files.write(Paths.get(lineBreakFile.getAbsolutePath()), lineBreak.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
 		}
 		catch (Exception e) {
 			System.out.println("######### Erro updateLineBreak: " + e.getMessage());
@@ -102,7 +102,7 @@ public class ConfigurationSetup {
 		return dir;
 	}
 
-	protected void copyResourcesToTemp() throws IOException {
+	protected void copyResourcesToTemp(String lineBreak) throws IOException {
 	System.out.println("!!!!!!!!!!!!! copyResourcesToTemp INI !!!!!!!!");
 		
 		for (String resourceName : resourceNames) {
@@ -128,6 +128,8 @@ public class ConfigurationSetup {
 				e.printStackTrace();
 			}
 		}
+		
+		updateLineBreak(lineBreak, new File(randomGaneratedName + "\\" +  "Gazeter/quebra.lst"));
 		
 		
 		//Check
