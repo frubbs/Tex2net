@@ -49,14 +49,14 @@ public class ConfigurationSetup {
 	
 	private String resourceFolder = "com/text2net/gate/";
 	
-	private String resourceNames[] = {"Gazeter/quebra.lst",
-			"Gazeter/conectores.lst",
-			"Gazeter/names.lst",
-			"Gazeter/lists.def",
-			"Tokenizer/DefaultTokeniser.rules",
-			"Tokenizer/principal.jape",
-			"Tokenizer/nomes.jape",
-			"Tokenizer/separadorSimples.jape",
+	private String resourceNames[] = {"Gazeter\\quebra.lst",
+			"Gazeter\\conectores.lst",
+			"Gazeter\\names.lst",
+			"Gazeter\\lists.def",
+			"Tokenizer\\DefaultTokeniser.rules",
+			"Tokenizer\\principal.jape",
+			"Tokenizer\\nomes.jape",
+			"Tokenizer\\separadorSimples.jape",
 			"Nomes_Trecho.xapp"};
 	
 	
