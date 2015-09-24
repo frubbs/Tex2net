@@ -81,9 +81,18 @@ public class ConfigurationSetup {
 	}
 
 	protected void updateLineBreak(String lineBreak) throws IOException {
+		System.out.println("########### updateLineBreak INI ##############");
 		System.out.println("randomGaneratedName: " + randomGaneratedName + "\\Gazeter\\quebra.lst");
 		System.out.println("lineBreak: " + lineBreak);
+		try {
 		Files.write(Paths.get(randomGaneratedName + "\\Gazeter\\quebra.lst"), lineBreak.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
+		}
+		catch (Exception e) {
+			System.out.println("######### Erro updateLineBreak: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		System.out.println("########### updateLineBreakFIM ##############");
 	}
 
 	protected File createDir() {
