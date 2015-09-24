@@ -61,7 +61,7 @@ public class Text2Net {
 		try {
 			File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate/Nomes_Trecho.xapp").getPath());
 			File gappFileConfigured = new ConfigurationSetup().configure(connectionQuery.getLineBreak(), gappFile.getName());
-			result = processRequest(connectionQuery.getText(), gappFileConfigured);
+			result = processRequest(connectionQuery.getText(), gappFile);
 		}
 		catch(Exception e){
 			e.printStackTrace();
