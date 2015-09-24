@@ -74,6 +74,9 @@ public class Text2Net {
 
 	private ConnectionQueryResult processRequest(String text, File gappFile) throws Exception {
 		ConnectionQueryResult result;
+		
+		System.out.println("Starting annotation with xapp: " + gappFile.getAbsolutePath());
+		
 		AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, text);
 		
 		System.out.println("Finished Annotation. Starting connection detection");
