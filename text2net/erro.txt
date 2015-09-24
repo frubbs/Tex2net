@@ -1,23 +1,3 @@
-2015-09-21T04:08:16.541021+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:08:37.587930+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:08:37.587930+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:08:58.346996+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:08:58.346996+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:09:20.239276+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:09:20.239424+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:09:40.320365+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:09:40.320413+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:10:01.599378+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:10:01.599605+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:10:23.091832+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:10:23.091832+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:10:44.776917+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:10:44.776917+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:11:04.578101+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:11:04.578101+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:11:25.571642+00:00 heroku[web.1]: Process running mem=523M(102.3%)
-2015-09-21T04:11:25.571642+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
-2015-09-21T04:11:47.103107+00:00 heroku[web.1]: Process running mem=523M(102.3%)
 2015-09-21T04:11:47.103107+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
 2015-09-21T04:12:07.859063+00:00 heroku[web.1]: Process running mem=523M(102.3%)
 2015-09-21T04:12:07.859227+00:00 heroku[web.1]: Error R14 (Memory quota exceeded)
@@ -335,8 +315,7 @@
 2015-09-21T04:33:26.736617+00:00 app[web.1]: log4j:WARN Please initialize the log4j system properly.
 2015-09-21T04:33:26.736679+00:00 app[web.1]: log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
 2015-09-21T04:33:35.430777+00:00 app[web.1]: appExecute: 370 msFinished Annotation. Starting connection detection
-2015-09-21T04:33:35.452611+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=12902a96-099f-4c30-8905-bfce1
-f04cbe4 fwd="177.96.216.128" dyno=web.1 connect=1ms service=8750ms status=200 bytes=3505
+2015-09-21T04:33:35.452611+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=12902a96-099f-4c30-8905-bfce1f04cbe4 fwd="177.96.216.128" dyno=web.1 connect=1ms service=8750ms status=200 bytes=3505
 2015-09-21T04:33:52.971862+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=c14f0d7d-0818-449a-91e9-c4b57b75567b fwd="177.96.216.128" dyno=web.1 connect=1ms service=4ms status=200 bytes=267
 2015-09-21T04:33:54.634313+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=16fbd8b5-8740-410f-85ff-e52231375e18 fwd="177.96.216.128" dyno=web.1 connect=0ms service=1260ms status=200 bytes=3510
 2015-09-21T04:33:54.611906+00:00 app[web.1]: ..........Processing docString appExecute: 253 msFinished Annotation. Starting connection detection
@@ -356,7 +335,8 @@ f04cbe4 fwd="177.96.216.128" dyno=web.1 connect=1ms service=8750ms status=200 by
 2015-09-21T04:35:53.261858+00:00 app[web.1]: ..........Processing docString appExecute: 156 msFinished Annotation. Starting connection detection
 2015-09-21T04:36:43.368135+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=fab61d23-703e-46c0-aee5-0810746ab587 fwd="177.96.216.128" dyno=web.1 connect=15ms service=8ms status=200 bytes=396
 2015-09-21T04:36:51.501241+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=eef05bea-7e62-42cf-8f86-1d4d126d37d3 fwd="177.96.216.128" dyno=web.1 connect=2ms service=4ms status=200 bytes=267
-2015-09-21T04:36:52.593178+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=20def1f7-390a-49ef-8188-ed9232dfcac1 fwd="177.96.216.128" dyno=web.1 connect=0ms service=743ms status=200 bytes=3495
+2015-09-21T04:36:52.593178+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=20def1f7-390a-49ef-8188-ed9232dfca
+c1 fwd="177.96.216.128" dyno=web.1 connect=0ms service=743ms status=200 bytes=3495
 2015-09-21T04:36:52.583788+00:00 app[web.1]: ..........Processing docString appExecute: 17 msFinished Annotation. Starting connection detection
 2015-09-21T04:36:54.889020+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=a2ebdb52-32c1-471a-a47a-ef22c0c7d849 fwd="177.96.216.128" dyno=web.1 connect=0ms service=331ms status=200 bytes=3495
 2015-09-21T04:36:54.879657+00:00 app[web.1]: ..........Processing docString appExecute: 21 msFinished Annotation. Starting connection detection
@@ -425,8 +405,7 @@ f04cbe4 fwd="177.96.216.128" dyno=web.1 connect=1ms service=8750ms status=200 by
 2015-09-21T05:37:19.329029+00:00 app[web.1]: 2015-09-21 05:37:19.328:INFO:oejs.Server:main: jetty-9.0.6.v20130930
 2015-09-21T05:37:19.922480+00:00 app[web.1]: 2015-09-21 05:37:19.922:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
 2015-09-21T05:37:22.008313+00:00 app[web.1]: Sep 21, 2015 5:37:22 AM org.glassfish.jersey.internal.Errors logErrors
-2015-09-21T05:37:22.008318+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resourc
-e, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+2015-09-21T05:37:22.008318+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resource, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
 2015-09-21T05:37:22.025451+00:00 app[web.1]: 2015-09-21 05:37:22.025:INFO:oejsh.ContextHandler:main: Started o.e.j.w.WebAppContext@1b95da4b{/,file:/app/src/main/webapp/,AVAILABLE}
 2015-09-21T05:37:22.008320+00:00 app[web.1]: 
 2015-09-21T05:37:22.049260+00:00 app[web.1]: 2015-09-21 05:37:22.048:INFO:oejs.ServerConnector:main: Started ServerConnector@5279f757{HTTP/1.1}{0.0.0.0:27373}
@@ -457,7 +436,8 @@ e, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource 
 2015-09-21T05:44:44.244076+00:00 app[web.1]: 2015-09-21 05:44:44.243:INFO:oejs.Server:main: jetty-9.0.6.v20130930
 2015-09-21T05:44:44.504301+00:00 app[web.1]: 2015-09-21 05:44:44.504:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
 2015-09-21T05:44:46.122390+00:00 app[web.1]: Sep 21, 2015 5:44:46 AM org.glassfish.jersey.internal.Errors logErrors
-2015-09-21T05:44:46.122395+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resource, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+2015-09-21T05:44:46.12239
+5+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resource, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
 2015-09-21T05:44:46.122397+00:00 app[web.1]: 
 2015-09-21T05:44:46.136938+00:00 app[web.1]: 2015-09-21 05:44:46.136:INFO:oejsh.ContextHandler:main: Started o.e.j.w.WebAppContext@54e8d9f5{/,file:/app/src/main/webapp/,AVAILABLE}
 2015-09-21T05:44:46.301504+00:00 heroku[web.1]: State changed from starting to up
@@ -510,8 +490,7 @@ e, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource 
 2015-09-21T06:00:07.684000+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=5454973a-6e23-44af-8eff-88fdffe55d08 fwd="177.96.216.128" dyno=web.1 connect=0ms service=294ms status=200 bytes=2845
 2015-09-21T06:01:11.393579+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=1e916341-800e-4a04-aa99-c15d51379c9f fwd="177.96.216.128" dyno=web.1 connect=0ms service=6ms status=200 bytes=396
 2015-09-21T06:01:44.166087+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=2809a32f-32e1-4bd2-90db-2ecceb46739b fwd="177.96.216.128" dyno=web.1 connect=1ms service=5ms status=200 bytes=267
-2015-09-21T06:01:45.287527+00:00 app[web.1]: ........Processing docString appExecute: 16 msFinished Annotation. Starting c
-onnection detection
+2015-09-21T06:01:45.287527+00:00 app[web.1]: ........Processing docString appExecute: 16 msFinished Annotation. Starting connection detection
 2015-09-21T06:01:45.295696+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=29e1c8c7-eae0-4979-88f0-6abeb8b7e0f2 fwd="177.96.216.128" dyno=web.1 connect=0ms service=769ms status=200 bytes=2841
 2015-09-21T06:02:46.678972+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=c2dd6d51-deb8-480d-ae5b-eeca457bc37d fwd="177.96.216.128" dyno=web.1 connect=0ms service=5ms status=200 bytes=396
 2015-09-21T06:02:55.657378+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=ccf9542e-e7ec-4c89-99e2-43f10736f9ea fwd="177.96.216.128" dyno=web.1 connect=0ms service=2ms status=200 bytes=267
@@ -531,7 +510,8 @@ onnection detection
 2015-09-21T06:12:01.926337+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=638b8730-ea1a-4ec5-a45c-682686a5b849 fwd="177.96.216.128" dyno=web.1 connect=1ms service=280ms status=200 bytes=2845
 2015-09-21T06:12:01.918762+00:00 app[web.1]: ........Processing docString appExecute: 16 msFinished Annotation. Starting connection detection
 2015-09-21T06:12:41.905517+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=d58600d1-b08a-40dd-a681-a3219bdf7300 fwd="177.96.216.128" dyno=web.1 connect=1ms service=6ms status=200 bytes=396
-2015-09-21T06:12:48.512909+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=9bfeaf1f-b7ed-46ea-8c86-51a0202b4a1d fwd="177.96.216.128" dyno=web.1 connect=1ms service=3ms status=200 bytes=267
+2015-09-21T06:12:48.512909+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com requ
+est_id=9bfeaf1f-b7ed-46ea-8c86-51a0202b4a1d fwd="177.96.216.128" dyno=web.1 connect=1ms service=3ms status=200 bytes=267
 2015-09-21T06:12:49.082238+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=e1149765-da2f-4cc5-80dc-b912deb4151c fwd="177.96.216.128" dyno=web.1 connect=1ms service=245ms status=200 bytes=2832
 2015-09-21T06:12:49.076507+00:00 app[web.1]: ........Processing docString appExecute: 15 msFinished Annotation. Starting connection detection
 2015-09-21T06:12:57.349137+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=b2a023b9-3501-4442-98d3-3262e53936b0 fwd="177.96.216.128" dyno=web.1 connect=2ms service=3ms status=200 bytes=267
@@ -584,8 +564,7 @@ onnection detection
 2015-09-21T06:28:09.787075+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=12846592-6edd-4ade-91af-5da0cec604a0 fwd="177.96.216.128" dyno=web.1 connect=0ms service=2ms status=200 bytes=267
 2015-09-21T06:28:10.338929+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=d8006e24-391b-4c2f-a515-24f2630f6753 fwd="177.96.216.128" dyno=web.1 connect=1ms service=223ms status=200 bytes=3351
 2015-09-21T06:28:10.334095+00:00 app[web.1]: Processing docString appExecute: 8 msFinished Annotation. Starting connection detection
-2015-09-21T06:28:19.166481+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=56e07f49-5d59-41e7-b027-97a4d770225d fwd="177.96.216.128" 
-dyno=web.1 connect=1ms service=2ms status=200 bytes=267
+2015-09-21T06:28:19.166481+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=56e07f49-5d59-41e7-b027-97a4d770225d fwd="177.96.216.128" dyno=web.1 connect=1ms service=2ms status=200 bytes=267
 2015-09-21T06:28:19.704870+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=96e37bc5-93d2-40d9-bc3b-bf08794ffc71 fwd="177.96.216.128" dyno=web.1 connect=1ms service=216ms status=200 bytes=3329
 2015-09-21T06:28:19.699930+00:00 app[web.1]: Processing docString appExecute: 10 msFinished Annotation. Starting connection detection
 2015-09-21T06:28:56.107662+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=ca13b560-724e-4fa1-894b-91a0ca8f475c fwd="177.96.216.128" dyno=web.1 connect=1ms service=3ms status=200 bytes=267
@@ -606,7 +585,8 @@ dyno=web.1 connect=1ms service=2ms status=200 bytes=267
 2015-09-21T06:31:28.295784+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=3146f72e-a061-4834-b08a-1b3270b0bf83 fwd="177.96.216.128" dyno=web.1 connect=4ms service=17ms status=200 bytes=267
 2015-09-21T06:31:28.912491+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=51d8f952-fdef-44a8-9264-6ae67d95679e fwd="177.96.216.128" dyno=web.1 connect=1ms service=258ms status=200 bytes=2848
 2015-09-21T06:31:28.906748+00:00 app[web.1]: ........Processing docString appExecute: 18 msFinished Annotation. Starting connection detection
-2015-09-21T06:32:35.752465+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=34b7c628-6862-47ad-8744-2c41c3f5b256 fwd="177.96.216.128" dyno=web.1 connect=0ms service=5ms status=200 bytes=396
+2015-09-21T06:32:35.752465+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=34b7c628-6862-47ad-8744-2c41c3f5b256 fwd="177.96.216.128" dyno=web.1 connect=0ms service=5ms status=200 b
+ytes=396
 2015-09-21T06:32:45.072678+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=09bce423-ac38-4f83-9541-1a727f3919a5 fwd="177.96.216.128" dyno=web.1 connect=0ms service=2ms status=200 bytes=267
 2015-09-21T06:32:48.482285+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=fdbefa9e-18e6-4274-af6b-6d5ffa34e388 fwd="177.96.216.128" dyno=web.1 connect=0ms service=3019ms status=200 bytes=2838
 2015-09-21T06:32:48.477012+00:00 app[web.1]: ........Processing docString appExecute: 14 msFinished Annotation. Starting connection detection
@@ -658,8 +638,7 @@ dyno=web.1 connect=1ms service=2ms status=200 bytes=267
 2015-09-21T06:51:54.189575+00:00 app[web.1]: ........Processing docString appExecute: 1008 msFinished Annotation. Starting connection detection
 2015-09-21T06:52:00.826113+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=1f97d874-b06c-4002-985d-40417f6f281f fwd="177.96.216.128" dyno=web.1 connect=1ms service=1ms status=200 bytes=267
 2015-09-21T06:52:31.166680+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=4f860c9c-1722-46a9-9512-1af12be885a5 fwd="177.96.216.128" dyno=web.1 connect=0ms service=30020ms status=503 bytes=0
-2015-09-21T06:52:33.
-756814+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=20df096e-b835-4206-8346-6007e44b8b2b fwd="177.96.216.128" dyno=web.1 connect=1ms service=2092ms status=200 bytes=267
+2015-09-21T06:52:33.756814+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=20df096e-b835-4206-8346-6007e44b8b2b fwd="177.96.216.128" dyno=web.1 connect=1ms service=2092ms status=200 bytes=267
 2015-09-21T06:53:04.090221+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=7a4f8188-e7ca-4954-83a2-6dc91ce9f81a fwd="177.96.216.128" dyno=web.1 connect=6ms service=30008ms status=503 bytes=0
 2015-09-21T06:53:53.749140+00:00 app[web.1]: ........Processing docString Processing docString appExecute: 83470 msFinished Annotation. Starting connection detection
 2015-09-21T06:53:55.049035+00:00 heroku[slug-compiler]: Slug compilation started
@@ -691,7 +670,8 @@ dyno=web.1 connect=1ms service=2ms status=200 bytes=267
 2015-09-21T06:54:15.810192+00:00 app[web.1]: log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
 2015-09-21T06:54:31.033072+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=4fb2fcf8-2591-49ec-9084-e54a5eb040f1 fwd="177.96.216.128" dyno=web.1 connect=0ms service=15262ms status=200 bytes=2841
 2015-09-21T06:54:30.990389+00:00 app[web.1]: appExecute: 2074 msFinished Annotation. Starting connection detection
-2015-09-21T06:54:50.639851+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=8144496a-ee08-4279-9e6e-c6f23b41987d fwd="177.96.216.128" dyno=web.1 connect=1ms service=6ms status=200 bytes=267
+2015-09-21T06:54:50.639851+00:00 
+heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=8144496a-ee08-4279-9e6e-c6f23b41987d fwd="177.96.216.128" dyno=web.1 connect=1ms service=6ms status=200 bytes=267
 2015-09-21T06:54:53.783979+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=6825c219-e1ca-41d3-8911-d958abd5d2ec fwd="177.96.216.128" dyno=web.1 connect=0ms service=2834ms status=200 bytes=7901
 2015-09-21T06:54:53.752168+00:00 app[web.1]: ........Processing docString appExecute: 1423 msFinished Annotation. Starting connection detection
 2015-09-21T06:56:08.545591+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=d4da26ea-7883-484f-bef9-0d625cbeb5a5 fwd="177.96.216.128" dyno=web.1 connect=0ms service=12ms status=200 bytes=396
@@ -762,8 +742,7 @@ dyno=web.1 connect=1ms service=2ms status=200 bytes=267
 2015-09-21T13:47:18.341675+00:00 app[web.1]: Processing docString log4j:WARN No appenders could be found for logger (com.text2net.core.TextAnnotator).
 2015-09-21T13:47:18.341708+00:00 app[web.1]: log4j:WARN Please initialize the log4j system properly.
 2015-09-21T13:47:18.341731+00:00 app[web.1]: log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
-2015-09-21T13:47:26.689616+00:00 app[web.1]: appExecute: 1536 
-msFinished Annotation. Starting connection detection
+2015-09-21T13:47:26.689616+00:00 app[web.1]: appExecute: 1536 msFinished Annotation. Starting connection detection
 2015-09-21T13:47:28.209649+00:00 heroku[router]: at=info method=POST path="/text2net/34" host=aqueous-springs-2352.herokuapp.com request_id=fa912a2e-5ef4-4f84-af51-775843b9c9f8 fwd="177.96.216.128" dyno=web.1 connect=1ms service=10129ms status=200 bytes=3622
 2015-09-21T13:50:55.262492+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=d28c4a79-4877-4310-9059-0fc81215c0cc fwd="177.96.216.128" dyno=web.1 connect=0ms service=10ms status=200 bytes=417
 2015-09-21T14:25:44.721292+00:00 heroku[web.1]: State changed from up to down
@@ -798,7 +777,8 @@ msFinished Annotation. Starting connection detection
 2015-09-21T18:53:28.617894+00:00 heroku[web.1]: Process exited with status 143
 2015-09-21T19:32:53.790563+00:00 heroku[web.1]: Unidling
 2015-09-21T19:32:53.790946+00:00 heroku[web.1]: State changed from down to starting
-2015-09-21T19:33:14.360226+00:00 heroku[web.1]: Starting process with command `java -cp target/classes:target/dependency/* com.text2net.heroku.Main`
+2015-09-21T19:33:14.360226+00:00 heroku[web.1]: Starting pro
+cess with command `java -cp target/classes:target/dependency/* com.text2net.heroku.Main`
 2015-09-21T19:33:16.040034+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
 2015-09-21T19:33:16.049193+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx384m -Xss512k -Dfile.encoding=UTF-8
 2015-09-21T19:33:16.681728+00:00 app[web.1]: 2015-09-21 19:33:16.681:INFO:oejs.Server:main: jetty-9.0.6.v20130930
@@ -865,8 +845,7 @@ msFinished Annotation. Starting connection detection
 2015-09-21T20:00:02.767131+00:00 app[web.1]: .............Processing docString appExecute: 8 msFinished Annotation. Starting connection detection
 2015-09-21T20:00:06.946441+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=998443b3-5305-4032-a0a8-b02d23856350 fwd="177.96.216.128" dyno=web.1 connect=0ms service=755ms status=200 bytes=14076
 2015-09-21T20:00:06.899286+00:00 app[web.1]: .............Processing docString appExecute: 29 msFinished Annotation. Starting connection detection
-2015-09-21T20:01:53.359435+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=
-aqueous-springs-2352.herokuapp.com request_id=b690b997-86e3-460c-bbf3-e7a3dc185601 fwd="177.96.216.128" dyno=web.1 connect=2ms service=25ms status=200 bytes=396
+2015-09-21T20:01:53.359435+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=b690b997-86e3-460c-bbf3-e7a3dc185601 fwd="177.96.216.128" dyno=web.1 connect=2ms service=25ms status=200 bytes=396
 2015-09-21T20:02:05.982315+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=28dbb8f7-2872-426b-a121-907c9bff7c98 fwd="177.96.216.128" dyno=web.1 connect=2ms service=4ms status=200 bytes=267
 2015-09-21T20:02:06.691946+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=ee2ffb31-649a-4c76-9ec4-226cd5c7144a fwd="177.96.216.128" dyno=web.1 connect=2ms service=380ms status=200 bytes=14058
 2015-09-21T20:02:06.678517+00:00 app[web.1]: .............Processing docString appExecute: 10 msFinished Annotation. Starting connection detection
@@ -887,7 +866,8 @@ aqueous-springs-2352.herokuapp.com request_id=b690b997-86e3-460c-bbf3-e7a3dc1856
 2015-09-21T20:03:44.540846+00:00 app[web.1]: .............Processing docString appExecute: 20 msFinished Annotation. Starting connection detection
 2015-09-21T20:04:08.240518+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=826e498a-29de-40b1-bacc-930427e54178 fwd="177.96.216.128" dyno=web.1 connect=0ms service=2ms status=200 bytes=267
 2015-09-21T20:04:08.830064+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=bb543520-88cd-4c81-bc51-3d6489ed4ba4 fwd="177.96.216.128" dyno=web.1 connect=1ms service=273ms status=200 bytes=14058
-2015-09-21T20:04:08.822069+00:00 app[web.1]: .............Processing docString appExecute: 6 msFinished Annotation. Starting connection detection
+2015-0
+9-21T20:04:08.822069+00:00 app[web.1]: .............Processing docString appExecute: 6 msFinished Annotation. Starting connection detection
 2015-09-21T20:04:17.165238+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=adb42633-30c6-47bb-94f2-3792bbb27d4c fwd="177.96.216.128" dyno=web.1 connect=0ms service=2ms status=200 bytes=267
 2015-09-21T20:04:17.792351+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=dc0be37a-84ed-4596-953e-752b85f3ee84 fwd="177.96.216.128" dyno=web.1 connect=2ms service=300ms status=200 bytes=401
 2015-09-21T20:04:17.780716+00:00 app[web.1]: .............Processing docString appExecute: 100 msFinished Annotation. Starting connection detection
@@ -941,8 +921,7 @@ aqueous-springs-2352.herokuapp.com request_id=b690b997-86e3-460c-bbf3-e7a3dc1856
 2015-09-21T20:08:26.551429+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=9c4c1a15-8d7f-48cd-912b-429d14533011 fwd="177.96.216.128" dyno=web.1 connect=1ms service=225ms status=200 bytes=14062
 2015-09-21T20:08:32.863532+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=3d4a111b-547d-4b7a-95b6-63b094f10025 fwd="177.96.216.128" dyno=web.1 connect=0ms service=5ms status=200 bytes=267
 2015-09-21T20:08:33.342171+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=6f590ee0-9506-4cf3-86d9-3bce33338bc7 fwd="177.96.216.128" dyno=web.1 connect=0ms service=168ms status=200 bytes=14062
-2015-09-21T20:08:33.335803+00:00 app[web.1]: .............Processing docString appExecute: 5 msFinis
-hed Annotation. Starting connection detection
+2015-09-21T20:08:33.335803+00:00 app[web.1]: .............Processing docString appExecute: 5 msFinished Annotation. Starting connection detection
 2015-09-21T20:09:09.505106+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=27e11d90-f58d-4295-ac8c-a48066665958 fwd="177.96.216.128" dyno=web.1 connect=2ms service=3ms status=200 bytes=267
 2015-09-21T20:09:10.059070+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=8534c03c-8294-4b3c-a5fe-1c1b3e561d5b fwd="177.96.216.128" dyno=web.1 connect=2ms service=202ms status=200 bytes=14013
 2015-09-21T20:09:10.042401+00:00 app[web.1]: .............Processing docString appExecute: 10 msFinished Annotation. Starting connection detection
@@ -962,7 +941,8 @@ hed Annotation. Starting connection detection
 2015-09-21T20:11:50.199371+00:00 app[web.1]: .............Processing docString appExecute: 6 msFinished Annotation. Starting connection detection
 2015-09-21T20:11:50.203283+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=dc938fd3-d180-46c7-a883-f6ac52a916f1 fwd="177.96.216.128" dyno=web.1 connect=20ms service=170ms status=200 bytes=13933
 2015-09-21T20:11:59.920270+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=5bf4a079-2c3c-48f3-9a7f-8c3546d2d841 fwd="177.96.216.128" dyno=web.1 connect=5ms service=6ms status=200 bytes=267
-2015-09-21T20:12:00.384043+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=c54bce41-56be-4fa2-8ef8-44f92d67acd2 fwd="177.96.216.128" dyno=web.1 connect=2ms service=134ms status=200 bytes=13843
+2015-09-21T20:12:00.384043+00:00 heroku[router]: at=info method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=c54bce41-56be-4fa2-8ef8-44f92d67acd2 fwd="177.96.216.128" dyno=web.1 connect=2ms servi
+ce=134ms status=200 bytes=13843
 2015-09-21T20:12:00.379037+00:00 app[web.1]: .............Processing docString appExecute: 5 msFinished Annotation. Starting connection detection
 2015-09-21T20:12:45.854855+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=7da48108-bd20-45c1-96fd-5bf7e32c2d42 fwd="177.96.216.128" dyno=web.1 connect=0ms service=5ms status=200 bytes=396
 2015-09-21T20:12:55.033445+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=169d590c-225e-4441-8b49-20d5043a06ce fwd="177.96.216.128" dyno=web.1 connect=0ms service=3ms status=200 bytes=267
@@ -1045,8 +1025,7 @@ hed Annotation. Starting connection detection
 2015-09-22T02:14:20.174909+00:00 heroku[web.1]: State changed from down to starting
 2015-09-22T02:14:34.491780+00:00 heroku[web.1]: Starting process with command `java -cp target/classes:target/dependency/* com.text2net.heroku.Main`
 2015-09-22T02:14:37.071352+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx384m -Xss512k -Dfile.encoding=UTF-8
-2015-09-22T02:14:37.060927+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom 
-settings will override them.
+2015-09-22T02:14:37.060927+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
 2015-09-22T02:14:37.505410+00:00 app[web.1]: SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 2015-09-22T02:14:37.505493+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 2015-09-22T02:14:37.709526+00:00 app[web.1]: 2015-09-22 02:14:37.709:INFO:oejs.Server:main: jetty-9.0.6.v20130930
@@ -1078,7 +1057,8 @@ settings will override them.
 2015-09-22T03:06:28.063081+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx384m -Xss512k -Dfile.encoding=UTF-8
 2015-09-22T03:06:29.092233+00:00 app[web.1]: SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 2015-09-22T03:06:29.093676+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-2015-09-22T03:06:29.962062+00:00 app[web.1]: 2015-09-22 03:06:29.961:INFO:oejs.Server:main: jetty-9.0.6.v20130930
+2015-09
+-22T03:06:29.962062+00:00 app[web.1]: 2015-09-22 03:06:29.961:INFO:oejs.Server:main: jetty-9.0.6.v20130930
 2015-09-22T03:06:31.070600+00:00 app[web.1]: 2015-09-22 03:06:31.070:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
 2015-09-22T03:06:33.436982+00:00 app[web.1]: Sep 22, 2015 3:06:33 AM org.glassfish.jersey.internal.Errors logErrors
 2015-09-22T03:06:33.436987+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resource, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
@@ -1129,8 +1109,7 @@ settings will override them.
 2015-09-22T03:59:11.562732+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=8f300e5d-dcd7-45c3-968b-9a50b8ab1fd1 fwd="201.22.139.5" dyno=web.1 connect=0ms service=18ms status=200 bytes=396
 2015-09-22T03:59:52.284526+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=f92934ba-2b02-4551-85f6-a89d7a52e0d5 fwd="201.22.139.5" dyno=web.1 connect=0ms service=9ms status=200 bytes=396
 2015-09-22T04:01:14.310020+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=c45013e7-a62f-4323-bb51-99d5919ea013 fwd="201.22.139.5" dyno=web.1 connect=2ms service=7ms status=200 bytes=396
-2015-09-22T04:02:41.736643+00:00 heroku[router]: at=info method=GET path=
-"/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=a931705d-cd23-44ea-b850-91cef674676b fwd="201.22.139.5" dyno=web.1 connect=0ms service=10ms status=200 bytes=396
+2015-09-22T04:02:41.736643+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=a931705d-cd23-44ea-b850-91cef674676b fwd="201.22.139.5" dyno=web.1 connect=0ms service=10ms status=200 bytes=396
 2015-09-22T04:08:36.291285+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=21fe133a-2f08-484b-9bd8-a763e8ae3d74 fwd="201.22.139.5" dyno=web.1 connect=0ms service=33ms status=200 bytes=396
 2015-09-22T04:09:33.110305+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=4c3cfac3-bf6e-4c2d-97a5-17e3f13c0a82 fwd="201.22.139.5" dyno=web.1 connect=0ms service=28ms status=200 bytes=417
 2015-09-22T04:10:22.128451+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=5dd98910-4a73-4a6e-bc5f-936f738219e5 fwd="201.22.139.5" dyno=web.1 connect=0ms service=4ms status=200 bytes=288
@@ -1156,7 +1135,8 @@ settings will override them.
 2015-09-22T04:12:33.072631+00:00 app[web.1]: 2015-09-22 04:12:33.072:INFO:oejs.ServerConnector:main: Started ServerConnector@1e1bd932{HTTP/1.1}{0.0.0.0:39295}
 2015-09-22T04:12:33.431656+00:00 heroku[web.1]: State changed from starting to up
 2015-09-22T04:12:34.848864+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=760ba85d-f64f-4bec-8bed-8f9243dc03e0 fwd="201.22.139.5" dyno=web.1 connect=0ms service=32ms status=200 bytes=288
-2015-09-22T04:12:35.399309+00:00 app[web.1]: Processing docString log4j:WARN No appenders could be found for logger (com.text2net.core.TextAnnotator).
+2015-09-22T04:12:35.399309+00:00 app[web.1]: Processing docString log4j:WARN No appenders could be found for logger
+ (com.text2net.core.TextAnnotator).
 2015-09-22T04:12:35.399373+00:00 app[web.1]: log4j:WARN Please initialize the log4j system properly.
 2015-09-22T04:12:35.399414+00:00 app[web.1]: log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
 2015-09-22T04:12:38.662533+00:00 app[web.1]: appExecute: 338 msFinished Annotation. Starting connection detection
@@ -1241,8 +1221,7 @@ settings will override them.
 2015-09-23T15:42:36.470801+00:00 app[web.1]: SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 2015-09-23T15:42:36.470865+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 2015-09-23T15:42:36.672056+00:00 app[web.1]: 2015-09-23 15:42:36.671:INFO:oejs.Server:main: jetty-9.0.6.v20130930
-2015-
-09-23T15:42:37.106980+00:00 app[web.1]: 2015-09-23 15:42:37.106:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2015-09-23T15:42:37.106980+00:00 app[web.1]: 2015-09-23 15:42:37.106:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
 2015-09-23T15:42:39.101088+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resource, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
 2015-09-23T15:42:39.101083+00:00 app[web.1]: Sep 23, 2015 3:42:39 PM org.glassfish.jersey.internal.Errors logErrors
 2015-09-23T15:42:39.101090+00:00 app[web.1]: 
@@ -1273,7 +1252,8 @@ settings will override them.
 2015-09-23T19:06:10.081864+00:00 heroku[router]: at=info method=GET path="/robots.txt" host=aqueous-springs-2352.herokuapp.com request_id=3cf862df-be87-4b4d-a85d-35297581cda3 fwd="66.249.64.27" dyno=web.1 connect=0ms service=118ms status=404 bytes=492
 2015-09-23T19:06:10.353978+00:00 heroku[router]: at=info method=GET path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=46932334-2ad7-41d1-ac03-52ee1f9c8701 fwd="66.249.64.32" dyno=web.1 connect=0ms service=253ms status=200 bytes=408
 2015-09-23T19:43:35.821659+00:00 heroku[web.1]: Idling
-2015-09-23T19:43:35.822440+00:00 heroku[web.1]: State changed from up to down
+2015-09-23T19:43:35.822440+00:00 heroku[web
+.1]: State changed from up to down
 2015-09-23T19:43:38.464226+00:00 heroku[web.1]: Stopping all processes with SIGTERM
 2015-09-23T19:43:40.447274+00:00 heroku[web.1]: Process exited with status 143
 2015-09-24T01:16:57.677652+00:00 heroku[web.1]: Unidling
@@ -1368,8 +1348,7 @@ settings will override them.
 2015-09-24T16:27:35.740820+00:00 app[web.1]: SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 2015-09-24T16:27:35.740872+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 2015-09-24T16:27:36.017200+00:00 app[web.1]: 2015-09-24 16:27:36.016:INFO:oejs.Server:main: jetty-9.0.6.v20130930
-2015-09-24T16:27:36.544625+00:00 app[web.1]: 2015-09-24 16:27:36.544:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.a
-pache.jasper.servlet.JspServlet
+2015-09-24T16:27:36.544625+00:00 app[web.1]: 2015-09-24 16:27:36.544:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
 2015-09-24T16:27:39.192778+00:00 app[web.1]: Sep 24, 2015 4:27:39 PM org.glassfish.jersey.internal.Errors logErrors
 2015-09-24T16:27:39.192786+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resource, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
 2015-09-24T16:27:39.192788+00:00 app[web.1]: 
@@ -1400,7 +1379,8 @@ pache.jasper.servlet.JspServlet
 2015-09-24T16:29:15.699857+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
 2015-09-24T16:29:15.700179+00:00 app[web.1]: 	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:309)
 2015-09-24T16:29:15.700100+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
-2015-09-24T16:29:15.700226+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+2015-09-24T16:29:15
+.700226+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
 2015-09-24T16:29:15.700266+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
 2015-09-24T16:29:15.700366+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
 2015-09-24T16:29:15.700316+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
@@ -1495,8 +1475,7 @@ pache.jasper.servlet.JspServlet
 2015-09-24T16:31:17.363417+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1489)
 2015-09-24T16:31:17.363462+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:517)
 2015-09-24T16:31:17.363654+00:00 app[web.1]: 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:213)
-2015-09-24T16:31:17.363528+00:00 app[w
-eb.1]: 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:138)
+2015-09-24T16:31:17.363528+00:00 app[web.1]: 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:138)
 2015-09-24T16:31:17.363602+00:00 app[web.1]: 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:564)
 2015-09-24T16:31:17.363701+00:00 app[web.1]: 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097)
 2015-09-24T16:31:17.363738+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:446)
@@ -1512,3 +1491,24 @@ eb.1]: 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.j
 2015-09-24T16:31:17.364236+00:00 app[web.1]: 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532)
 2015-09-24T16:31:17.364285+00:00 app[web.1]: 	at java.lang.Thread.run(Thread.java:745)
 2015-09-24T16:31:17.369237+00:00 heroku[router]: at=info method=POST path="/text2net/34" host=aqueous-springs-2352.herokuapp.com request_id=5234b9ad-b654-4312-8866-48b42e6d0176 fwd="179.187.102.135" dyno=web.1 connect=0ms service=111ms status=204 bytes=214
+2015-09-24T16:42:19.361076+00:00 heroku[slug-compiler]: Slug compilation started
+2015-09-24T16:42:19.361103+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-09-24T16:42:19.522865+00:00 heroku[web.1]: State changed from up to starting
+2015-09-24T16:42:24.099557+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-09-24T16:42:25.516029+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-09-24T16:42:26.661211+00:00 heroku[web.1]: Process exited with status 143
+2015-09-24T16:42:32.955920+00:00 heroku[web.1]: Starting process with command `java -cp target/classes:target/dependency/* com.text2net.heroku.Main`
+2015-09-24T16:42:35.610129+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2015-09-24T16:42:35.620900+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx384m -Xss512k -Dfile.encoding=UTF-8
+2015-09-24T16:42:36.155541+00:00 app[web.1]: SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2015-09-24T16:42:36.155594+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2015-09-24T16:42:36.558052+00:00 app[web.1]: 2015-09-24 16:42:36.557:INFO:oejs.Server:main: jetty-9.0.6.v20130930
+2015-09-24T16:42:36.993750+00:00 app[web.1]: 2015-09-24 16:42:36.993:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2015-09-24T16:42:39.069478+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resource, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+2015-09-24T16:42:39.069471+00:00 app[web.1]: Sep 24, 2015 4:42:39 PM org.glassfish.jersey.internal.Errors logErrors
+2015-09-24T16:42:39.069479+00:00 app[web.1]: 
+2015-09-24T16:42:39.083635+00:00 app[web.1]: 2015-09-24 16:42:39.083:INFO:oejsh.ContextHandler:main: Started o.e.j.w.WebAppContext@3539fdf7{/,file:/app/src/main/webapp/,AVAILABLE}
+2015-09-24T16:42:39.110777+00:00 app[web.1]: 2015-09-24 16:42:39.110:INFO:oejs.ServerConnector:main: Started ServerConnector@33f058f3{HTTP/1.1}{0.0.0.0:10307}
+2015-09-24T16:42:39.838026+00:00 heroku[web.1]: State changed from 
+starting to up
+2015-09-24T16:45:07.931129+00:00 heroku[router]: at=error code=H99 desc="Platform error" method=POST path="/text2net/34" host=aqueous-springs-2352.herokuapp.com request_id=739ccdcd-7e40-4221-9068-019c7ae8f173 fwd="179.187.102.135" dyno= connect= service= status=503 bytes=

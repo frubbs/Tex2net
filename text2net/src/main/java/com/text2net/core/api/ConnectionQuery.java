@@ -5,10 +5,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class ConnectionQuery {
+	
 	@XmlElement 
-	private String text;
+	public String text;
     @XmlElement 
-    private String lineBreak;
+    public String lineBreak;
     
 	public String getText() {
 		return lineBreak + " " + text + " " + lineBreak;
