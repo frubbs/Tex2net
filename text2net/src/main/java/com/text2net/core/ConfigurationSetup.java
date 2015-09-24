@@ -132,10 +132,7 @@ public class ConfigurationSetup {
 		
 		//Check
 		for (String resourceName : resourceNames) {
-			String resourceFullName = resourceFolder + resourceName;
-			
-			//File resource = new File(this.getClass().getClassLoader().getResource(resourceName).getPath());
-			File resourceCopy = new File(resourceFullName);
+			File resourceCopy = new File(randomGaneratedName + "\\" +  resourceName);
 			System.out.println("Checking File:" + resourceCopy.getAbsoluteFile());
 			if (resourceCopy.exists())
 			{
