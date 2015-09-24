@@ -63,7 +63,7 @@ public class MyResource {
 			annotatedText = new TextAnnotator().processFile(gappFile, docFile);
 		
 		
-		System.out.println("Finished Annotation. Starting connection detection");
+		//System.out.println("Finished Annotation. Starting connection detection");
 		
 		List<Connection> connections = new ConnectionProducer().process(annotatedText);
 		
@@ -80,7 +80,7 @@ public class MyResource {
 		
 		
 		*/
-		System.out.println("Finished Connection");
+		//System.out.println("Finished Connection");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

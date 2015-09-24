@@ -23,8 +23,9 @@ public class TextUpMarker {
 		ArrayList<ConnectionElement> elements = new ArrayList<ConnectionElement>();
 		
 		for (Connection connection : connections) {
-			elements.add(connection.getElementA());
-			elements.add(connection.getElementB());
+			elements.add(connection.getElementA()); //Node
+			elements.add(connection.getElementB()); //Node
+			elements.add(new ConnectionElement("Separator", connection.getTextChunkID(), connection.getTextChunkID()+1 ));
 		}
 
 		Collections.sort( elements, new Comparator<ConnectionElement>() {
@@ -36,7 +37,9 @@ public class TextUpMarker {
 			   return (int) (initOffset2 - initOffset1);
 
 		    }} );
+		
 		Document doc = null;
+		
 	    try {
 			doc = annotatedText.getDoc();
 			long lastIniOffsetProcessed = doc.getContent().size();
@@ -53,8 +56,11 @@ public class TextUpMarker {
 					System.out.println("ini: " + connectionElement.getInitialOffset());
 					
 					*/
+					String cssClass = "element";
+					if(connectionElement.getName().equals("Separator"))
+						cssClass = "separator";
 					
-					doc = Factory.newDocument(dcbefore.toString() + "<span class=\"element\">" + dcword.toString() + "</span>" + dcafter.toString());
+					doc = Factory.newDocument(dcbefore.toString() + "<span class=\""+ cssClass +"\">" + dcword.toString() + "</span>" + dcafter.toString());
 					
 					
 					lastIniOffsetProcessed = connectionElement.getInitialOffset(); 

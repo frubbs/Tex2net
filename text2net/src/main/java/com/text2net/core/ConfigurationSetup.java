@@ -82,18 +82,19 @@ public class ConfigurationSetup {
 	}
 
 	protected void updateLineBreak(String lineBreak, File lineBreakFile) throws IOException {
-		System.out.println("########### updateLineBreak INI ##############");
-		System.out.println("lineBreakFile.getAbsolutePath(): " + lineBreakFile.getAbsolutePath());
-		System.out.println("lineBreak: " + lineBreak);
-		try {
+		//System.out.println("########### updateLineBreak INI ##############");
+		//System.out.println("lineBreakFile.getAbsolutePath(): " + lineBreakFile.getAbsolutePath());
+		//System.out.println("lineBreak: " + lineBreak);
+		//try {
 		Files.write(Paths.get(lineBreakFile.getAbsolutePath()), lineBreak.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
-		}
+		/*}
 		catch (Exception e) {
-			System.out.println("######### Erro updateLineBreak: " + e.getMessage());
+			//System.out.println("######### Erro updateLineBreak: " + e.getMessage());
 			e.printStackTrace();
 		}
 		
 		System.out.println("########### updateLineBreakFIM ##############");
+		*/
 	}
 
 	protected File createDir() {
@@ -103,13 +104,13 @@ public class ConfigurationSetup {
 	}
 
 	protected void copyResourcesToTemp(String lineBreak) throws IOException {
-	System.out.println("!!!!!!!!!!!!! copyResourcesToTemp INI !!!!!!!!");
+	//System.out.println("!!!!!!!!!!!!! copyResourcesToTemp INI !!!!!!!!");
 		
 		for (String resourceName : resourceNames) {
 			
 			String resourceFullName = resourceFolder + resourceName;
 			
-			System.out.println("resourceName: " + resourceFullName);
+			//System.out.println("resourceName: " + resourceFullName);
 			
 			File source = new File(this.getClass().getClassLoader().getResource(resourceFullName).getPath());
 			
@@ -119,21 +120,21 @@ public class ConfigurationSetup {
 			//System.out.println("folder: " + folder);
 			
 			
-			try {
+			//try {
 			File dest = new File(randomGaneratedName + "/" +  resourceName);
 			FileUtils.copyFile(source, dest);
-			}
+			/*}
 			catch (Exception e){
 				System.out.println("ssssssssss Erro : " + e.getMessage());
 				e.printStackTrace();
-			}
+			}*/
 		}
 		
 		updateLineBreak(lineBreak, new File(randomGaneratedName + "/" +  "Gazeter/quebra.lst"));
 		
 		
 		//Check
-		for (String resourceName : resourceNames) {
+		/*for (String resourceName : resourceNames) {
 			File resourceCopy = new File(randomGaneratedName + "/" +  resourceName);
 			System.out.println("Checking File:" + resourceCopy.getAbsoluteFile());
 			if (resourceCopy.exists())
@@ -148,7 +149,7 @@ public class ConfigurationSetup {
 			}
 		}
 
-		System.out.println("!!!!!!!!!!!!! copyResourcesToTemp FIM !!!!!!!!");
+		System.out.println("!!!!!!!!!!!!! copyResourcesToTemp FIM !!!!!!!!");*/
 	}
 /*
 	protected void changeXappTempGazeterReference(String xappFile) throws IOException {
@@ -186,7 +187,7 @@ public class ConfigurationSetup {
 	
 	
 	protected void finalize () throws Throwable {
-		deleteAllTempFiles();
+		//deleteAllTempFiles();
 	}
 	
 }

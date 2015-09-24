@@ -48,7 +48,7 @@ public class TextAnnotator {
 		long appExecStart = System.currentTimeMillis();
 		application.execute();
 		long appExecEnd = System.currentTimeMillis();
-		System.out.print("appExecute: " + (appExecEnd - appExecStart) + " ms");
+		//System.out.print("appExecute: " + (appExecEnd - appExecStart) + " ms");
 		log.warn("appExecute: " + (appExecEnd - appExecStart) + " ms");
 
 		// remove the document from the corpus again
@@ -89,7 +89,7 @@ public class TextAnnotator {
 	public AnnotatedText processString(File gappFile, String docString) throws Exception 
 	{
 		// load the document (using the specified encoding if one was given)
-		System.out.print("Processing docString ");
+		//System.out.print("Processing docString ");
 		initGate();
 		Document doc = Factory.newDocument(docString);
 		return processDoc(gappFile, doc);
@@ -100,7 +100,7 @@ public class TextAnnotator {
 	public AnnotatedText processFile(File gappFile, File docFile) throws Exception
 	{
 		// load the document (using the specified encoding if one was given)
-		System.out.print("Processing document " + docFile + "...");
+		//System.out.print("Processing document " + docFile + "...");
 		initGate();
 		@SuppressWarnings("deprecation")
 		Document doc = Factory.newDocument(docFile.toURL(), encoding);
