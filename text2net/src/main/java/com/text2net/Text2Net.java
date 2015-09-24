@@ -66,7 +66,7 @@ public class Text2Net {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		
+		result.setName(connectionQuery.getName()); 
 		return result;
 	}
 

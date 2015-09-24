@@ -4,8 +4,8 @@ angular.module('Text2net', ["ngSanitize"])
 		
 		
 		
-	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
-//	var targetURL = 'http://localhost:8081/text2net/text2net/1';
+//	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
+	var targetURL = 'http://localhost:8081/text2net/text2net/1';
 	 
 	  $scope.submitForm = function() {
 			console.log('samba');
@@ -28,19 +28,18 @@ angular.module('Text2net', ["ngSanitize"])
 		console.log('noi');
 		$scope.loading = true; //loading
 		
-		var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
+		//var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
 		
-		$http.post(targetURL, submitText).
+		$http.post(targetURL, $scope.connectionQuery).
 			success(function(data) {
 				//$scope.connections = data.connections;
 				//$scope.markedUpText = data.markedUpText;
-				data.name = $scope.connectionQuery.name; //isso eh mau
+				//data.name = $scope.connectionQuery.name; //isso eh mau
 				$scope.queryResults.push(data)
 				console.log(data);
 				$scope.selectedQueryResult = data;
 				$scope.pajekNetwork = mergeToPajek($scope.queryResults);
 				$scope.loading = false; //loading
-		
 		});
 		
 	};

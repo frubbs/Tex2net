@@ -28,21 +28,33 @@ angular.module('Text2net', ["ngSanitize"])
 		console.log('noi');
 		$scope.loading = true; //loading
 		
-		var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
+		//var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
 		
-		$http.post(targetURL, submitText).
-			success(function(data) {
+		$http.post(targetURL, $scope.connectionQuery).
+			then(function(response) {
+				$scope.queryResults.push(response.data)
+				console.log(response.data);
+				$scope.selectedQueryResult = response.data;
+				$scope.pajekNetwork = mergeToPajek($scope.queryResults);
+				$scope.loading = false; //loading
+			}, function(response) {
+				$scope.loading = false; //loading
+				$scope.selectedQueryResult = {"markedUpText" : "OOps! Error while processing request. Try again later."};
+		});
+		
+		
+		
+		/*	success(function(data) {
 				//$scope.connections = data.connections;
 				//$scope.markedUpText = data.markedUpText;
-				data.name = $scope.connectionQuery.name; //isso eh mau
+				//data.name = $scope.connectionQuery.name; //isso eh mau
 				$scope.queryResults.push(data)
 				console.log(data);
 				$scope.selectedQueryResult = data;
 				$scope.pajekNetwork = mergeToPajek($scope.queryResults);
 				$scope.loading = false; //loading
-		
 		});
-		
+		*/
 	};
 	
   
