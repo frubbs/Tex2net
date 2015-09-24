@@ -13,6 +13,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.security.SecureRandom;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 
 public class ConfigurationSetup {
 	
@@ -102,6 +103,8 @@ public class ConfigurationSetup {
 	}
 
 	protected void copyResourcesToTemp() throws IOException {
+	System.out.println("!!!!!!!!!!!!! copyResourcesToTemp INI !!!!!!!!");
+		
 		for (String resourceName : resourceNames) {
 			
 			String resourceFullName = resourceFolder + resourceName;
@@ -116,10 +119,37 @@ public class ConfigurationSetup {
 			//System.out.println("folder: " + folder);
 			
 			
-			
+			try {
 			File dest = new File(randomGaneratedName + "\\" +  resourceName);
 			FileUtils.copyFile(source, dest);
+			}
+			catch (Exception e){
+				System.out.println("ssssssssss Erro : " + e.getMessage());
+				e.printStackTrace();
+			}
 		}
+		
+		
+		//Check
+		for (String resourceName : resourceNames) {
+			String resourceFullName = resourceFolder + resourceName;
+			
+			//File resource = new File(this.getClass().getClassLoader().getResource(resourceName).getPath());
+			File resourceCopy = new File(resourceFullName);
+			System.out.println("Checking File:" + resourceCopy.getAbsoluteFile());
+			if (resourceCopy.exists())
+			{
+				System.out.println("Exists File:" + resourceCopy.getAbsoluteFile());
+					
+			}
+			else
+			{
+				System.out.println("NOT  File:" + resourceCopy.getAbsoluteFile());
+				
+			}
+		}
+
+		System.out.println("!!!!!!!!!!!!! copyResourcesToTemp FIM !!!!!!!!");
 	}
 
 	protected void changeXappTempGazeterReference(String xappFile) throws IOException {
