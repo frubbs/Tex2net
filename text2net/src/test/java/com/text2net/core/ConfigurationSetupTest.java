@@ -52,7 +52,7 @@ public class ConfigurationSetupTest {
 		}
 		
 	}
-	
+	/*
 	@Test
 	@Ignore
 	public void testChangeXappTempFileReferences() throws IOException {
@@ -67,7 +67,7 @@ public class ConfigurationSetupTest {
 	      
 	      Assert.assertTrue(xappString.indexOf("$relpath$Gazeter") <= 0);
 	}
-	
+	*/
 	@Test 
 	public void testAlteraRecursoGazzeter() throws IOException {
 		

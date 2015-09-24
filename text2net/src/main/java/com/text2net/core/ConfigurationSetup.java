@@ -120,7 +120,7 @@ public class ConfigurationSetup {
 			
 			
 			try {
-			File dest = new File(randomGaneratedName + "\\" +  resourceName);
+			File dest = new File(randomGaneratedName + "/" +  resourceName);
 			FileUtils.copyFile(source, dest);
 			}
 			catch (Exception e){
@@ -129,12 +129,12 @@ public class ConfigurationSetup {
 			}
 		}
 		
-		updateLineBreak(lineBreak, new File(randomGaneratedName + "\\" +  "Gazeter/quebra.lst"));
+		updateLineBreak(lineBreak, new File(randomGaneratedName + "/" +  "Gazeter/quebra.lst"));
 		
 		
 		//Check
 		for (String resourceName : resourceNames) {
-			File resourceCopy = new File(randomGaneratedName + "\\" +  resourceName);
+			File resourceCopy = new File(randomGaneratedName + "/" +  resourceName);
 			System.out.println("Checking File:" + resourceCopy.getAbsoluteFile());
 			if (resourceCopy.exists())
 			{
@@ -150,7 +150,7 @@ public class ConfigurationSetup {
 
 		System.out.println("!!!!!!!!!!!!! copyResourcesToTemp FIM !!!!!!!!");
 	}
-
+/*
 	protected void changeXappTempGazeterReference(String xappFile) throws IOException {
 	    String filename = randomGaneratedName + "\\" + xappFile;  
 		
@@ -163,7 +163,7 @@ public class ConfigurationSetup {
 	      
 	      Files.write(Paths.get(filename), newXappString.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
 	}
-
+*/
 
 	protected void deleteAllTempFiles() throws IOException {
 		Path directory = Paths.get(randomGaneratedName);
