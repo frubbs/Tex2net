@@ -45,11 +45,12 @@ public class MyResourceTest extends JerseyTest {
     	
     	final Response responseMsg = target().path("text2net/3/").request().post(Entity.entity(connectionQuery, MediaType.APPLICATION_JSON));
 
-    	//System.out.println("SSSSSSSS" + responseMsg.readEntity(ConnectionQueryResult.class));
     	
     	ConnectionQueryResult result = responseMsg.readEntity(ConnectionQueryResult.class);
     	
     	Assert.assertEquals(78, result.getConnections().size());
+    	
+    	
     	
     }
     

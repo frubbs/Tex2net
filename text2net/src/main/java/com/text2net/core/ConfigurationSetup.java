@@ -148,7 +148,7 @@ public class ConfigurationSetup {
 	
 	
 	protected void finalize () throws Throwable {
-		//deleteAllTempFiles();
+		deleteAllTempFiles();
 	}
 	
 }
