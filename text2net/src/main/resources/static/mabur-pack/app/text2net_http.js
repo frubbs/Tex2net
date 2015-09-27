@@ -30,6 +30,10 @@ angular.module('Text2net', ["ngSanitize"])
 		
 		//var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
 		
+		if($scope.rdNameList == 'br')
+			$scope.connectionQuery.namesList = '';
+		
+		
 		$http.post(targetURL, $scope.connectionQuery).
 			then(function(response) {
 				$scope.queryResults.push(response.data)

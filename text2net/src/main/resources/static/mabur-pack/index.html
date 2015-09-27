@@ -80,6 +80,14 @@ p.contact-left{
 
 }
 
+.case-available{
+	background: #00AEEF;
+}
+
+.case-unavailable{
+	background: #FD3B01;
+}
+
 
 </style>		
 		
@@ -260,37 +268,36 @@ p.contact-left{
 				<div class="col-md-6 test-monial-time-line-left">
 					<div class="test-monial-time-line-grid test-monial-time-line-grid-l1">
 						<div class="col-md-9 test-monial-time-line-left-text">
-							<p>Here we process political discourses trying to find relationship between people cited in those speeches. The hypothesis is if two individuals are often cited together (or closely) in a speech, they are probably somehow connected.</p>
-							<span class="caseArtfact"><a href="Cases/Political/sample.txt">Sample text</a></span>
-							<span class="caseImage"><a href="Cases/Political/setup.png">Setup and expected results</a></span>
+								<p>Crime reports with identified criminal names may contain infomation about how they probably collaborate or form gangs. Using these recors as input text and providing a list of known criminals would be enough to map an existing crime network.</p>
 						</div>
 						<div class="col-md-3 test-monial-time-line-left-pic">
 							<!--<img src="web/images/pic1.jpg" title="name" /> -->
-							<a href="#">Political discourse analysis</a>
+							<a href="#">Police crime reports</a>
 						</div>
-						<span class="grid-point"> </span>
+						<span class="grid-point case-available"> </span>
 					</div>
 				</div>
 				<div class="col-md-6 test-monial-time-line-right">
 					<div class="test-monial-time-line-grid test-monial-time-line-grid-r1">
 						<div class="col-md-3 test-monial-time-line-left-pic">
-							<img src="web/images/pic2.png" title="name" />
-							<a href="#">John Doe</a>
+							<a href="#">Political discourse analysis</a>
 						</div>
+						
 						<div class="col-md-9 test-monial-time-line-left-text">
-							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
+						<p>Here we process political discourses trying to find relationship between people cited in those speeches. The hypothesis is if two individuals are often cited together (or closely) in a speech, they are probably somehow connected.</p>
+							<span class="caseArtfact"><a href="Cases/Political/sample.txt">Sample text</a></span>
+							<span class="caseImage"><a href="Cases/Political/setup.png">Setup and expected results</a></span>
 						</div>
-						<span class="grid-point grid-point1"> </span>
+						<span class="grid-point grid-point1 case-available"> </span>
 					</div>
 					<div class="test-monial-time-line-grid test-monial-time-line-grid-r2">
 						<div class="col-md-3 test-monial-time-line-left-pic">
-							<img src="web/images/pic2.png" title="name" />
-							<a href="#">John Doe</a>
+							<a href="#">Police crime reports</a>
 						</div>
 						<div class="col-md-9 test-monial-time-line-left-text">
 							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
 						</div>
-						<span class="grid-point grid-point1"> </span>
+						<span class="grid-point grid-point1 case-unavailable"> </span>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -298,7 +305,7 @@ p.contact-left{
 					<span> </span>
 				</div>
 				<div class="clearfix"> </div>
-				<a class="more-testmonial-time-line" href="#"> <span>More</span></a>
+				<!-- <a class="more-testmonial-time-line" href="#"> <span>More</span></a> -->
 			</div>
 			</div>
 		</div>
@@ -335,15 +342,15 @@ p.contact-left{
 									
 									<i class="fa fa-users"> </i> Nodes:
 									   	<label class="radio-inline">
-											<input type="radio" value="br" ng-model="nameList">
+											<input type="radio" value="br" ng-model="rdNameList">
 											Brazilian Full Names
 										</label>
 										<label class="radio-inline">
-											<input type="radio" ng-value="specialValue" ng-model="nameList">
+											<input type="radio" ng-value="specialValue" ng-model="rdNameList">
 											Custom List
 										</label>
 									</div>
-									<textarea class="form-control" ng-model="connectionQuery.namesList" ng-show="nameList != 'br'"></textarea>
+									<textarea class="form-control" ng-model="connectionQuery.namesList" ng-show="rdNameList != 'br'"></textarea>
 									<i class="fa fa-pencil-square-o"> </i> Text:<textarea class="form-control" ng-model="connectionQuery.text"></textarea>
 									 
 									<!--TODO passar conectionsQuery como parametro-->
