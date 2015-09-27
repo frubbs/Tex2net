@@ -75,6 +75,12 @@ span.caseArtfact, span.caseImage {
 padding-right: 15px;
 }
 
+p.contact-left{
+	padding: 45px;
+
+}
+
+
 </style>		
 		
 		
@@ -320,9 +326,25 @@ padding-right: 15px;
 								</table>
 
 									<p>Insert text data:</p>
-									Network name: <input class="form-control" ng-model="connectionQuery.name" type="text" value="Give a name to the network" >
-									Text separator: <input class="form-control" ng-model="connectionQuery.lineBreak" type="text" value="Give a name to the network" >
-									Text:<textarea class="form-control" ng-model="connectionQuery.text"></textarea>
+									<i class="fa fa-connectdevelop"> </i> Network name: <input class="form-control" ng-model="connectionQuery.name" type="text" value="Give a name to the network" >
+									<i class="fa fa-chain-broken"> </i>  
+									Define Text separator: <input type="checkbox" ng-model="cbLineBreak"> 
+									<p/>
+									<input class="form-control" ng-model="connectionQuery.lineBreak" type="text" ng-show="cbLineBreak == true" >
+									<div class="input-group "> 
+									
+									<i class="fa fa-users"> </i> Nodes:
+									   	<label class="radio-inline">
+											<input type="radio" value="br" ng-model="nameList">
+											Brazilian Full Names
+										</label>
+										<label class="radio-inline">
+											<input type="radio" ng-value="specialValue" ng-model="nameList">
+											Custom List
+										</label>
+									</div>
+									<textarea class="form-control" ng-model="connectionQuery.namesList" ng-show="nameList != 'br'"></textarea>
+									<i class="fa fa-pencil-square-o"> </i> Text:<textarea class="form-control" ng-model="connectionQuery.text"></textarea>
 									 
 									<!--TODO passar conectionsQuery como parametro-->
 									<button class="btn btn-primary btn-block" ng-click="submitConnections()" ng-disabled="!connectionQuery.name || !connectionQuery.text">Process text</button>

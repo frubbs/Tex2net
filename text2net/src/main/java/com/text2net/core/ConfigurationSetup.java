@@ -90,6 +90,9 @@ public class ConfigurationSetup {
 		//System.out.println("lineBreakFile.getAbsolutePath(): " + lineBreakFile.getAbsolutePath());
 		//System.out.println("lineBreak: " + lineBreak);
 		//try {
+		
+
+		
 		Files.write(Paths.get(lineBreakFile.getAbsolutePath()), lineBreak.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
 		/*}
 		catch (Exception e) {

@@ -17,6 +17,8 @@ public class ConnectionQuery {
 	
 	
 	public String getLineBreak() {
+		if(lineBreak == null || lineBreak.equals(""))
+			return "@@NO_SEPARATOR@@";
 		return lineBreak;
 	}
 	public String getName() {
@@ -26,7 +28,7 @@ public class ConnectionQuery {
 		return namesList;
 	}
     public String getText() {
-		return lineBreak + " " + text + " " + lineBreak;
+		return getLineBreak() + " " + text + " " + getLineBreak();
 	}
     
 	public void setLineBreak(String lineBreak) {
