@@ -32,9 +32,12 @@ public class ConfigurationSetup {
 		randomGaneratedName = root + new BigInteger(130, random).toString(32);
 	}
 	
-	public File configure(String lineBreak, String xappFile) throws IOException {
+	public File configure(String lineBreak, String namesList, String xappFile) throws IOException {
+		//String resFolder = resourceFolder;
+		
+			
 		createDir();
-		copyResourcesToTemp(lineBreak);
+		copyResourcesToTemp(lineBreak, namesList);
 		//changeXappTempGazeterReference(xappFile);
 		
 		return new File(randomGaneratedName + "/" + xappFile);
@@ -47,7 +50,8 @@ public class ConfigurationSetup {
 	}
 
 	
-	private String resourceFolder = "com/text2net/gate/";
+	private String baseResourceFolder = "com/text2net/gate_{0}/";
+	private String resourceFolder = "";
 	
 	private String resourceNames[] = {"Gazeter/quebra.lst",
 			"Gazeter/conectores.lst",
@@ -103,14 +107,19 @@ public class ConfigurationSetup {
 		return dir;
 	}
 
-	protected void copyResourcesToTemp(String lineBreak) throws IOException {
+	protected void copyResourcesToTemp(String lineBreak, String namesList) throws IOException {
 	//System.out.println("!!!!!!!!!!!!! copyResourcesToTemp INI !!!!!!!!");
+		
+		if (namesList != null && !namesList.equals(""))
+			resourceFolder = baseResourceFolder.replace("{0}", "customlist");
+		else
+			resourceFolder = baseResourceFolder.replace("{0}", "brnames");
 		
 		for (String resourceName : resourceNames) {
 			
 			String resourceFullName = resourceFolder + resourceName;
 			
-			//System.out.println("resourceName: " + resourceFullName);
+			System.out.println("resourceName: " + resourceFullName);
 			
 			File source = new File(this.getClass().getClassLoader().getResource(resourceFullName).getPath());
 			
@@ -131,6 +140,9 @@ public class ConfigurationSetup {
 		}
 		
 		updateLineBreak(lineBreak, new File(randomGaneratedName + "/" +  "Gazeter/quebra.lst"));
+		
+		if (namesList != null && !namesList.equals(""))
+			updateNamesList(namesList, new File(randomGaneratedName + "/" +  "Gazeter/names.lst"));
 		
 		
 		//Check
@@ -188,6 +200,19 @@ public class ConfigurationSetup {
 	
 	protected void finalize () throws Throwable {
 		//deleteAllTempFiles();
+	}
+
+	public void updateNamesList(String names, File file) throws IOException {
+		
+		
+		String[] aux = names.split(",");
+		String namesNormalized ="";
+		for (String string : aux) {
+			namesNormalized += string.trim() + '\n';
+		}
+		
+		Files.write(Paths.get(file.getAbsolutePath()), namesNormalized.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
+		
 	}
 	
 }

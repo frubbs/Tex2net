@@ -29,7 +29,7 @@ public class ConfigurationSetupTest {
 		File dir = cs.createDir();
 		
 		if (dir.exists()) {
-			Assert.assertEquals("temp\\" + dir.getName(), cs.getRandomGaneratedName());
+			Assert.assertEquals("temp/" + dir.getName(), cs.getRandomGaneratedName());
 		}else{
 			Assert.fail();
 		}
@@ -41,7 +41,7 @@ public class ConfigurationSetupTest {
 		
 		String[] resourceNames = cs.getResourceNames();
 		
-		cs.copyResourcesToTemp("@@DOUBLE_NW@@");
+		cs.copyResourcesToTemp("@@DOUBLE_NW@@", null);
 
 		for (String resourceName : resourceNames) {
 			//File resource = new File(this.getClass().getClassLoader().getResource(resourceName).getPath());
@@ -73,6 +73,8 @@ public class ConfigurationSetupTest {
 		
 		String lineBreak = "TESTE2";
 
+		String docFilePath = this.getClass().getClassLoader().getResource("com/text2net/douSample/Dou-02012013-1.min.txt").getPath().substring(1);
+		
 		cs.updateLineBreak(lineBreak, new File(cs.getRandomGaneratedName() + "\\Gazeter\\quebra.lst"));
 		
 
@@ -86,6 +88,30 @@ public class ConfigurationSetupTest {
 
 	         			
 	}
+
+	@Test 
+	public void testAlteraListaNomesTokenizer() throws IOException {
+		
+		String names = "FRANCISCO CARLOS, Carlos Eduardo,Eduardo Xavier de Souza";
+		
+		
+
+		cs.updateNamesList(names, new File(cs.getRandomGaneratedName() + "\\Gazeter\\names.lst"));
+		
+
+		byte[] lstArray = Files.readAllBytes(Paths.get(cs.getRandomGaneratedName() + "\\Gazeter\\names.lst"));
+
+	      String lstString = new String(lstArray, "UTF-8");
+	      
+	                     
+	   
+        Assert.assertEquals(lstString, names.replace(',', '\n'));
+
+	         			
+	}
+	
+
+	
 	
 	@Test
 	@Ignore

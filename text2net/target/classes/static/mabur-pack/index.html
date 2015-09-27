@@ -1,13 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Text2net - co-word analisys tool and Social network analisys tool.</title>
+<title>Text2.net - co-word analysis tool and Social network analysis tool.</title>
 <link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 
@@ -59,6 +53,28 @@ span.separator:before {
    vertical-align: middle;
    color: red;
 }
+
+span.caseArtfact:before{
+   font-family: FontAwesome;
+   content: "\f15c";
+   display: inline-block;
+   padding-right: 5px;
+   vertical-align: middle;
+}
+
+span.caseImage:before{
+   font-family: FontAwesome;
+   content: "\f03e";
+   display: inline-block;
+   padding-right: 5px;
+   vertical-align: middle;
+}
+
+
+span.caseArtfact, span.caseImage {
+padding-right: 15px;
+}
+
 </style>		
 		
 		
@@ -105,7 +121,8 @@ span.separator:before {
 				<!---- start-logo---->
 				<div class="logo">
 					<h1>
-					<a href="index.html"><!--<img src="web/images/logo.png" title="Mabur" />--><b>TEXT<font color="red">2</font>NET</b><i class="fa fa-connectdevelop"> </i></a>
+					<a href="index.html">
+						<b>TEXT<font color="red">2.</font>NET</b><i class="fa fa-connectdevelop"> </i></a>
 					</h1>
 				</div>
 				<!---- //End-logo---->
@@ -113,10 +130,10 @@ span.separator:before {
 				 <nav class="top-nav">
 					<ul class="top-nav">
 						<li class="active"><a href="#home" class="scroll">Home</a></li>
-						<li class="page-scroll"><a href="#fea" class="scroll">Tools</a></li>
-						<li class="page-scroll"><a href="#work" class="scroll">Step-by-Step</a></li>
-						<li class="page-scroll"><a href="#blog" class="scroll">Blog</a></li>
-						<li class="page-scroll"><a href="#test" class="scroll">Testimonials</a></li>
+						<li class="page-scroll"><a href="#tools" class="scroll">Tools</a></li>
+						<li class="page-scroll"><a href="#steps" class="scroll">Step-by-Step</a></li>
+						<li class="page-scroll"><a href="#cases" class="scroll">Use Cases</a></li>
+						<li class="page-scroll"><a href="#disc" class="scroll">Disclaimer</a></li>
 						<li class="contatct-active" class="page-scroll"><a href="#contact" class="scroll">Contact</a></li>
 					</ul>
 					<a href="#" id="pull"><img src="web/images/nav-icon.png" title="menu" /></a>
@@ -125,14 +142,15 @@ span.separator:before {
 				<div class="slide-text text-center">
 					<h1>SNA and Co-Word analysis </h1>
 					<span>Just a few clicks away.</span>
-					<a class="slide-btn" href="#">Learn More</a>
+					<a class="slide-btn scroll" href="#tools">Learn More</a>
+					<a class="slide-btn scroll" href="#plaintext2net">Let's do it!</a>
 				</div>
 				<!----//End-top-nav---->
 			</div>
 		</div>
 		<!----//End-header---->
 		<!----start-feartures----->
-		<div id="fea" class="features">
+		<div id="tools" class="features">
 			<div class="container">
 				<div class="head text-center">
 					<h3><span> </span>Tools</h3>
@@ -177,7 +195,7 @@ span.separator:before {
 		</div>
 		<!----//End-feartures----->
 		<!---- start-work---->
-		<div class="work">
+		<div id="steps" class="work">
 			<div class="container">
 				<div class="head text-center work-head">
 					<h3><span> </span>The solution, Step by Step</h3>
@@ -200,7 +218,7 @@ span.separator:before {
 						</div>
 					</div>
 					<div class="col-md-3 work-grid">
-						<span class="col-md-5 w-icon"><i class="fa fa-users"> </i> </span>
+						<span class="col-md-5 w-icon"><i class="fa fa-chain-broken"> </i> </span>
 						<div class="col-md-12 work-info">
 							<h4>Define limits (optional)</h4>
 							<p>Tags, words, elements that define subgroups of text which determine if elements are connected. Ex: Connect only elements found in the same Chapter, section, page, between words "Hello" and "Bye", etc...</p>
@@ -224,9 +242,68 @@ span.separator:before {
 			</div>
 		</div>
 		<!---- //End-work---->
-
+<!----start-test-monials---->
+		<div  id="cases" class="testmonials">
+			<div class="container">
+				<div class="head text-center">
+						<h3><span> </span> Use cases</h3>
+						<p>These are just a few examples of how the tools provided here can be used. The red ones are not supported yet, but will shortly be, in further releases.</p>
+				</div>
+			<!----start-testmonial-time-line---->
+			<div class="test-monial-time-line">
+				<div class="col-md-6 test-monial-time-line-left">
+					<div class="test-monial-time-line-grid test-monial-time-line-grid-l1">
+						<div class="col-md-9 test-monial-time-line-left-text">
+							<p>Here we process political discourses trying to find relationship between people cited in those speeches. The hypothesis is if two individuals are often cited together (or closely) in a speech, they are probably somehow connected.</p>
+							<span class="caseArtfact"><a href="Cases/Political/sample.txt">Sample text</a></span>
+							<span class="caseImage"><a href="Cases/Political/setup.png">Setup and expected results</a></span>
+						</div>
+						<div class="col-md-3 test-monial-time-line-left-pic">
+							<!--<img src="web/images/pic1.jpg" title="name" /> -->
+							<a href="#">Political discourse analysis</a>
+						</div>
+						<span class="grid-point"> </span>
+					</div>
+				</div>
+				<div class="col-md-6 test-monial-time-line-right">
+					<div class="test-monial-time-line-grid test-monial-time-line-grid-r1">
+						<div class="col-md-3 test-monial-time-line-left-pic">
+							<img src="web/images/pic2.png" title="name" />
+							<a href="#">John Doe</a>
+						</div>
+						<div class="col-md-9 test-monial-time-line-left-text">
+							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
+						</div>
+						<span class="grid-point grid-point1"> </span>
+					</div>
+					<div class="test-monial-time-line-grid test-monial-time-line-grid-r2">
+						<div class="col-md-3 test-monial-time-line-left-pic">
+							<img src="web/images/pic2.png" title="name" />
+							<a href="#">John Doe</a>
+						</div>
+						<div class="col-md-9 test-monial-time-line-left-text">
+							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
+						</div>
+						<span class="grid-point grid-point1"> </span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="test-monial-timeline-connector">
+					<span> </span>
+				</div>
+				<div class="clearfix"> </div>
+				<a class="more-testmonial-time-line" href="#"> <span>More</span></a>
+			</div>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+			<!----//End-testmonial-time-line---->
+		
+		
+		
+		
 			<!----start-contact---->
-				<div id="contact" class="contact" ng-app="Text2net"> 
+				<div id="plaintext2net" class="contact" ng-app="Text2net"> 
 						<div class="contact-grids" ng-controller='ConnectionCtrl'>
 							<div class="col-md-4 contact-left">
 								<h3>
@@ -255,7 +332,7 @@ span.separator:before {
 							</div>
 							<div class="col-md-4 contact-right">
 								<div ng-show="loading"> <h1><i class="fa fa-cog fa-spin"></i></h1></div>
-								 <div ng-bind-html="selectedQueryResult.markedUpText"></div> 
+								<div ng-bind-html="selectedQueryResult.markedUpText"></div> 
 								<!--<div>
 								DISCURSO CÂMARA DOS DEPUTADOS ORDEM DO DIA ENCAMINHAMENTO DE VOTAÇÃO <span class="separator">D</span>ISCURSO Sumário O SR. <span class="element">MARCUS PESTANA </span>(Bloco/PSDB-MG. Sem revisão do orador.) - Sr. Presidente, Sras. e Srs. Deputados, eu não queria, de forma ingênua, contribuir para o processo protelatório de obstrução liderado pelo PT. Mas é necessário colocar alguns pingos nos is. Caro amigo, <span class="element">Deputado Henrique Fontana</span>, V.Exa. sabe que eu tenho isenção para fazer isso. Esta é uma agenda prioritária há mais de 1 década. O sistema político brasileiro, o sistema partidário eleitoral se esgotou: 70% da população, 2 anos depois, não sabe dizer o nome do Deputado em quem votou; as regras do financiamento precisam de aprimoramento; os partidos não são fortalecidos, pelo contrário, é um sistema anárquico que divide os partidos e não alimenta a solidariedade partidária, porque você compete com um companheiro e não com um adversário, na lógica absurda que não existe em parte nenhuma do mundo. Existem três sistemas clássicos: sistema distrital puro, misto e lista fechada. O Brasil tem uma engenharia que é uma verdadeira jabuticaba, só existe aqui. Esgotou-se! Mal ou bem, viemos até aqui com ele. <span class="element">Ulysses </span>e <span class="element">Tancredo </span>nos entregaram a democracia. Mal ou bem, chegamos aqui. Não vamos cuspir no prato em que comemos, mas agora é hora de mudar. Instalaram-se dois procedimentos em 2011. Um se deu no Senado, foi sumário, durou 2 meses e acabou em nada, foi desfigurado, e o Senado esqueceu o assunto. Nós tivemos uma Comissão Especial que trabalhou 2 anos, cujo Relator era exatamente <span class="element">Henrique Fontana</span>. Não foi possível construir o consenso, sequer votamos o relatório, e o processo foi arquivado no final de 2012. 87 Com as mobilizações de rua de junho de 2013 surgiu o tema novamente da reforma política. Ninguém na rua pediu reforma política. Este é um tema instrumental um tanto árido para a população. É obrigação nossa, institucional, modernizar. Mas não é um tema popular, vamos dizer claramente. É um meio, não é o fim. Mas surgiram, entre outras coisas - uma coisa captada do Podemos, dos indignados espanhóis - os cartazes Vocês não nos representam. No fim daquele ciclo de manifestações de rua, a <span class="element">Presidente Dilma </span>propôs uma Constituinte exclusiva, e foi combatida por todos os lados. Como ter um poder constituinte com a democracia e as instituições funcionando democraticamente? Não cabe uma Constituinte numa democracia que está fortalecida e institucionalizada. Ela passou a defender o plebiscito, que não é viável. O referendo é viável. Para um tema dessa complexidade, não é viável. Estudo esse tema há 15, 17 anos. Aí o <span class="element">Presidente Henrique Eduardo Alves</span>, numa sábia decisão, em reposta às ruas, nomeou um grupo de trabalho que trabalhou 4 meses sem holofotes, sem vaidades. Eram 15 Deputados e um coordenador: <span class="element">Deputada Luiza Erundina</span>, representando a bancada feminina; Deputado Esperidião Amin; <span class="element">Deputado Guilherme Campos</span>, representando o PSD; <span class="element">Ministro Ricardo Berzoini</span>, representando o PT; <span class="element">Deputado Daniel Almeida</span>, representando o PCdoB; <span class="element">Deputado Marcelo Castro</span>, o PMDB. Chegamos à formulação de uma PEC. Coordenada pelo Deputado Cândido Vaccarezza, do PT, teve a participação na votação do relatório do Ministro Berzoini. É uma tempestade em copo d'água. Quem não quer discutir o mérito é quem não quer deixar instalar a Comissão Especial, não é só financiamento. Eu acho que o PT tem um complexo de culpa freudiano, pois tem fixação no tema do financiamento, por causa do mensalão e do petrolão. (Palmas.) Há muito mais coisa em jogo: a emenda fala em cláusula de desempenho progressiva de 3%, em 2018, de 4%, em 2022 e de 5%, atingindo o patamar alemão, em 2026, em voto facultativo; acaba com as coligações proporcionais, permitindo federações nacionais de partido; promove a coincidência de mandato; muda as regras de financiamento; acaba com a reeleição; regionaliza o voto proporcional. Este sistema nosso é maluco. <span class="element">São Paulo </span>teve mil candidatos a Deputado Federal, disputando 34 milhões de votos. O eleitor tem qualidade? Ele consegue comparar os mil candidatos? Ele vai ter contato no máximo com 20 ou 30, através de um santinho, uma palestra, um comício ou, quiçá, pela televisão. O que estamos votando hoje é só o início da conversa. Q
 								</div>

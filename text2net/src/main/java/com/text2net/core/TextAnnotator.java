@@ -119,7 +119,7 @@ public class TextAnnotator {
 //essa eh a boa:
 		//props.setProperty("gate.home",".\\gate");
 
-		String home = this.getClass().getClassLoader().getResource("com/text2net/gate/gatehome").getPath();
+		String home = this.getClass().getClassLoader().getResource("com/text2net/gate_brnames/gatehome").getPath();
 		 
 		props.setProperty("gate.home",home);
 		

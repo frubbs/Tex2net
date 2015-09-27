@@ -59,8 +59,8 @@ public class Text2Net {
 	public ConnectionQueryResult getConnectionsLineBreak(@PathParam("id") int id, ConnectionQuery connectionQuery) {
 		ConnectionQueryResult result = null;
 		try {
-			File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate/Nomes_Trecho.xapp").getPath());
-			File gappFileConfigured = new ConfigurationSetup().configure(connectionQuery.getLineBreak(), gappFile.getName());
+			//File gappFile =  new File(this.getClass().getClassLoader().getResource("com/text2net/gate_/Nomes_Trecho.xapp").getPath());
+			File gappFileConfigured = new ConfigurationSetup().configure(connectionQuery.getLineBreak(), connectionQuery.getNamesList(), "Nomes_Trecho.xapp");
 			result = processRequest(connectionQuery.getText(), gappFileConfigured);
 		}
 		catch(Exception e){

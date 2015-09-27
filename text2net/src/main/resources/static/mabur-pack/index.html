@@ -1,13 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Text2net - co-word analisys tool and Social network analisys tool.</title>
+<title>Text2.net - co-word analysis tool and Social network analysis tool.</title>
 <link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 
@@ -59,6 +53,28 @@ span.separator:before {
    vertical-align: middle;
    color: red;
 }
+
+span.caseArtfact:before{
+   font-family: FontAwesome;
+   content: "\f15c";
+   display: inline-block;
+   padding-right: 5px;
+   vertical-align: middle;
+}
+
+span.caseImage:before{
+   font-family: FontAwesome;
+   content: "\f03e";
+   display: inline-block;
+   padding-right: 5px;
+   vertical-align: middle;
+}
+
+
+span.caseArtfact, span.caseImage {
+padding-right: 15px;
+}
+
 </style>		
 		
 		
@@ -105,7 +121,8 @@ span.separator:before {
 				<!---- start-logo---->
 				<div class="logo">
 					<h1>
-					<a href="index.html"><!--<img src="web/images/logo.png" title="Mabur" />--><b>TEXT<font color="red">2</font>NET</b><i class="fa fa-connectdevelop"> </i></a>
+					<a href="index.html">
+						<b>TEXT<font color="red">2.</font>NET</b><i class="fa fa-connectdevelop"> </i></a>
 					</h1>
 				</div>
 				<!---- //End-logo---->
@@ -113,10 +130,10 @@ span.separator:before {
 				 <nav class="top-nav">
 					<ul class="top-nav">
 						<li class="active"><a href="#home" class="scroll">Home</a></li>
-						<li class="page-scroll"><a href="#fea" class="scroll">Tools</a></li>
-						<li class="page-scroll"><a href="#work" class="scroll">Step-by-Step</a></li>
-						<li class="page-scroll"><a href="#blog" class="scroll">Blog</a></li>
-						<li class="page-scroll"><a href="#test" class="scroll">Testimonials</a></li>
+						<li class="page-scroll"><a href="#tools" class="scroll">Tools</a></li>
+						<li class="page-scroll"><a href="#steps" class="scroll">Step-by-Step</a></li>
+						<li class="page-scroll"><a href="#cases" class="scroll">Use Cases</a></li>
+						<li class="page-scroll"><a href="#disc" class="scroll">Disclaimer</a></li>
 						<li class="contatct-active" class="page-scroll"><a href="#contact" class="scroll">Contact</a></li>
 					</ul>
 					<a href="#" id="pull"><img src="web/images/nav-icon.png" title="menu" /></a>
@@ -125,14 +142,15 @@ span.separator:before {
 				<div class="slide-text text-center">
 					<h1>SNA and Co-Word analysis </h1>
 					<span>Just a few clicks away.</span>
-					<a class="slide-btn" href="#">Learn More</a>
+					<a class="slide-btn scroll" href="#tools">Learn More</a>
+					<a class="slide-btn scroll" href="#plaintext2net">Let's do it!</a>
 				</div>
 				<!----//End-top-nav---->
 			</div>
 		</div>
 		<!----//End-header---->
 		<!----start-feartures----->
-		<div id="fea" class="features">
+		<div id="tools" class="features">
 			<div class="container">
 				<div class="head text-center">
 					<h3><span> </span>Tools</h3>
@@ -177,7 +195,7 @@ span.separator:before {
 		</div>
 		<!----//End-feartures----->
 		<!---- start-work---->
-		<div class="work">
+		<div id="steps" class="work">
 			<div class="container">
 				<div class="head text-center work-head">
 					<h3><span> </span>The solution, Step by Step</h3>
@@ -200,7 +218,7 @@ span.separator:before {
 						</div>
 					</div>
 					<div class="col-md-3 work-grid">
-						<span class="col-md-5 w-icon"><i class="fa fa-users"> </i> </span>
+						<span class="col-md-5 w-icon"><i class="fa fa-chain-broken"> </i> </span>
 						<div class="col-md-12 work-info">
 							<h4>Define limits (optional)</h4>
 							<p>Tags, words, elements that define subgroups of text which determine if elements are connected. Ex: Connect only elements found in the same Chapter, section, page, between words "Hello" and "Bye", etc...</p>
@@ -224,9 +242,68 @@ span.separator:before {
 			</div>
 		</div>
 		<!---- //End-work---->
-
+<!----start-test-monials---->
+		<div  id="cases" class="testmonials">
+			<div class="container">
+				<div class="head text-center">
+						<h3><span> </span> Use cases</h3>
+						<p>These are just a few examples of how the tools provided here can be used. The red ones are not supported yet, but will shortly be, in further releases.</p>
+				</div>
+			<!----start-testmonial-time-line---->
+			<div class="test-monial-time-line">
+				<div class="col-md-6 test-monial-time-line-left">
+					<div class="test-monial-time-line-grid test-monial-time-line-grid-l1">
+						<div class="col-md-9 test-monial-time-line-left-text">
+							<p>Here we process political discourses trying to find relationship between people cited in those speeches. The hypothesis is if two individuals are often cited together (or closely) in a speech, they are probably somehow connected.</p>
+							<span class="caseArtfact"><a href="Cases/Political/sample.txt">Sample text</a></span>
+							<span class="caseImage"><a href="Cases/Political/setup.png">Setup and expected results</a></span>
+						</div>
+						<div class="col-md-3 test-monial-time-line-left-pic">
+							<!--<img src="web/images/pic1.jpg" title="name" /> -->
+							<a href="#">Political discourse analysis</a>
+						</div>
+						<span class="grid-point"> </span>
+					</div>
+				</div>
+				<div class="col-md-6 test-monial-time-line-right">
+					<div class="test-monial-time-line-grid test-monial-time-line-grid-r1">
+						<div class="col-md-3 test-monial-time-line-left-pic">
+							<img src="web/images/pic2.png" title="name" />
+							<a href="#">John Doe</a>
+						</div>
+						<div class="col-md-9 test-monial-time-line-left-text">
+							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
+						</div>
+						<span class="grid-point grid-point1"> </span>
+					</div>
+					<div class="test-monial-time-line-grid test-monial-time-line-grid-r2">
+						<div class="col-md-3 test-monial-time-line-left-pic">
+							<img src="web/images/pic2.png" title="name" />
+							<a href="#">John Doe</a>
+						</div>
+						<div class="col-md-9 test-monial-time-line-left-text">
+							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
+						</div>
+						<span class="grid-point grid-point1"> </span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="test-monial-timeline-connector">
+					<span> </span>
+				</div>
+				<div class="clearfix"> </div>
+				<a class="more-testmonial-time-line" href="#"> <span>More</span></a>
+			</div>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+			<!----//End-testmonial-time-line---->
+		
+		
+		
+		
 			<!----start-contact---->
-				<div id="contact" class="contact" ng-app="Text2net"> 
+				<div id="plaintext2net" class="contact" ng-app="Text2net"> 
 						<div class="contact-grids" ng-controller='ConnectionCtrl'>
 							<div class="col-md-4 contact-left">
 								<h3>

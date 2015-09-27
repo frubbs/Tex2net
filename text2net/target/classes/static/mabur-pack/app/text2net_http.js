@@ -4,8 +4,8 @@ angular.module('Text2net', ["ngSanitize"])
 		
 		
 		
-//	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
-	var targetURL = 'http://localhost:8081/text2net/text2net/1';
+	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
+//	var targetURL = 'http://localhost:8081/text2net/text2net/1';
 	 
 	  $scope.submitForm = function() {
 			console.log('samba');
@@ -31,7 +31,20 @@ angular.module('Text2net', ["ngSanitize"])
 		//var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
 		
 		$http.post(targetURL, $scope.connectionQuery).
-			success(function(data) {
+			then(function(response) {
+				$scope.queryResults.push(response.data)
+				console.log(response.data);
+				$scope.selectedQueryResult = response.data;
+				$scope.pajekNetwork = mergeToPajek($scope.queryResults);
+				$scope.loading = false; //loading
+			}, function(response) {
+				$scope.loading = false; //loading
+				$scope.selectedQueryResult = {"markedUpText" : "OOps! Error while processing request. Try again later."};
+		});
+		
+		
+		
+		/*	success(function(data) {
 				//$scope.connections = data.connections;
 				//$scope.markedUpText = data.markedUpText;
 				//data.name = $scope.connectionQuery.name; //isso eh mau
@@ -41,7 +54,7 @@ angular.module('Text2net', ["ngSanitize"])
 				$scope.pajekNetwork = mergeToPajek($scope.queryResults);
 				$scope.loading = false; //loading
 		});
-		
+		*/
 	};
 	
   
