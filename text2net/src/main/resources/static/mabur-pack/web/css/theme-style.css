@@ -712,13 +712,16 @@ nav a#pull {
 }
 .test-monial-timeline-connector span{
 	width: 1px;
-	height: 500px;
+	height: 600px;
 	background: #E1E1E1;
 	position: absolute;
 	left: 50%;
 }
 .test-monial-time-line-grid-l1{
 	margin-top: 37%;
+}
+.test-monial-time-line-grid-l2{
+	margin-top: 90%;
 }
 .test-monial-time-line-grid-r1{
 	margin-top:10%;
