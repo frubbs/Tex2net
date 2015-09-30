@@ -2,7 +2,10 @@ package com.text2net.core;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionElement;
@@ -97,30 +100,25 @@ public class ConnectionProducer {
 				 * ); break; }
 				 */
 			}
-			ConnectionElement[] entidadesEncontradas = entidadesEncontradasNome.values().toArray(new ConnectionElement[0]);
 			
-			for (int k = 0; k < entidadesEncontradas.length; k++)
-			{
-				for (int l = k + 1; l < entidadesEncontradas.length; l++)
-				{
-/*
-					Entidade entidadeA = entidadesEncontradas[k];
-					Entidade entidadeB = entidadesEncontradas[l];
+		    Iterator it = entidadesEncontradasNome.entrySet().iterator();
+		    while (it.hasNext()) {
+		        Map.Entry pair = (Map.Entry)it.next();
+		       
+		        for (Entry<String, ConnectionElement> entry : entidadesEncontradasNome.entrySet())
+		        {
+		        	ConnectionElement elementA = (ConnectionElement) pair.getValue();
+		        	ConnectionElement elementB = (ConnectionElement) entry.getValue();
+		        	if (!elementA.getName().equals(elementB.getName()))
+		        			result.add(new Connection(elementA, elementB,  inicioPortaria));
+		        }
+		        
+		        it.remove(); // avoids a ConcurrentModificationException
+		    }
+			
+			
+			
 
-					ConnectionElement elementA = new ConnectionElement(entidadeA.entidade, entidadeA.inicioEntidade, entidadeA.fimEntidade);
-					ConnectionElement elementB = new ConnectionElement(entidadeB.entidade, entidadeB.inicioEntidade, entidadeB.fimEntidade);
-					*/
-					
-					ConnectionElement elementA =  entidadesEncontradas[k];
-					ConnectionElement elementB =  entidadesEncontradas[l];
-					
-					
-					result.add(new Connection(elementA, elementB,  inicioPortaria));
-					
-					
-					
-				}
-			}
 		
 		}
 		

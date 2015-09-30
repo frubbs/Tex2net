@@ -23,18 +23,6 @@ public class MyResourceTest extends JerseyTest {
         return new ResourceConfig(Text2Net.class);
     }
 
-    /**
-     * Test to see that the message "Got it!" is sent in the response.
-     */
-    @Test
-    public void testGetIt() {
-        final String responseMsg = target().path("text2net/3/").request().get(String.class);
-
-        System.out.println("responseMsg: " + responseMsg);
-        
-        assertEquals("Hello, Heroku!", responseMsg);
-    }
-    
     @Test
     public void testGetConnectionsLineBreak() {
     	
