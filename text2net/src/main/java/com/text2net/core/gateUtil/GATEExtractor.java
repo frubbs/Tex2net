@@ -27,8 +27,13 @@ public class GATEExtractor {
 	public static GATEExtractor getInstance() throws GateException, IOException
 	{
 		if(instance==null){
+			System.out.println("########### INICIANDO GATE ############");
 			instance = new GATEExtractor();
 		}
+		else {
+			System.out.println("########### GATE JA INICIADO ############");
+		}
+		
 		return instance;
 	}
 	
