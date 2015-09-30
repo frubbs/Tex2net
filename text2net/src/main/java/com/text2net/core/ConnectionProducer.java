@@ -12,20 +12,20 @@ import com.text2net.core.api.ConnectionElement;
 import com.text2net.core.api.Entidade;
 
 import gate.AnnotationSet;
+import gate.Document;
 import gate.SimpleFeatureMap;
 import gate.util.InvalidOffsetException;
 
 public class ConnectionProducer {
 
-	protected final Logger log = Logger.getLogger(ConnectionProducer.class);
 	
-	public List<Connection> process(AnnotatedText annotatedText) {
+	public List<Connection> process(Document annotatedText) {
 		
 		List<Connection> result = new ArrayList<Connection>();
 		
 		
 		// Listas de anotacoes detectadas pelo gate ja na ordem em que aparecem no documento
-		AnnotationSet todasAnnots = annotatedText.getDoc().getAnnotations();
+		AnnotationSet todasAnnots = annotatedText.getAnnotations();
 		List<gate.Annotation> inicioList = gate.Utils.inDocumentOrder(todasAnnots.get("Inicio"));
 		List<gate.Annotation> entidadeList = gate.Utils.inDocumentOrder(todasAnnots.get("EntidadeIdentificada"));
 		
@@ -38,7 +38,7 @@ public class ConnectionProducer {
 
 			long fimPortaria;
 			if (i == inicioList.size() - 1) { // se estivermos no ultimo inicio, o fim eh o fim e nao a proximo inicio
-				fimPortaria = annotatedText.getDoc().getContent().size().longValue();
+				fimPortaria = annotatedText.getContent().size().longValue();
 			} else	{
 				fimPortaria = inicioList.get(i + 1).getStartNode().getOffset();
 			}
@@ -46,8 +46,7 @@ public class ConnectionProducer {
 			// se chegamos aqui temos uma portaria identificada. vamos
 			// anotar as entidades nela presentes.
 
-			log.warn("Entidades no arquivo: " + entidadeList.size());
-
+	
 			List<gate.Annotation> entidadesEncontradasGate = new ArrayList<gate.Annotation>();
 
 			// List<Entidade> entidadesEncontradasNome = new ArrayList<Entidade>();
@@ -75,13 +74,13 @@ public class ConnectionProducer {
 						
 						String entidadeText;
 						try {
-								entidadeText = annotatedText.getDoc().getContent().getContent(inicioEntidade, fimEntidade).toString();
+								entidadeText = annotatedText.getContent().getContent(inicioEntidade, fimEntidade).toString();
 						} catch (InvalidOffsetException e) {
 							e.printStackTrace();
 							continue;
 						}
 						
-						SimpleFeatureMap featureMap = annEnt.getFeatures();
+					/*	SimpleFeatureMap featureMap = annEnt.getFeatures();
 
 						String particao = featureMap.get("Particao") != null ? featureMap.get("Particao").toString() : "";
 
@@ -91,6 +90,10 @@ public class ConnectionProducer {
 
 						Entidade entidade = new Entidade(entidadeText, null, particao, inicioEntidade, fimEntidade,
 								featureMap.get("kind").toString());
+								*/
+
+						Entidade entidade = new Entidade(entidadeText, null, null, inicioEntidade, fimEntidade,
+								null);
 
 						//if (entidade.tipoEntidade.equals("Orgao"))
 						//	entidadesEncontradasOrgao.put(entidade.entidade, entidade); // entidadesEncontradasOrgao.add(entidade);
@@ -132,9 +135,7 @@ public class ConnectionProducer {
 					result.add(new Connection(elementA, elementB, entidadeA.inicioEntidade - entidadeB.inicioEntidade, inicioPortaria));
 					
 					
-					if ((result.size() % 100) == 0)
-						log.warn("Processadas ligacoes[" + result.size() + "]");
-
+					
 				}
 			}
 		

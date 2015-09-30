@@ -19,12 +19,14 @@ import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionQuery;
 
+import gate.Document;
+import gate.Factory;
 import junit.framework.Assert;
 
-public class TextAnnotatorTest {
+public class TextAnnotator2Test {
 
 	
-/*
+
 	@Test
 	public void testCOmSeparadorEListadeNomes() {
 		try{
@@ -48,16 +50,18 @@ public class TextAnnotatorTest {
 			File gappFileConfigured = new ConfigurationSetup().configure(query.getLineBreak(), query.getNamesList(), "Nomes_Trecho.xapp");
 			
 			
-			AnnotatedText annotatedText = new TextAnnotator().processString(gappFileConfigured, query.getText());
+			Document annotatedText = new TextAnnotator2().processString(gappFileConfigured, query.getText());
 			
-			assertEquals(annotatedText.getDoc().getAnnotations().size(), 1743);
+			assertEquals(annotatedText.getAnnotations().size(), 1743);
 			
-			System.out.println("annotatedText.getDoc().getAnnotations().size():" + annotatedText.getDoc().getAnnotations().size());
+			System.out.println("annotatedText.getDoc().getAnnotations().size():" + annotatedText.getAnnotations().size());
 
 			List<Connection> connections = new ConnectionProducer().process(annotatedText);
 			
 			
 			String markedUpText = new TextUpMarker().markUp(annotatedText, connections);
+			
+			Factory.deleteResource(annotatedText);
 			
 			assertEquals(connections.size(), 4);
 			
@@ -90,11 +94,11 @@ public class TextAnnotatorTest {
 			File gappFileConfigured = new ConfigurationSetup().configure(query.getLineBreak(), query.getNamesList(), "Nomes_Trecho.xapp");
 			
 			
-			AnnotatedText annotatedText = new TextAnnotator().processString(gappFileConfigured, query.getText());
+			Document annotatedText = new TextAnnotator2().processString(gappFileConfigured, query.getText());
 			
-			assertEquals(annotatedText.getDoc().getAnnotations().size(), 1747);
+			assertEquals(annotatedText.getAnnotations().size(), 1747);
 			
-			System.out.println("annotatedText.getDoc().getAnnotations().size():" + annotatedText.getDoc().getAnnotations().size());
+			System.out.println("annotatedText.getDoc().getAnnotations().size():" + annotatedText.getAnnotations().size());
 
 			List<Connection> connections = new ConnectionProducer().process(annotatedText);
 			
@@ -129,11 +133,11 @@ public class TextAnnotatorTest {
 			File gappFileConfigured = new ConfigurationSetup().configure(query.getLineBreak(), query.getNamesList(), "Nomes_Trecho.xapp");
 			
 			
-			AnnotatedText annotatedText = new TextAnnotator().processString(gappFileConfigured, query.getText());
+			Document annotatedText = new TextAnnotator2().processString(gappFileConfigured, query.getText());
 			
-			assertEquals(annotatedText.getDoc().getAnnotations().size(), 1768);
+			assertEquals(annotatedText.getAnnotations().size(), 1768);
 			
-			System.out.println("annotatedText.getDoc().getAnnotations().size():" + annotatedText.getDoc().getAnnotations().size());
+			System.out.println("annotatedText.getDoc().getAnnotations().size():" + annotatedText.getAnnotations().size());
 
 			List<Connection> connections = new ConnectionProducer().process(annotatedText);
 			
@@ -166,9 +170,9 @@ public class TextAnnotatorTest {
 				File gappFileConfigured = new ConfigurationSetup().configure(query.getLineBreak(), query.getNamesList(), "Nomes_Trecho.xapp");
 				
 				
-				AnnotatedText annotatedText = new TextAnnotator().processString(gappFileConfigured, query.getText());
+				Document annotatedText = new TextAnnotator2().processString(gappFileConfigured, query.getText());
 				
-				assertEquals(annotatedText.getDoc().getAnnotations().size(), 1772);
+				assertEquals(annotatedText.getAnnotations().size(), 1772);
 				
 				//System.out.println("annotatedText.getDoc().getAnnotations().size():" + annotatedText.getDoc().getAnnotations().size());
 
@@ -189,7 +193,7 @@ public class TextAnnotatorTest {
 	}
 	
 	
-*/
+
 
 	
 	

@@ -1,0 +1,101 @@
+2015-09-30T16:28:28.232223+00:00 app[web.1]: 	at org.glassfish.jersey.server.ServerRuntime$Responder.process(ServerRuntime.java:486)
+2015-09-30T16:28:28.232224+00:00 app[web.1]: 	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:317)
+2015-09-30T16:28:28.232226+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+2015-09-30T16:28:28.232229+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+2015-09-30T16:28:28.232230+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+2015-09-30T16:28:28.232261+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+2015-09-30T16:28:28.232263+00:00 app[web.1]: 	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+2015-09-30T16:28:28.232264+00:00 app[web.1]: 	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:292)
+2015-09-30T16:28:28.232265+00:00 app[web.1]: 	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1139)
+2015-09-30T16:28:28.232267+00:00 app[web.1]: 	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:460)
+2015-09-30T16:28:28.232268+00:00 app[web.1]: 	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:386)
+2015-09-30T16:28:28.232269+00:00 app[web.1]: 	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:334)
+2015-09-30T16:28:28.232271+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:698)
+2015-09-30T16:28:28.232272+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1509)
+2015-09-30T16:28:28.232228+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+2015-09-30T16:28:28.232270+00:00 app[web.1]: 	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:221)
+2015-09-30T16:28:28.232273+00:00 app[web.1]: 	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:197)
+2015-09-30T16:28:28.232274+00:00 app[web.1]: 	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:274)
+2015-09-30T16:28:28.232275+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1489)
+2015-09-30T16:28:28.232276+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:517)
+2015-09-30T16:28:28.232277+00:00 app[web.1]: 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:138)
+2015-09-30T16:28:28.232278+00:00 app[web.1]: 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:564)
+2015-09-30T16:28:28.232279+00:00 app[web.1]: 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:213)
+2015-09-30T16:28:28.232282+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:446)
+2015-09-30T16:28:28.232283+00:00 app[web.1]: 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:175)
+2015-09-30T16:28:28.232284+00:00 app[web.1]: 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1031)
+2015-09-30T16:28:28.232285+00:00 app[web.1]: 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:136)
+2015-09-30T16:28:28.232286+00:00 app[web.1]: 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+2015-09-30T16:28:28.232280+00:00 app[web.1]: 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097)
+2015-09-30T16:28:28.232287+00:00 app[web.1]: 	at org.eclipse.jetty.server.Server.handle(Server.java:445)
+2015-09-30T16:28:28.232288+00:00 app[web.1]: 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:269)
+2015-09-30T16:28:28.232289+00:00 app[web.1]: 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:229)
+2015-09-30T16:28:28.232290+00:00 app[web.1]: 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.run(AbstractConnection.java:358)
+2015-09-30T16:28:28.232297+00:00 app[web.1]: 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532)
+2015-09-30T16:28:28.232296+00:00 app[web.1]: 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:601)
+2015-09-30T16:28:28.232299+00:00 app[web.1]: Caused by: 
+2015-09-30T16:28:28.232300+00:00 app[web.1]: java.lang.OutOfMemoryError: GC overhead limit exceeded
+2015-09-30T16:28:28.232298+00:00 app[web.1]: 	at java.lang.Thread.run(Thread.java:745)
+2015-09-30T16:28:28.232301+00:00 app[web.1]: 	at com.text2net.core.ConnectionProducer.process(ConnectionProducer.java:130)
+2015-09-30T16:28:28.232304+00:00 app[web.1]: 	at com.text2net.Text2Net.getConnectionsLineBreak(Text2Net.java:64)
+2015-09-30T16:28:28.232305+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2015-09-30T16:28:28.232303+00:00 app[web.1]: 	at com.text2net.Text2Net.processRequest(Text2Net.java:84)
+2015-09-30T16:28:28.232306+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+2015-09-30T16:28:28.232308+00:00 app[web.1]: 	at java.lang.reflect.Method.invoke(Method.java:606)
+2015-09-30T16:28:28.232310+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+2015-09-30T16:28:28.232307+00:00 app[web.1]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2015-09-30T16:28:28.232312+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+2015-09-30T16:28:28.232313+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+2015-09-30T16:28:28.232309+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+2015-09-30T16:28:28.232314+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+2015-09-30T16:28:28.232315+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+2015-09-30T16:28:28.232317+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+2015-09-30T16:28:28.232320+00:00 app[web.1]: 	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:309)
+2015-09-30T16:28:28.232321+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+2015-09-30T16:28:28.232323+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+2015-09-30T16:28:28.232318+00:00 app[web.1]: 	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+2015-09-30T16:28:28.232324+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+2015-09-30T16:28:28.232325+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+2015-09-30T16:28:28.232327+00:00 app[web.1]: 	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:292)
+2015-09-30T16:28:28.232326+00:00 app[web.1]: 	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+2015-09-30T16:28:28.232328+00:00 app[web.1]: 	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1139)
+2015-09-30T16:28:28.232322+00:00 app[web.1]: 	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+2015-09-30T16:28:28.232331+00:00 app[web.1]: 	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:386)
+2015-09-30T16:28:28.232332+00:00 app[web.1]: 	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:334)
+2015-09-30T16:28:28.232334+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:698)
+2015-09-30T16:28:28.232329+00:00 app[web.1]: 	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:460)
+2015-09-30T16:28:28.232335+00:00 app[web.1]: 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1509)
+2015-09-30T16:28:28.232336+00:00 app[web.1]: 	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:197)
+2015-09-30T16:28:28.232337+00:00 app[web.1]: 	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:274)
+2015-09-30T16:28:28.232333+00:00 app[web.1]: 	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:221)
+2015-09-30T16:29:55.152719+00:00 heroku[web.1]: State changed from up to starting
+2015-09-30T16:29:58.566701+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-09-30T16:30:01.197804+00:00 heroku[web.1]: Process exited with status 143
+2015-09-30T16:30:15.298566+00:00 heroku[web.1]: Starting process with command `java -cp target/classes:target/dependency/* com.text2net.heroku.Main`
+2015-09-30T16:30:17.773333+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2015-09-30T16:30:17.787655+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx384m -Xss512k -Dfile.encoding=UTF-8
+2015-09-30T16:30:18.663008+00:00 app[web.1]: SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2015-09-30T16:30:18.663016+00:00 app[web.1]: SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2015-09-30T16:30:19.055155+00:00 app[web.1]: 2015-09-30 16:30:19.054:INFO:oejs.Server:main: jetty-9.0.6.v20130930
+2015-09-30T16:30:19.798949+00:00 app[web.1]: 2015-09-30 16:30:19.798:INFO:oejw.StandardDescriptorProcessor:main: NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2015-09-30T16:30:22.564816+00:00 app[web.1]: 2015-09-30 16:30:22.564:INFO:oejsh.ContextHandler:main: Started o.e.j.w.WebAppContext@562151f9{/,file:/app/src/main/webapp/,AVAILABLE}
+2015-09-30T16:30:22.539385+00:00 app[web.1]: Sep 30, 2015 4:30:22 PM org.glassfish.jersey.internal.Errors logErrors
+2015-09-30T16:30:22.539391+00:00 app[web.1]: WARNING: The following warnings have been detected: WARNING: A resource, Resource{"myresource", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "myresource" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+2015-09-30T16:30:22.539393+00:00 app[web.1]: 
+2015-09-30T16:30:22.613081+00:00 app[web.1]: 2015-09-30 16:30:22.612:INFO:oejs.ServerConnector:main: Started ServerConnector@15525c8d{HTTP/1.1}{0.0.0.0:7467}
+2015-09-30T16:30:23.204305+00:00 heroku[web.1]: State changed from starting to up
+2015-09-30T16:30:31.896027+00:00 heroku[router]: at=info method=OPTIONS path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=7b5ebbd1-7edb-4b4f-818e-837cf253aebe fwd="177.96.233.13" dyno=web.1 connect=6ms service=60ms status=200 bytes=288
+2015-09-30T16:30:36.194099+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Gazeter/quebra.lst
+2015-09-30T16:30:36.212706+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Tokenizer/separadorSimples.jape
+2015-09-30T16:30:36.210690+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Gazeter/lists.def
+2015-09-30T16:30:36.209597+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Gazeter/cargos.lst
+2015-09-30T16:30:36.211676+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Tokenizer/principal.jape
+2015-09-30T16:30:36.209007+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Gazeter/conectores.lst
+2015-09-30T16:30:36.210185+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Gazeter/names.lst
+2015-09-30T16:30:36.211172+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Tokenizer/DefaultTokeniser.rules
+2015-09-30T16:30:36.213163+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Nomes_Trecho.xapp
+2015-09-30T16:30:36.212248+00:00 app[web.1]: resourceName: com/text2net/gate_customlist/Tokenizer/nomes.jape
+2015-09-30T16:30:38.257346+00:00 app[web.1]: log4j:WARN No appenders could be found for logger (com.text2net.core.TextAnnotator).
+2015-09-30T16:30:38.283147+00:00 app[web.1]: log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+2015-09-30T16:30:38.283074+00:00 app[web.1]: log4j:WARN Please initialize the log4j system properly.
+2015-09-30T16:31:03.931249+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=POST path="/text2net/1" host=aqueous-springs-2352.herokuapp.com request_id=d273ab80-14b8-4b86-bbca-a1e2a1a0f2ee fwd="177.96.233.13" dyno=web.1 connect=2ms service=31666ms status=503 bytes=0

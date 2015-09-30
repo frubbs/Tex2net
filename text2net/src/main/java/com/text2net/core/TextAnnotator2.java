@@ -1,11 +1,13 @@
 package com.text2net.core;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
 import com.text2net.core.api.AnnotatedText;
+import com.text2net.core.gateUtil.GATEExtractor;
 
 import gate.Corpus;
 import gate.CorpusController;
@@ -15,14 +17,14 @@ import gate.Gate;
 import gate.util.GateException;
 import gate.util.persistence.PersistenceManager;
 
-public class TextAnnotator {
+public class TextAnnotator2 {
 
 	private String encoding = "UTF-8";
-	protected final Logger log = Logger.getLogger(TextAnnotator.class);
+	protected final Logger log = Logger.getLogger(TextAnnotator2.class);
 	
 	
 	
-	public AnnotatedText processDoc(File gappFile, Document doc) throws Exception 
+	public Document processDoc(File gappFile, Document doc) throws Exception 
 	{
 		long startTime = System.currentTimeMillis();
 
@@ -69,30 +71,25 @@ public class TextAnnotator {
 		long stopTime = System.currentTimeMillis();
 		log.warn("Fim do programa: " + (stopTime - startTime) + " ms");
 		
-		AnnotatedText result = new AnnotatedText();
-		result.setDoc(doc);
-		return result;
+		
+		return doc;
 		
 		// Release the document, as it is no longer needed
 		//Factory.deleteResource(doc);
 
 	}
 
-	private void initGate() throws GateException {
-		// Configura variaveis de ambiente para o GATE
-		configureGateProps();
-
-		// initialise GATE - this must be done before calling any GATE APIs
-		Gate.init();
+	private void initGate() throws GateException, IOException {
+		GATEExtractor.getInstance();
 	}
 	
-	public AnnotatedText processString(File gappFile, String docString) throws Exception 
+	public Document processString(File gappFile, String docString) throws Exception 
 	{
 		// load the document (using the specified encoding if one was given)
 		//System.out.print("Processing docString ");
 		initGate();
 		Document doc = Factory.newDocument(docString);
-		AnnotatedText result =  processDoc(gappFile, doc);
+		Document result =  processDoc(gappFile, doc);
 		
 		return result;
 		
@@ -100,7 +97,7 @@ public class TextAnnotator {
 	
 	
 	
-	public AnnotatedText processFile(File gappFile, File docFile) throws Exception
+	public Document processFile(File gappFile, File docFile) throws Exception
 	{
 		// load the document (using the specified encoding if one was given)
 		//System.out.print("Processing document " + docFile + "...");

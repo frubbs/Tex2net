@@ -13,12 +13,16 @@ import javax.ws.rs.core.MediaType;
 import com.text2net.core.ConfigurationSetup;
 import com.text2net.core.ConnectionProducer;
 import com.text2net.core.TextAnnotator;
+import com.text2net.core.TextAnnotator2;
 import com.text2net.core.TextUpMarker;
 import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionElement;
 import com.text2net.core.api.ConnectionQuery;
 import com.text2net.core.api.ConnectionQueryResult;
+
+import gate.Document;
+import gate.Factory;
 
 @Path("text2net")
 public class Text2Net {
@@ -77,7 +81,7 @@ public class Text2Net {
 		
 		//System.out.println("Starting annotation with xapp: " + gappFile.getAbsolutePath());
 		
-		AnnotatedText annotatedText = new TextAnnotator().processString(gappFile, text);
+		Document annotatedText = new TextAnnotator2().processString(gappFile, text);
 		
 		//System.out.println("Finished Annotation. Starting connection detection");
 		
@@ -89,6 +93,10 @@ public class Text2Net {
 		System.out.println("marked: " + markedUpText);
 		
 		result = new ConnectionQueryResult(connections, markedUpText);
+		
+		Factory.deleteResource(annotatedText);
+		
+		
 		return result;
 	}
 	    

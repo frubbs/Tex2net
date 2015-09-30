@@ -78,7 +78,7 @@ public class ConfigurationSetup {
 			*/
 	
 	protected String[] getResourceNames() {
-		String[] result = new String[9];
+		String[] result = new String[10];
 		
 		for (int i = 0; i < resourceNames.length; i++) {
 			result[i] = resourceFolder + resourceNames[i]; 

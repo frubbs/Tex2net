@@ -92,7 +92,7 @@ public class ConfigurationSetupTest {
 	@Test 
 	public void testAlteraListaNomesTokenizer() throws IOException {
 		
-		String names = "FRANCISCO CARLOS, Carlos Eduardo,Eduardo Xavier de Souza";
+		String names = "FRANCISCO CARLOS,Carlos Eduardo,Eduardo Xavier de Souza,";
 		
 		
 

@@ -19,13 +19,13 @@ import gate.util.InvalidOffsetException;
 
 public class TextUpMarker {
 
-	public String markUp(AnnotatedText annotatedText, List<Connection> connections) {
+	public String markUp(Document annotatedText, List<Connection> connections) {
 		
 		ArrayList<ConnectionElement> elements = new ArrayList<ConnectionElement>();
 		
 		
 		// Listas de anotacoes detectadas pelo gate ja na ordem em que aparecem no documento
-		AnnotationSet todasAnnots = annotatedText.getDoc().getAnnotations();
+		AnnotationSet todasAnnots = annotatedText.getAnnotations();
 		List<gate.Annotation> inicioList = gate.Utils.inDocumentOrder(todasAnnots.get("Inicio"));
 		List<gate.Annotation> entidadeList = gate.Utils.inDocumentOrder(todasAnnots.get("EntidadeIdentificada"));
 		
@@ -57,14 +57,14 @@ public class TextUpMarker {
 		Document doc = null;
 		
 	    try {
-			doc = annotatedText.getDoc();
+			doc = annotatedText;
 			long lastIniOffsetProcessed = doc.getContent().size();
 		    for (ConnectionElement connectionElement : elements) {
 		    	
 		    	if(connectionElement.getInitialOffset() < lastIniOffsetProcessed) {
 					DocumentContent dcbefore = doc.getContent().getContent(0L, connectionElement.getInitialOffset());
 					DocumentContent dcword = doc.getContent().getContent(connectionElement.getInitialOffset(), connectionElement.getFinalOffset());
-					DocumentContent dcafter = doc.getContent().getContent(connectionElement.getFinalOffset(), annotatedText.getDoc().getContent().size());
+					DocumentContent dcafter = doc.getContent().getContent(connectionElement.getFinalOffset(), annotatedText.getContent().size());
 				/*	
 					System.out.println("dcbefore: " + dcbefore.toString());
 					System.out.println("dcword: " + dcword.toString());
