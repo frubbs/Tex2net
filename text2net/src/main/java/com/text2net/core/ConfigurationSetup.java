@@ -123,7 +123,7 @@ public class ConfigurationSetup {
 			
 			String resourceFullName = resourceFolder + resourceName;
 			
-			System.out.println("resourceName: " + resourceFullName);
+			//System.out.println("resourceName: " + resourceFullName);
 			
 			File source = new File(this.getClass().getClassLoader().getResource(resourceFullName).getPath());
 			

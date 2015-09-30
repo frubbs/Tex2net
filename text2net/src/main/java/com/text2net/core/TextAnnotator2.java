@@ -20,16 +20,10 @@ import gate.util.persistence.PersistenceManager;
 public class TextAnnotator2 {
 
 	private String encoding = "UTF-8";
-	protected final Logger log = Logger.getLogger(TextAnnotator2.class);
-	
-	
 	
 	public Document processDoc(File gappFile, Document doc) throws Exception 
 	{
-		long startTime = System.currentTimeMillis();
-
-
-
+	
 		// load the saved application
 		CorpusController application = (CorpusController) PersistenceManager.loadObjectFromFile(gappFile);
 
@@ -40,36 +34,18 @@ public class TextAnnotator2 {
 		Corpus corpus = Factory.newCorpus("DouProcessor Corpus");
 		application.setCorpus(corpus);
 
-		long arquivoStart = System.currentTimeMillis();
-
-		
 		// put the document in the corpus
 		corpus.add(doc);
 
-		// run the application
-		long appExecStart = System.currentTimeMillis();
 		application.execute();
-		long appExecEnd = System.currentTimeMillis();
-		//System.out.print("appExecute: " + (appExecEnd - appExecStart) + " ms");
-		log.warn("appExecute: " + (appExecEnd - appExecStart) + " ms");
-
+	
 		// remove the document from the corpus again
 		corpus.clear();
 
-		long portariaStart = System.currentTimeMillis();
-
-		//processador.process(docFile, doc, registroStrategy);
-
-		long portariaEnd = System.currentTimeMillis();
-		log.warn("Portaria: " + (portariaEnd - portariaStart) + " ms");
-
-
-		log.warn("done");
-		long arquivoEnd = System.currentTimeMillis();
-		log.warn("Arquivo: " + (arquivoEnd - arquivoStart) + "ms");
-
-		long stopTime = System.currentTimeMillis();
-		log.warn("Fim do programa: " + (stopTime - startTime) + " ms");
+			
+		
+		Factory.deleteResource(application);
+		Factory.deleteResource(corpus);
 		
 		
 		return doc;
@@ -106,47 +82,4 @@ public class TextAnnotator2 {
 		Document doc = Factory.newDocument(docFile.toURL(), encoding);
 		return processDoc(gappFile, doc);
 	}
-
-	private void configureGateProps()
-	{
-		Properties props = System.getProperties();
-		// props.setProperty("gate.plugins.home", ".\\plugins\\ANNIE");
-		/*props.setProperty("gate.home",
-				"C:\\Users\\rafa\\Documents\\GitHub\\analisador-dou\\AnalisadorDou\\lib\\GateAPI\\gate-7.1-build4485-ALL");
-	*/
-		
-		
-//essa eh a boa:
-		//props.setProperty("gate.home",".\\gate");
-
-		String home = this.getClass().getClassLoader().getResource("com/text2net/gate_brnames/gatehome").getPath();
-		 
-		props.setProperty("gate.home",home);
-		
-		
-		
-		// props.setProperty("gate.site.config", ".\\gate.xml");
-
-		/*
-		 * Properties props = System.getProperties(); props.setProperty("gate.plugins.home", ".\\plugins\\ANNIE");
-		 * props.setProperty("gate.home", ".\\bin\\gate.jar"); props.setProperty("gate.site.config", ".\\gate.xml");
-		 * 
-		 * String gateHomeStr = System.getProperty(Gate.GATE_HOME_PROPERTY_NAME);
-		 * 
-		 * // gateHomeStr = // Thread.currentThread().getContextClassLoader().getResource ("gate/Gate.class").toString();
-		 * 
-		 * log.warn("#########8gfah: " + gateHomeStr);
-		 */
-
-		//
-		//
-		String gateHomeStr = System.getProperty(Gate.GATE_HOME_PROPERTY_NAME);
-
-		// //gateHomeStr =
-		// Thread.currentThread().getContextClassLoader().getResource("gate/Gate.class").toString();
-		//
-		log.warn("## Gate home: " + gateHomeStr);
-
-	}
-
 }

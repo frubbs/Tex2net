@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
-import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionElement;
 import com.text2net.core.api.Entidade;
@@ -45,14 +42,9 @@ public class ConnectionProducer {
 
 			// se chegamos aqui temos uma portaria identificada. vamos
 			// anotar as entidades nela presentes.
+			//List<gate.Annotation> entidadesEncontradasGate = new ArrayList<gate.Annotation>();
 
-	
-			List<gate.Annotation> entidadesEncontradasGate = new ArrayList<gate.Annotation>();
-
-			// List<Entidade> entidadesEncontradasNome = new ArrayList<Entidade>();
 			HashMap<String, Entidade> entidadesEncontradasNome = new HashMap<String, Entidade>();
-			// List<Entidade> entidadesEncontradasOrgao = new ArrayList<Entidade>();
-			//HashMap<String, Entidade> entidadesEncontradasOrgao = new HashMap<String, Entidade>();
 
 			
 
@@ -80,18 +72,6 @@ public class ConnectionProducer {
 							continue;
 						}
 						
-					/*	SimpleFeatureMap featureMap = annEnt.getFeatures();
-
-						String particao = featureMap.get("Particao") != null ? featureMap.get("Particao").toString() : "";
-
-						// Se houver sinonimo, usa
-						entidadeText = featureMap.get("Sinonimo") != null ? featureMap.get("Sinonimo").toString()
-								: entidadeText;
-
-						Entidade entidade = new Entidade(entidadeText, null, particao, inicioEntidade, fimEntidade,
-								featureMap.get("kind").toString());
-								*/
-
 						Entidade entidade = new Entidade(entidadeText, null, null, inicioEntidade, fimEntidade,
 								null);
 
@@ -101,7 +81,7 @@ public class ConnectionProducer {
 						entidadesEncontradasNome.put(entidade.entidade, entidade);// .add(entidade);
 
 						// adiciona para remover da lista depois. se achou nessa portaria, nao estara em nenhuma outra
-						entidadesEncontradasGate.add(annEnt);
+						//entidadesEncontradasGate.add(annEnt);
 
 					}// TODO se falhar aqui ja pode sair fora. a lista esta
 						// ordenada.

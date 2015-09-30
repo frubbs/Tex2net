@@ -17,9 +17,9 @@ import gate.creole.ResourceInstantiationException;
 import gate.util.InvalidOffsetException;
 
 
-public class TextUpMarker {
+public  class TextUpMarker {
 
-	public String markUp(Document annotatedText, List<Connection> connections) {
+	public static String markUp(Document annotatedText, List<Connection> connections) {
 		
 		ArrayList<ConnectionElement> elements = new ArrayList<ConnectionElement>();
 		
@@ -89,8 +89,7 @@ public class TextUpMarker {
 			//	continue;
 			}
 			
-	    	System.out.println("opa: " + doc.getContent().toString());
-		
+	    	
 		
 		// TODO Auto-generated method stub
 		return doc.getContent().toString();

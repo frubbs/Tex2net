@@ -12,7 +12,6 @@ import javax.ws.rs.core.MediaType;
 
 import com.text2net.core.ConfigurationSetup;
 import com.text2net.core.ConnectionProducer;
-import com.text2net.core.TextAnnotator;
 import com.text2net.core.TextAnnotator2;
 import com.text2net.core.TextUpMarker;
 import com.text2net.core.api.AnnotatedText;
@@ -87,10 +86,8 @@ public class Text2Net {
 		
 		List<Connection> connections = new ConnectionProducer().process(annotatedText);
 		
+		String markedUpText = TextUpMarker.markUp(annotatedText, connections);
 		
-		String markedUpText = new TextUpMarker().markUp(annotatedText, connections);
-		
-		System.out.println("marked: " + markedUpText);
 		
 		result = new ConnectionQueryResult(connections, markedUpText);
 		
