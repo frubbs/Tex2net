@@ -86,6 +86,8 @@ public class Text2Net {
 		
 		String markedUpText = new TextUpMarker().markUp(annotatedText, connections);
 		
+		System.out.println("marked: " + markedUpText);
+		
 		result = new ConnectionQueryResult(connections, markedUpText);
 		return result;
 	}

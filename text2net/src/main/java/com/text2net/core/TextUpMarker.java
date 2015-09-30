@@ -9,6 +9,7 @@ import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionElement;
 
+import gate.AnnotationSet;
 import gate.Document;
 import gate.DocumentContent;
 import gate.Factory;
@@ -22,15 +23,26 @@ public class TextUpMarker {
 		
 		ArrayList<ConnectionElement> elements = new ArrayList<ConnectionElement>();
 		
-		for (Connection connection : connections) {
-			elements.add(connection.getElementA()); //Node
-			elements.add(connection.getElementB()); //Node
-			elements.add(new ConnectionElement("Separator", connection.getTextChunkID(), connection.getTextChunkID()+1 ));
+		
+		// Listas de anotacoes detectadas pelo gate ja na ordem em que aparecem no documento
+		AnnotationSet todasAnnots = annotatedText.getDoc().getAnnotations();
+		List<gate.Annotation> inicioList = gate.Utils.inDocumentOrder(todasAnnots.get("Inicio"));
+		List<gate.Annotation> entidadeList = gate.Utils.inDocumentOrder(todasAnnots.get("EntidadeIdentificada"));
+		
+		for (gate.Annotation annotation : inicioList) {
+			long inicio = annotation.getStartNode().getOffset();
+			long fim = annotation.getEndNode().getOffset();
 			
-			System.out.println("elements: " + connection.getElementA());
-			System.out.println("elements: " + connection.getElementB());
-			
+			elements.add(new ConnectionElement("Separator", inicio, fim ));
 		}
+		
+		for (gate.Annotation annotation : entidadeList) {
+			long inicio = annotation.getStartNode().getOffset();
+			long fim = annotation.getEndNode().getOffset();
+			
+			elements.add(new ConnectionElement("Entity", inicio, fim ));
+		}
+		
 
 		Collections.sort( elements, new Comparator<ConnectionElement>() {
 
@@ -77,7 +89,7 @@ public class TextUpMarker {
 			//	continue;
 			}
 			
-	    	
+	    	System.out.println("opa: " + doc.getContent().toString());
 		
 		
 		// TODO Auto-generated method stub
