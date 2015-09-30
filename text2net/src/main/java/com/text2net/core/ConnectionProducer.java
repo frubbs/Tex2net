@@ -44,7 +44,7 @@ public class ConnectionProducer {
 			// anotar as entidades nela presentes.
 			//List<gate.Annotation> entidadesEncontradasGate = new ArrayList<gate.Annotation>();
 
-			HashMap<String, Entidade> entidadesEncontradasNome = new HashMap<String, Entidade>();
+			HashMap<String, ConnectionElement> entidadesEncontradasNome = new HashMap<String, ConnectionElement>();
 
 			
 
@@ -72,13 +72,12 @@ public class ConnectionProducer {
 							continue;
 						}
 						
-						Entidade entidade = new Entidade(entidadeText, null, null, inicioEntidade, fimEntidade,
-								null);
+						ConnectionElement entidade = new ConnectionElement(entidadeText, inicioEntidade, fimEntidade);
 
 						//if (entidade.tipoEntidade.equals("Orgao"))
 						//	entidadesEncontradasOrgao.put(entidade.entidade, entidade); // entidadesEncontradasOrgao.add(entidade);
 					//	else
-						entidadesEncontradasNome.put(entidade.entidade, entidade);// .add(entidade);
+						entidadesEncontradasNome.put(entidade.getName(), entidade);// .add(entidade);
 
 						// adiciona para remover da lista depois. se achou nessa portaria, nao estara em nenhuma outra
 						//entidadesEncontradasGate.add(annEnt);
@@ -98,21 +97,25 @@ public class ConnectionProducer {
 				 * ); break; }
 				 */
 			}
-			Entidade[] entidadesEncontradas = entidadesEncontradasNome.values().toArray(new Entidade[0]);
+			ConnectionElement[] entidadesEncontradas = entidadesEncontradasNome.values().toArray(new ConnectionElement[0]);
 			
-			int countProcessed = 0;
 			for (int k = 0; k < entidadesEncontradas.length; k++)
 			{
 				for (int l = k + 1; l < entidadesEncontradas.length; l++)
 				{
-
+/*
 					Entidade entidadeA = entidadesEncontradas[k];
 					Entidade entidadeB = entidadesEncontradas[l];
 
 					ConnectionElement elementA = new ConnectionElement(entidadeA.entidade, entidadeA.inicioEntidade, entidadeA.fimEntidade);
 					ConnectionElement elementB = new ConnectionElement(entidadeB.entidade, entidadeB.inicioEntidade, entidadeB.fimEntidade);
+					*/
 					
-					result.add(new Connection(elementA, elementB, entidadeA.inicioEntidade - entidadeB.inicioEntidade, inicioPortaria));
+					ConnectionElement elementA =  entidadesEncontradas[k];
+					ConnectionElement elementB =  entidadesEncontradas[l];
+					
+					
+					result.add(new Connection(elementA, elementB,  inicioPortaria));
 					
 					
 					

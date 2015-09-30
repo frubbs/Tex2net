@@ -34,7 +34,7 @@ public class Text2Net {
 		ConnectionElement elementB = new ConnectionElement("Elemneto testeb", 554, 564);
 		
 		
-		return new Connection(elementA, elementB, 256L, id);
+		return new Connection(elementA, elementB, id);
 	}
 	/*
 	

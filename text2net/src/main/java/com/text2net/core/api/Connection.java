@@ -5,7 +5,7 @@ public class Connection {
 	ConnectionElement elementA;
 	ConnectionElement elementB;
 	
-	long distance; //co-word distance;
+	//long distance; //co-word distance;
 	
 	long textChunkID; //reference to a chunk where the connection was found
 
@@ -13,11 +13,10 @@ public class Connection {
 		
 	}
 	
-	public Connection(ConnectionElement elementA, ConnectionElement elementB, long distance, long textChunkID) {
+	public Connection(ConnectionElement elementA, ConnectionElement elementB,  long textChunkID) {
 		super();
 		this.elementA = elementA;
 		this.elementB = elementB;
-		this.distance = distance;
 		this.textChunkID = textChunkID;
 	}
 
@@ -38,11 +37,7 @@ public class Connection {
 	}
 
 	public long getDistance() {
-		return distance;
-	}
-
-	public void setDistance(long distance) {
-		this.distance = distance;
+		return elementA.initialOffset - elementB.initialOffset;
 	}
 
 	public long getTextChunkID() {
