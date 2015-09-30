@@ -28,7 +28,7 @@ public class ConnectionQuery {
 		return namesList;
 	}
     public String getText() {
-		return getLineBreak() + " " + text + " " + getLineBreak();
+		return getLineBreak() + " " + text.replace("-", " - ") + " " + getLineBreak();
 	}
     
 	public void setLineBreak(String lineBreak) {

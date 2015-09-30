@@ -26,6 +26,10 @@ public class TextUpMarker {
 			elements.add(connection.getElementA()); //Node
 			elements.add(connection.getElementB()); //Node
 			elements.add(new ConnectionElement("Separator", connection.getTextChunkID(), connection.getTextChunkID()+1 ));
+			
+			System.out.println("elements: " + connection.getElementA());
+			System.out.println("elements: " + connection.getElementB());
+			
 		}
 
 		Collections.sort( elements, new Comparator<ConnectionElement>() {

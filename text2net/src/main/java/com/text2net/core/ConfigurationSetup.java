@@ -55,6 +55,7 @@ public class ConfigurationSetup {
 	
 	private String resourceNames[] = {"Gazeter/quebra.lst",
 			"Gazeter/conectores.lst",
+			"Gazeter/cargos.lst",
 			"Gazeter/names.lst",
 			"Gazeter/lists.def",
 			"Tokenizer/DefaultTokeniser.rules",

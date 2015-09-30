@@ -4,8 +4,8 @@ angular.module('Text2net', ["ngSanitize"])
 		
 		
 		
-	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
-//	var targetURL = 'http://localhost:8081/text2net/text2net/1';
+//	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
+	var targetURL = 'http://localhost:8081/text2net/text2net/1';
 	 
 	  $scope.submitForm = function() {
 			console.log('samba');
@@ -32,6 +32,10 @@ angular.module('Text2net', ["ngSanitize"])
 		
 		if($scope.rdNameList == 'br')
 			$scope.connectionQuery.namesList = '';
+		
+		if(!$scope.cbLineBreak)
+			$scope.connectionQuery.lineBreak = '';
+		
 		
 		
 		$http.post(targetURL, $scope.connectionQuery).

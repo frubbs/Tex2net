@@ -75,6 +75,20 @@ span.caseArtfact, span.caseImage {
 padding-right: 15px;
 }
 
+p.contact-left{
+	padding: 45px;
+
+}
+
+.case-available{
+	background: #00AEEF;
+}
+
+.case-unavailable{
+	background: #FD3B01;
+}
+
+
 </style>		
 		
 		
@@ -247,44 +261,55 @@ padding-right: 15px;
 			<div class="container">
 				<div class="head text-center">
 						<h3><span> </span> Use cases</h3>
-						<p>These are just a few examples of how the tools provided here can be used. The red ones are not supported yet, but will shortly be, in further releases.</p>
+						<p>These are just a few examples of how the tools provided here can be used. The red ones are not supported yet, but will shortly be, in further releases. For some cases, configuration and sample text suggestions are provided.</p>
 				</div>
 			<!----start-testmonial-time-line---->
 			<div class="test-monial-time-line">
 				<div class="col-md-6 test-monial-time-line-left">
 					<div class="test-monial-time-line-grid test-monial-time-line-grid-l1">
 						<div class="col-md-9 test-monial-time-line-left-text">
-							<p>Here we process political discourses trying to find relationship between people cited in those speeches. The hypothesis is if two individuals are often cited together (or closely) in a speech, they are probably somehow connected.</p>
-							<span class="caseArtfact"><a href="Cases/Political/sample.txt">Sample text</a></span>
-							<span class="caseImage"><a href="Cases/Political/setup.png">Setup and expected results</a></span>
+								<p>Crime reports with identified criminal names may contain infomation about how they probably collaborate or form gangs. Using these recors as input text and providing a list of known criminals would be enough to map an existing crime network.</p>
 						</div>
 						<div class="col-md-3 test-monial-time-line-left-pic">
 							<!--<img src="web/images/pic1.jpg" title="name" /> -->
-							<a href="#">Political discourse analysis</a>
+							<a href="#">Police crime reports</a>
 						</div>
-						<span class="grid-point"> </span>
+						<span class="grid-point case-available"> </span>
+					</div>
+					<div class="test-monial-time-line-grid test-monial-time-line-grid-l2">
+						<div class="col-md-9 test-monial-time-line-left-text">
+								<p>You can save your e-mails to files and use their text to map a network of people (or key-words/themes) within your company context.</p>
+						</div>
+						<div class="col-md-3 test-monial-time-line-left-pic">
+							<!--<img src="web/images/pic1.jpg" title="name" /> -->
+							<a href="#">Email body analysis</a>
+						</div>
+						<span class="grid-point case-unavailable"> </span>
 					</div>
 				</div>
 				<div class="col-md-6 test-monial-time-line-right">
 					<div class="test-monial-time-line-grid test-monial-time-line-grid-r1">
 						<div class="col-md-3 test-monial-time-line-left-pic">
-							<img src="web/images/pic2.png" title="name" />
-							<a href="#">John Doe</a>
+							<a href="#">Political discourse analysis</a>
 						</div>
+						
 						<div class="col-md-9 test-monial-time-line-left-text">
-							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
+						<p>Here we process political discourses trying to find relationship between people cited in those speeches. The hypothesis is if two individuals are often cited together (or closely) in a speech, they are probably somehow connected.</p>
+							<span class="caseArtfact"><a href="Cases/Political/sample.txt">Sample text</a></span>
+							<span class="caseImage"><a href="Cases/Political/setup.png">Setup and expected results</a></span>
 						</div>
-						<span class="grid-point grid-point1"> </span>
+						<span class="grid-point grid-point1 case-available"> </span>
 					</div>
 					<div class="test-monial-time-line-grid test-monial-time-line-grid-r2">
 						<div class="col-md-3 test-monial-time-line-left-pic">
-							<img src="web/images/pic2.png" title="name" />
-							<a href="#">John Doe</a>
+							<a href="#">Official Gazzete Acts</a>
 						</div>
 						<div class="col-md-9 test-monial-time-line-left-text">
-							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
+							<p>Using official publications of govenment acts it is possible to map networks between Minister of States. The hypothesis is that if they make many acts together, they work more closely and are, somehow, connected.</p>
+							<span class="caseArtfact"><a href="Cases/InterMinister/sample.txt">Sample text</a></span>
+							<span class="caseImage"><a href="Cases/InterMinister/setup.png">Setup and expected results</a></span>
 						</div>
-						<span class="grid-point grid-point1"> </span>
+						<span class="grid-point grid-point1 case-available"> </span>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -292,7 +317,7 @@ padding-right: 15px;
 					<span> </span>
 				</div>
 				<div class="clearfix"> </div>
-				<a class="more-testmonial-time-line" href="#"> <span>More</span></a>
+				<!-- <a class="more-testmonial-time-line" href="#"> <span>More</span></a> -->
 			</div>
 			</div>
 		</div>
@@ -301,7 +326,7 @@ padding-right: 15px;
 		
 		
 		
-		
+			
 			<!----start-contact---->
 				<div id="plaintext2net" class="contact" ng-app="Text2net"> 
 						<div class="contact-grids" ng-controller='ConnectionCtrl'>
@@ -321,19 +346,24 @@ padding-right: 15px;
 
 									<p>Insert text data:</p>
 									<i class="fa fa-connectdevelop"> </i> Network name: <input class="form-control" ng-model="connectionQuery.name" type="text" value="Give a name to the network" >
-									<i class="fa fa-chain-broken"> </i> Text separator: <input class="form-control" ng-model="connectionQuery.lineBreak" type="text" value="Give a name to the network" >
-									<i class="fa fa-users"> </i>
-									<div class="input-group ">
-										<label class="radio-inline">
-											<input type="radio" value="br" ng-model="nameList">
+									<i class="fa fa-chain-broken"> </i>
+			
+									Define Text separator: <input type="checkbox" ng-model="cbLineBreak"> 
+									<p/>
+									<input class="form-control" ng-model="connectionQuery.lineBreak" type="text" ng-show="cbLineBreak == true" >
+									<div class="input-group "> 
+									
+									<i class="fa fa-users"> </i> Nodes:
+									   	<label class="radio-inline">
+											<input type="radio" value="br" ng-model="rdNameList">
 											Brazilian Full Names
 										</label>
 										<label class="radio-inline">
-											<input type="radio" ng-value="specialValue" ng-model="nameList">
+											<input type="radio" ng-value="specialValue" ng-model="rdNameList">
 											Custom List
 										</label>
 									</div>
-									<textarea class="form-control" ng-model="connectionQuery.namesList" ng-show="nameList != 'br'"></textarea>
+									<textarea class="form-control" ng-model="connectionQuery.namesList" ng-show="rdNameList != 'br'"></textarea>
 									<i class="fa fa-pencil-square-o"> </i> Text:<textarea class="form-control" ng-model="connectionQuery.text"></textarea>
 									 
 									<!--TODO passar conectionsQuery como parametro-->
@@ -360,13 +390,10 @@ padding-right: 15px;
 						</div>
 				</div>
 			<!----//End-contact---->
-		<!----start-footer----
+	
+		<!----start-footer---->
 		<div class="footer">
-			<div class="container">
-				<div class="footer-left">
-					<a href="#"><img src="web/images/footer-logo.png" title="mabur" /></a>
-					<p>Template by <a href="http://w3layouts.com/">W3layouts</a></p>
-				</div>
+			
 				<script type="text/javascript">
 				$(document).ready(function() {
 					/*
