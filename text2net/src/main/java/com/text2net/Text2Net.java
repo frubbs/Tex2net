@@ -66,6 +66,11 @@ public class Text2Net {
 			File gappFileConfigured = new ConfigurationSetup().configure(connectionQuery.getLineBreak(), connectionQuery.getNamesList(), "Nomes_Trecho.xapp");
 			result = processRequest(connectionQuery.getText(), gappFileConfigured);
 		}
+		catch (OutOfMemoryError o){
+			o.printStackTrace();
+			result = new ConnectionQueryResult();
+			result.setMarkedUpText("ERROR: System out of memory. We are working hard to increase system eficiency. For now, wait a few minutes and try submitting a shorter text.");
+		}
 		catch(Exception e){
 			e.printStackTrace();
 		}

@@ -5,7 +5,7 @@ public class Connection {
 	ConnectionElement elementA;
 	ConnectionElement elementB;
 	
-	//long distance; //co-word distance;
+	long distance; //co-word distance;
 	
 	long textChunkID; //reference to a chunk where the connection was found
 
