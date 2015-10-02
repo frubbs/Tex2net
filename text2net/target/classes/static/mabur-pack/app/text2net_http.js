@@ -4,8 +4,8 @@ angular.module('Text2net', ["ngSanitize"])
 		
 		
 		
-	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
-//	var targetURL = 'http://localhost:8081/text2net/text2net/1';
+//	var targetURL = 'http://aqueous-springs-2352.herokuapp.com/text2net/1';
+	var targetURL = 'http://localhost:8081/text2net/text2net/1';
 	 
 	  $scope.submitForm = function() {
 			console.log('samba');
@@ -20,7 +20,7 @@ angular.module('Text2net', ["ngSanitize"])
     });
 	
 	
-    $scope.processText = {text:'O @@DOUBLE_NW@@ PORTARIA N 4.220, DE 13 DE DEZEMBRO DE 2012 @@DOUBLE_NW@@ Em Aditamento da Portaria Nº 0019 de 12 de Abril de 2010O PROCURADOR DO TRABALHO, que esta subscreve, nouso de suas atribuições legais,Considerando o teor dos fatosrelatados no procedimento nºPP 003183.2009.01.003/9 - 301, instaurado a partir de duas denúnciasanônimas formuladas nestaProcuradoria Regional do Trabalho da 1ªRegião Procuradoria do Trabalho no Município de Campos dosGoytacazes, dando notícia de queas denunciadas, LIMPORT COMÉRCIO E SERVIÇOS LTDA e PORTLIMP COMÉRCIO E SERVIÇOS LTDA., vêm praticando irregularidades trabalhistas,concernentes à submissão dos trabalhadores a excesso de jornada de trabalho, pagamento do adicional noturno de formaincorreta, pagamentode férias de forma incorreta, não pagamento do trabalho realizado emferiados e imposição aos trabalhadores queos recibos sejam assinadosantes dos depósitos dos respectivos salários;Considerando o disposto nos arts. 127 e 129 da ConstituiçãodaRepública, art. 6º, VII e 84, III, da Lei Complementar nº 75/93 eart. 8º, §1º da Lei nº 7347/85, que atribuem aoMinistério Público doTrabalho a defesa dos interesses difusos, coletivos, sociais e individuais indisponíveis dos trabalhadores,resolve:Retificar o objeto investigado no Inquérito Civil Público nº003183.2009.01.003/9 - 301, para incluir o temaausência de intervalointrajornada. Continuará presidindo o inquérito o Procurador do Trabalho, DR. FRANCISCO CARLOS DA SILVA ARAÚJO,que poderá ser secretariado pelos servidores Carlos Eduardo Jacintho Lobo e Eduardo Xavier de Souza, Analistas Processuais.@@DOUBLE_NW@@FRANCISCO CARLOS DA SILVA ARAÚJO @@DOUBLE_NW@@Poder Judiciário.@@DOUBLE_NW@@TRIBUNAL REGIONAL DO TRABALHO13ªREGIÃO@@DOUBLE_NW@@ATO N 457, DE 12 DE DEZEMBRO DE 2012@@DOUBLE_NW@@O DESEMBARGADOR PRESIDENTE DO '};
+    $scope.processText = {text:'O @@DOUBLE_NW@@ PORTARIA N 4.220, DE 13 DE DEZEMBRO DE 2012 @@DOUBLE_NW@@ Em Aditamento da Portaria NÂº 0019 de 12 de Abril de 2010O PROCURADOR DO TRABALHO, que esta subscreve, nouso de suas atribuiÃ§Ãµes legais,Considerando o teor dos fatosrelatados no procedimento nÂºPP 003183.2009.01.003/9 - 301, instaurado a partir de duas denÃºnciasanÃ´nimas formuladas nestaProcuradoria Regional do Trabalho da 1ÂªRegiÃ£o Procuradoria do Trabalho no MunicÃ­pio de Campos dosGoytacazes, dando notÃ­cia de queas denunciadas, LIMPORT COMÃ‰RCIO E SERVIÃ‡OS LTDA e PORTLIMP COMÃ‰RCIO E SERVIÃ‡OS LTDA., vÃªm praticando irregularidades trabalhistas,concernentes Ã  submissÃ£o dos trabalhadores a excesso de jornada de trabalho, pagamento do adicional noturno de formaincorreta, pagamentode fÃ©rias de forma incorreta, nÃ£o pagamento do trabalho realizado emferiados e imposiÃ§Ã£o aos trabalhadores queos recibos sejam assinadosantes dos depÃ³sitos dos respectivos salÃ¡rios;Considerando o disposto nos arts. 127 e 129 da ConstituiÃ§Ã£odaRepÃºblica, art. 6Âº, VII e 84, III, da Lei Complementar nÂº 75/93 eart. 8Âº, Â§1Âº da Lei nÂº 7347/85, que atribuem aoMinistÃ©rio PÃºblico doTrabalho a defesa dos interesses difusos, coletivos, sociais e individuais indisponÃ­veis dos trabalhadores,resolve:Retificar o objeto investigado no InquÃ©rito Civil PÃºblico nÂº003183.2009.01.003/9 - 301, para incluir o temaausÃªncia de intervalointrajornada. ContinuarÃ¡ presidindo o inquÃ©rito o Procurador do Trabalho, DR. FRANCISCO CARLOS DA SILVA ARAÃšJO,que poderÃ¡ ser secretariado pelos servidores Carlos Eduardo Jacintho Lobo e Eduardo Xavier de Souza, Analistas Processuais.@@DOUBLE_NW@@FRANCISCO CARLOS DA SILVA ARAÃšJO @@DOUBLE_NW@@Poder JudiciÃ¡rio.@@DOUBLE_NW@@TRIBUNAL REGIONAL DO TRABALHO13ÂªREGIÃƒO@@DOUBLE_NW@@ATO N 457, DE 12 DE DEZEMBRO DE 2012@@DOUBLE_NW@@O DESEMBARGADOR PRESIDENTE DO '};
     
 	$scope.queryResults = [];
 	
@@ -29,14 +29,6 @@ angular.module('Text2net', ["ngSanitize"])
 		$scope.loading = true; //loading
 		
 		//var submitText = '@@DOUBLE_NW@@  ' + $scope.connectionQuery.text + '  @@DOUBLE_NW@@';
-		
-		if($scope.rdNameList == 'br')
-			$scope.connectionQuery.namesList = '';
-		
-		if(!$scope.cbLineBreak)
-			$scope.connectionQuery.lineBreak = '';
-		
-		
 		
 		$http.post(targetURL, $scope.connectionQuery).
 			then(function(response) {

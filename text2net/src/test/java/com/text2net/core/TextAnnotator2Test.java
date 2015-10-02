@@ -9,23 +9,59 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.text2net.core.api.AnnotatedText;
 import com.text2net.core.api.Connection;
 import com.text2net.core.api.ConnectionQuery;
+import com.text2net.core.gateUtil.GATEExtractor;
 
+import gate.AnnotationSet;
 import gate.Document;
 import gate.Factory;
-import junit.framework.Assert;
 
 public class TextAnnotator2Test {
 
 	
+	
+	@Test 
+	public void testProcessDoc() throws Exception{
+		
+		
+		String filePath = this.getClass().getClassLoader().getResource("com/text2net/gate/Nomes_Trecho.xapp").getPath().substring(1);
+		
+		File gappFile = new File(filePath);
+		
+		String docFilePath = this.getClass().getClassLoader().getResource("com/text2net/discursoSample/2012.txt").getPath().substring(1);
+		
+		System.out.println(docFilePath);
+		File file = new File(docFilePath);
+		
+		
+		GATEExtractor.getInstance();
+		Document doc = Factory.newDocument(file.toURL(), "UTF-8");
+		
+		Document annotatedDoc = new TextAnnotator2().processDoc(gappFile, doc);
+		
+		
+		Assert.assertEquals(36874, annotatedDoc.getAnnotations().size());
+		
+		AnnotationSet todasAnnots = annotatedDoc.getAnnotations();
+		List<gate.Annotation> inicioList = gate.Utils.inDocumentOrder(todasAnnots.get("Inicio"));
+		List<gate.Annotation> entidadeList = gate.Utils.inDocumentOrder(todasAnnots.get("EntidadeIdentificada"));
+		
+		
+		Assert.assertEquals(13, inicioList.size());
+		Assert.assertEquals(125, entidadeList.size());
+
+		Factory.deleteResource(annotatedDoc);
+	}
 
 	@Test
 	public void testCOmSeparadorEListadeNomes() {

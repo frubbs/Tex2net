@@ -58,13 +58,13 @@ public  class TextUpMarker {
 		
 	    try {
 			doc = annotatedText;
+			String newText = "";
 			long lastIniOffsetProcessed = doc.getContent().size();
 		    for (ConnectionElement connectionElement : elements) {
 		    	
 		    	if(connectionElement.getInitialOffset() < lastIniOffsetProcessed) {
-					DocumentContent dcbefore = doc.getContent().getContent(0L, connectionElement.getInitialOffset());
 					DocumentContent dcword = doc.getContent().getContent(connectionElement.getInitialOffset(), connectionElement.getFinalOffset());
-					DocumentContent dcafter = doc.getContent().getContent(connectionElement.getFinalOffset(), annotatedText.getContent().size());
+					DocumentContent dcafter = doc.getContent().getContent(connectionElement.getFinalOffset(), lastIniOffsetProcessed);
 				/*	
 					System.out.println("dcbefore: " + dcbefore.toString());
 					System.out.println("dcword: " + dcword.toString());
@@ -76,18 +76,24 @@ public  class TextUpMarker {
 					if(connectionElement.getName().equals("Separator"))
 						cssClass = "separator";
 					
-					doc = Factory.newDocument(dcbefore.toString() + "<span class=\""+ cssClass +"\">" + dcword.toString() + "</span>" + dcafter.toString());
 					
+					newText = "<span class=\""+ cssClass +"\">" + dcword.toString() + "</span>" + dcafter.toString() + newText;
 					
 					lastIniOffsetProcessed = connectionElement.getInitialOffset(); 
 					//System.out.println("doc: " + doc.toString());
 		    	}
-					
-		    	}		
-			} catch (Exception e) {
+		    }
+			DocumentContent dcbefore = doc.getContent().getContent(0L, lastIniOffsetProcessed);
+			
+			newText = dcbefore.toString() + newText;
+
+		    
+		    
+		    doc = Factory.newDocument(newText);
+		} catch (Exception e) {
 				e.printStackTrace();
-			//	continue;
-			}
+		//	continue;
+		}
 			
 	    	
 		

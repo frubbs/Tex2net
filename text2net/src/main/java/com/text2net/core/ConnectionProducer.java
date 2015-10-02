@@ -115,13 +115,8 @@ public class ConnectionProducer {
 		        
 		        it.remove(); // avoids a ConcurrentModificationException
 		    }
-			
-			
-			
-
-		
 		}
-		
+		System.out.println("####### FIM do connection producer ##########");
 		return result;
 		
 	}
