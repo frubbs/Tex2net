@@ -825,12 +825,12 @@ nav a#pull {
 	background:#394346;
 }
 .contact-grids{
-	position: absolute;
+	/*position: absolute;*/
 	top: 0;
 	width: 100%;
 }
 .contact{
-	position: relative;
+	/*position: relative;*/
 	margin-top: 7em;
 }
 .contact-left{

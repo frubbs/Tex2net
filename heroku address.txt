@@ -1,0 +1,14 @@
+https://aqueous-springs-2352.herokuapp.com/ | https://git.heroku.com/aqueous-springs-2352.git
+
+git push heroku master
+
+git commit -m "boa versao"
+
+git add . --all
+
+heroku restart --app aqueous-springs-2352
+
+heroku logs -n 1500  --app aqueous-springs-2352
+
+
+http://localhost:8081/mabur-pack/index.html
