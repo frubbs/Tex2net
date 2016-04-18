@@ -1,18 +1,23 @@
 Manifest-Version: 1.0
-Class-Path: ant-1.9.3.jar apache-mime4j-dom-0.7.2.jar bcprov-jdk15-1.4
- 5.jar xercesImpl-2.9.1.jar aopalliance-1.0.jar jackson-databind-2.3.2
- .jar pdfbox-1.8.8.jar java-getopt-1.0.13.jar jaxen-1.1.6.jar apache-m
- ime4j-core-0.7.2.jar commons-codec-1.9.jar poi-ooxml-3.11.jar stax2-a
- pi-3.1.1.jar woodstox-core-lgpl-4.2.0.jar spring-aop-2.5.6.SEC01.jar 
- ant-launcher-1.9.3.jar tika-parsers-1.7.jar poi-3.11.jar gate-asm-5.0
- .3.jar nekohtml-1.9.14.jar hamcrest-core-1.3.jar spring-beans-2.5.6.S
- EC01.jar poi-ooxml-schemas-3.11.jar commons-compress-1.8.1.jar xmlbea
- ns-2.6.0.jar junit-4.11.jar jempbox-1.8.8.jar poi-scratchpad-3.11.jar
-  xmlunit-1.5.jar xstream-1.4.7.jar jackson-core-2.3.2.jar log4j-1.2.1
- 7.jar commons-io-2.4.jar fontbox-1.8.8.jar commons-logging-1.1.3.jar 
- jackson-annotations-2.3.0.jar bcmail-jdk15-1.45.jar jdom-1.1.3.jar ti
- ka-core-1.7.jar joda-time-2.6.jar spring-core-2.5.6.SEC01.jar commons
- -lang-2.6.jar gate-compiler-jdt-4.3.2-P20140317-1600.jar gate-core-8.
- 1.jar xpp3-1.1.4c.jar ivy-2.3.0.jar flying-saucer-core-9.0.4.jar
+Class-Path: commons-io-2.4.jar commons-collections-3.2.1.jar httpclien
+ t-4.1.1.jar ivy-2.3.0.jar org.ektorp-1.2.2.jar tika-core-1.7.jar jack
+ son-databind-2.3.2.jar log4j-1.2.17.jar xmlbeans-2.6.0.jar bcprov-jdk
+ 15-1.45.jar ant-launcher-1.9.3.jar slf4j-api-1.6.1.jar hamcrest-core-
+ 1.3.jar aspectjweaver-1.6.9.jar jackson-mapper-asl-1.8.6.jar org.ekto
+ rp.spring-1.2.2.jar spring-context-3.2.16.RELEASE.jar jempbox-1.8.8.j
+ ar stax2-api-3.1.1.jar junit-4.11.jar java-getopt-1.0.13.jar jackson-
+ core-2.3.2.jar spring-beans-3.2.16.RELEASE.jar commons-compress-1.8.1
+ .jar poi-ooxml-3.11.jar tika-parsers-1.7.jar jdom-1.1.3.jar gate-comp
+ iler-jdt-4.3.2-P20140317-1600.jar spring-core-3.2.16.RELEASE.jar gate
+ -core-8.1.jar ant-1.9.3.jar pdfbox-1.8.8.jar bcmail-jdk15-1.45.jar po
+ i-ooxml-schemas-3.11.jar gate-asm-5.0.3.jar httpclient-cache-4.1.1.ja
+ r spring-expression-3.2.16.RELEASE.jar flying-saucer-core-9.0.4.jar h
+ ttpcore-4.1.jar apache-mime4j-dom-0.7.2.jar lombok-1.16.8.jar xstream
+ -1.4.7.jar xpp3-1.1.4c.jar aopalliance-1.0.jar apache-mime4j-core-0.7
+ .2.jar spring-aop-2.5.6.SEC01.jar commons-logging-1.1.3.jar jackson-c
+ ore-asl-1.8.6.jar nekohtml-1.9.14.jar poi-3.11.jar commons-codec-1.9.
+ jar jaxen-1.1.6.jar xercesImpl-2.9.1.jar commons-lang-2.6.jar fontbox
+ -1.8.8.jar jackson-annotations-2.3.0.jar joda-time-2.6.jar woodstox-c
+ ore-lgpl-4.2.0.jar poi-scratchpad-3.11.jar xmlunit-1.5.jar
 Main-Class: com.text2net.console.run.ProcessFragmentsForConnections
 

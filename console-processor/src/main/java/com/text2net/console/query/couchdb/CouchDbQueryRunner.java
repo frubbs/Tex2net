@@ -56,7 +56,7 @@ public class CouchDbQueryRunner {
 
         //System.out.println(net.toString());
         try {
-            Files.write(Paths.get("C:\\Users\\rafa\\Documents\\Doutorado\\Redes Dou\\Teste2.net"), net.toString().getBytes());
+            Files.write(Paths.get("C:\\Users\\rafa\\Documents\\Doutorado\\Redes Dou\\Teste3.net"), net.toString().getBytes());
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -82,7 +82,12 @@ public class CouchDbQueryRunner {
             edges.add((vertices.indexOf(elementA) + 1) + " " + (vertices.indexOf(elementB) + 1));
         }
         catch (Exception e){
-            e.printStackTrace();
+           // e.printStackTrace();
+            System.out.println("ERRRO:" + registro);
+            System.out.println(registro.indexOf(ALabel));
+            System.out.println(registro.indexOf(ALabelEnd));
+            System.out.println(registro.indexOf(BLabel));
+            System.out.println(registro.indexOf(BLabelEnd));
         }
 
     }

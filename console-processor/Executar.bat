@@ -2,7 +2,7 @@ cls
 @echo off 
 setlocal enableDelayedExpansion 
 
-set MYDIR=C:\Users\rafa\Documents\Artigos\Rede_da_presidente\DouDownloaded\txt2
+set MYDIR=C:\Users\rafa\Documents\Artigos\DatasetDOU\txt
 
 
 
@@ -16,7 +16,7 @@ for /F %%D in ('dir /a:d /b %MYDIR%') do (
 
 	 pause		 
 	 echo Gerar fragmentos : %MYDIR%\%%D\%%x
-	 java -Xmx1100M -jar C:\Users\rafa\Documents\Projects\Text2Net\console-processor\out\artifacts\fragments\console-processor.jar %MYDIR%\%%D\%%x  
+	 java -Xmx1100M -jar C:\Users\rafa\Documents\Projects\Text2Net\console-processor\out\artifacts\console_processor_jar\console-processor.jar %MYDIR%\%%D\%%x
 	 
 	)
 	
@@ -24,7 +24,7 @@ for /F %%D in ('dir /a:d /b %MYDIR%') do (
 
 	 pause		 
 	 echo Gerar conexoes : %MYDIR%\%%D\Fragmentos\%%y
-	 java -Xmx1100M -jar C:\Users\rafa\Documents\Projects\Text2Net\console-processor\out\artifacts\connections\console-processor.jar %MYDIR%\%%D\Fragmentos\%%y
+	 java -Xmx1100M -jar C:\Users\rafa\Documents\Projects\Text2Net\console-processor\out\artifacts\console_processor_jar2\console-processor.jar %MYDIR%\%%D\Fragmentos\%%y
 	)	
 )
 echo terminou!
