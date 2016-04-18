@@ -1,0 +1,22 @@
+// Valentin Tablan, 29/06/2001
+// $id$
+
+
+Phase:portarias
+Input: Token SpaceToken Lookup ASSINATURA 
+Options: control = appelt
+
+MACRO: INICIOCANDIDATE
+(
+    ({SpaceToken})[0,3]
+	{Lookup.majorType == "InicioPortaria"}
+	
+) 
+
+
+Rule: InicioCandidate
+(
+	(INICIOCANDIDATE)
+): ini
+-->
+:ini.InicioCandidate = {}

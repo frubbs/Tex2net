@@ -1,0 +1,15 @@
+com\text2net\console\query\QueryConnections.class
+com\text2net\console\FragmentProducer.class
+com\text2net\console\ProcessFileForConnections.class
+com\text2net\console\GATEExtractor.class
+com\text2net\console\storage\couchdb\CouchDbConnectionStorage.class
+com\text2net\console\Publication.class
+com\text2net\console\storage\IConnectionStorage.class
+com\text2net\console\storage\couchdb\CouchDbConnectionRepository.class
+com\text2net\console\query\couchdb\CouchDbQueryRunner.class
+com\text2net\console\storage\couchdb\CouchDBConnectionWrapper.class
+com\text2net\console\TextAnnotator2.class
+com\text2net\console\ConnectionProducer.class
+com\text2net\console\PublicationProducer.class
+com\text2net\console\ConnectionElement.class
+com\text2net\console\ProcessFileForFragments.class

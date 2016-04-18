@@ -1,0 +1,91 @@
+// Valentin Tablan, 29/06/2001
+// $id$
+
+
+Phase:nomes
+Input: Token SpaceToken Lookup
+Options: control = appelt
+
+
+
+Template: TipoEntidade = "Nome"
+		
+
+MACRO: CompletoMaiusculo
+(
+    (
+		({Token.orth == "allCaps", !Lookup.majorType == "Cargo"})
+		({SpaceToken})[1,3]
+	)[0,4]
+	({Lookup.majorType == [TipoEntidade] , Token.orth == "allCaps" })
+	({SpaceToken})[1,3]
+    (
+		({Token.orth == "allCaps", !Lookup.majorType == "Cargo"} | {Lookup.majorType == "Conector"})
+		({SpaceToken})[0,3]
+		
+	)[1,4]
+)
+
+MACRO: CompletoMaiusculoPonto
+(
+    (
+		({Token.orth == "allCaps", !Lookup.majorType == "Cargo"})
+		({SpaceToken})[1,3]
+	)[0,4]
+	({Lookup.majorType == [TipoEntidade] , Token.orth == "allCaps" })
+	({Token.string == "."} | {Token.string == ","})
+)
+
+
+MACRO: CompletoInicial
+(
+    (
+		({Token.orth == "upperInitial", !Lookup.majorType == "Cargo"})
+		({SpaceToken})[1,3]
+	)[0,4]
+	{Lookup.majorType == [TipoEntidade], Token.orth == "upperInitial"}
+	({SpaceToken})[1,3]
+    (
+		({Token.orth == "upperInitial", !Lookup.majorType == "Cargo"} | {Lookup.majorType == "Conector"} )
+		({SpaceToken})[0,3]
+	)[0,4]
+)
+
+MACRO: CompletoInicialPonto
+(
+    (
+		({Token.orth == "upperInitial", !Lookup.majorType == "Cargo"})
+		({SpaceToken})[1,3]
+	)[0,4]
+	{Lookup.majorType == [TipoEntidade], Token.orth == "upperInitial"}
+	({Token.string == "."} | {Token.string == ","})
+)
+
+MACRO: NOMECOMPLETO
+(
+	(CompletoInicial) | (CompletoMaiusculo) | 	(CompletoInicialPonto) | (CompletoMaiusculoPonto)
+)
+
+
+Rule: Nome	
+(
+	(CompletoMaiusculoPonto) | (CompletoMaiusculo)
+): nomeCompleto
+-->
+:nomeCompleto.EntidadeIdentificada = { kind = "CompletoMaiusculo" }
+
+Rule: Nome	
+(
+	(CompletoInicialPonto) | (CompletoInicial)
+): nomeCompleto
+-->
+:nomeCompleto.EntidadeIdentificada = { kind = "CompletoInicial" }
+
+
+
+
+		
+		
+
+
+		
