@@ -28,6 +28,12 @@ public class ProcessFragmentsForConnections {
     public static void main(String[] args) {
         System.out.println("ini");
 
+
+        if(args.length != 1){
+            System.out.println("ProcessFragmentsForConnections");
+            System.out.println("param1 = caminho do fragmento a processar ");
+        }
+
         ApplicationContext context =
                 new ClassPathXmlApplicationContext(new String[] {"spring\\app-config.xml"});
 
@@ -36,8 +42,9 @@ public class ProcessFragmentsForConnections {
 
         long startTime = System.currentTimeMillis();
 
-        String filePath = "C:\\Users\\rafa\\Documents\\Artigos\\Rede_da_presidente\\DouDownloaded\\txt2\\04052011\\Fragmentos\\Dou-04052011-1[0].txt";
-        System.out.println("pegando conn:" + filePath);
+       // String filePath = "C:\\Users\\rafa\\Documents\\Artigos\\Rede_da_presidente\\DouDownloaded\\txt2\\04052011\\Fragmentos\\Dou-04052011-1[0].txt";
+        String filePath = args[0];//"C:\\Users\\rafa\\Documents\\Artigos\\Rede_da_presidente\\DouDownloaded\\txt2\\04052011\\Fragmentos\\Dou-04052011-1[0].txt";
+        System.out.println("Extraindo conexoes de :" + filePath);
 
         main.getConnections(Paths.get(filePath));
 
@@ -48,10 +55,10 @@ public class ProcessFragmentsForConnections {
 
     private void getConnections(Path fpath) {
         try {
-            File gappFile = new File("C:\\Users\\rafa\\Documents\\Projects\\Text2Net\\console-processor\\src\\main\\resources\\com\\text2net\\gate_brnames\\Nomes_Trecho.xapp");
+            //File gappFile = new File("C:\\Users\\rafa\\Documents\\Projects\\Text2Net\\console-processor\\src\\main\\resources\\com\\text2net\\gate_brnames\\Nomes_Trecho.xapp");
+            File gappFile = new File("gate_brnames\\Nomes_Trecho.xapp");
             String content = new String(Files.readAllBytes(fpath), ("ISO-8859-1"));
 
-            System.out.println("get connection: " + fpath);
 
          /*   if (content.length() > 1) {
                 System.out.println(content);

@@ -37,13 +37,13 @@ public class FragmentProducer {
 
             if (i == inicioList.size() - 1) { // se estivermos no ultimo inicio, o fim eh o fim e nao a proximo inicio
                 fimPortaria = annotatedText.getContent().size().longValue();
-                System.out.println("ULTIMO fimPortaria:" + fimPortaria +" inicioPortaria:" + inicioPortaria +" diff:" + (fimPortaria - inicioPortaria));
+               // System.out.println("ULTIMO fimPortaria:" + fimPortaria +" inicioPortaria:" + inicioPortaria +" diff:" + (fimPortaria - inicioPortaria));
 
             } else	{
                 fimPortaria = inicioList.get(i + 1).getStartNode().getOffset();
-                System.out.println("fimPortaria:" + fimPortaria +" inicioPortaria:" + inicioPortaria +" diff:" + (fimPortaria - inicioPortaria));
+                //System.out.println("fimPortaria:" + fimPortaria +" inicioPortaria:" + inicioPortaria +" diff:" + (fimPortaria - inicioPortaria));
 
-                if (fimPortaria - inicioPortaria < 500000) //Quando chegar a 500k processa...
+                if (fimPortaria - inicioPortaria < 250000) //Quando chegar a 250k processa...
                     continue;
                 }
 

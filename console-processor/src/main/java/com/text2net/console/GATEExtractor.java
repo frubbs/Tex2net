@@ -15,7 +15,7 @@ public class GATEExtractor {
 		
 		configureGateProps();
 		gate = new Gate();
-		System.out.println("System.getProperty(\"gate.home\"):" + System.getProperty("gate.home"));
+
 		//gate.runInSandbox(true);
 		gate.init();
 		File gateHome = gate.getGateHome();

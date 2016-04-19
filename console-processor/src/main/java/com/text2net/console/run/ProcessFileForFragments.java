@@ -47,7 +47,9 @@ public class ProcessFileForFragments {
         try {
            // File gappFile =  new File(ProcessFileForFragments.class.getClassLoader().getResource("com/text2net/gate_inicioCandidate/Nomes_Trecho.xapp").getPath());
 
-            File gappFile =  new File("C:\\Users\\rafa\\Documents\\Projects\\Text2Net\\console-processor\\src\\main\\resources\\com\\text2net\\gate_inicioCandidate\\Nomes_Trecho.xapp");
+           // File gappFile =  new File("C:\\Users\\rafa\\Documents\\Projects\\Text2Net\\console-processor\\src\\main\\resources\\com\\text2net\\gate_inicioCandidate\\Nomes_Trecho.xapp");
+
+            File gappFile =  new File("gate_inicioCandidate\\Nomes_Trecho.xapp");
 
             int publicationId = 0;
             for(Publication p : processRequestForFragments(filePath, gappFile)){
